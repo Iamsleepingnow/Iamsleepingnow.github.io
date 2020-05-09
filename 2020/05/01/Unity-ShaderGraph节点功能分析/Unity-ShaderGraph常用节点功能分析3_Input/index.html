@@ -428,7 +428,7 @@
 <h1 id="Unity-ShaderGraph常用节点功能分析3-Input"><a href="#Unity-ShaderGraph常用节点功能分析3-Input" class="headerlink" title="Unity ShaderGraph常用节点功能分析3_Input"></a>Unity ShaderGraph常用节点功能分析3_Input</h1></blockquote>
 <p>持续更新，不定时更新</p>
 <p>（⭐常用度）</p>
-<h3 id="Input数值输入或获取"><a href="#Input数值输入或获取" class="headerlink" title="Input数值输入或获取"></a>Input数值输入或获取</h3><h4 id="Basic"><a href="#Basic" class="headerlink" title="Basic"></a><code>Basic</code></h4><hr>
+<h3 id="Input数值输入或获取"><a href="#Input数值输入或获取" class="headerlink" title="Input数值输入或获取"></a>Input数值输入或获取</h3><h4 id="Basic普通输入"><a href="#Basic普通输入" class="headerlink" title="Basic普通输入"></a><code>Basic</code>普通输入</h4><hr>
 <p>Boolean    ⭐</p>
 <pre><code>布尔开关，经常和branch连用来设置节点分支</code></pre><p><strong>Color</strong>（很重要）    ⭐⭐⭐⭐⭐</p>
 <pre><code>很普通的颜色</code></pre><p>Constant</p>
@@ -441,7 +441,7 @@ Sine Time:sin(Time.time)    在-1与1之间环绕的量
 Cosine Time:cos(Time.time)    在-1与1之间环绕的量
 Delta Time:Time.deltaTime    帧用时
 Smooth Delta:Time.smoothDeltaTime    平滑帧用时</code></pre><p><strong>Vectors</strong>（很重要）    ⭐⭐⭐⭐⭐</p>
-<pre><code>很普通的向量结构体，有Vector1~4四种，都表示浮点数向量</code></pre><h4 id="Geometry"><a href="#Geometry" class="headerlink" title="Geometry"></a><code>Geometry</code></h4><hr>
+<pre><code>很普通的向量结构体，有Vector1~4四种，都表示浮点数向量</code></pre><h4 id="Geometry几何输入"><a href="#Geometry几何输入" class="headerlink" title="Geometry几何输入"></a><code>Geometry</code>几何输入</h4><hr>
 <pre><code>Object物体空间：以该模型物体锚点为零点的坐标空间
 
 View视角空间：以活动摄像机为零点的坐标空间
@@ -466,22 +466,22 @@ Tiled:重复以屏幕中心为坐标顶点的空间</code></pre><p><strong>UV</s
 <pre><code>模型表面纹理着色排布坐标，用来控制纹理像素信息的位置，UV最多支持四个</code></pre><p>Vertex Color    ⭐</p>
 <pre><code>模型表面顶点颜色，拥有RGBA四通道，极端情况下可能用来做遮罩</code></pre><p><strong>View Direction</strong>（重要）    ⭐⭐</p>
 <pre><code>视角方向，从模型表面顶点到摄像机的方向向量，有四种坐标空间（Object物体空间/View视角空间/World世界空间/Tangent切线空间）
-是摄像机世界坐标减模型世界坐标获得的信息</code></pre><h4 id="Gradient"><a href="#Gradient" class="headerlink" title="Gradient"></a><code>Gradient</code></h4><hr>
+是摄像机世界坐标减模型世界坐标获得的信息</code></pre><h4 id="Gradient过渡输入"><a href="#Gradient过渡输入" class="headerlink" title="Gradient过渡输入"></a><code>Gradient</code>过渡输入</h4><hr>
 <p><strong>Gradient</strong>（重要）    ⭐⭐</p>
 <pre><code>很普通的过渡色</code></pre><p>Sample Gradient    ⭐</p>
-<pre><code>获取一个过渡色，用0~1来控制过渡位置</code></pre><h4 id="PBR"><a href="#PBR" class="headerlink" title="PBR"></a><code>PBR</code></h4><hr>
+<pre><code>获取一个过渡色，用0~1来控制过渡位置</code></pre><h4 id="PBR物理基准渲染输入"><a href="#PBR物理基准渲染输入" class="headerlink" title="PBR物理基准渲染输入"></a><code>PBR</code>物理基准渲染输入</h4><hr>
 <p>Dielectric Specular</p>
 <pre><code>高光介质系数，用于玄学计算不同材质的真实高光属性</code></pre><p>Metal Reflectance</p>
 <pre><code>不同材质的反射比
 如果PBR主节点使用Specular工作流，则输出Specular高光数
-如果PBR主节点使用Metallic工作流，则输出Albedo反射率</code></pre><h4 id="Scene"><a href="#Scene" class="headerlink" title="Scene"></a><code>Scene</code></h4><hr>
+如果PBR主节点使用Metallic工作流，则输出Albedo反射率</code></pre><h4 id="Scene场景信息输入"><a href="#Scene场景信息输入" class="headerlink" title="Scene场景信息输入"></a><code>Scene</code>场景信息输入</h4><hr>
 <p>Camera    ⭐⭐</p>
 <pre><code>获取当前相机组件的参数，包括位置，方向等</code></pre><p>Fog</p>
 <pre><code>获取场景雾效颜色和浓度</code></pre><p>Object    ⭐</p>
 <pre><code>获取材质附着物体的位置和缩放</code></pre><p>Scene Color    ⭐</p>
 <pre><code>获取片元着色器的颜色，获取当前摄像机的颜色缓存，但是超出了我的理解范围</code></pre><p>Scene Depth    ⭐⭐</p>
 <pre><code>获取当前摄像机片元着色器的深度缓冲区信息？？？</code></pre><p>Screen</p>
-<pre><code>获取屏幕的宽高像素</code></pre><h4 id="Texture"><a href="#Texture" class="headerlink" title="Texture"></a><code>Texture</code></h4><hr>
+<pre><code>获取屏幕的宽高像素</code></pre><h4 id="Texture贴图纹理输入"><a href="#Texture贴图纹理输入" class="headerlink" title="Texture贴图纹理输入"></a><code>Texture</code>贴图纹理输入</h4><hr>
 <p>Cubemap Asset</p>
 <pre><code>立方体天空盒文件，使用时需要加Sample Cubemap</code></pre><p>Sample Cubemap    ⭐</p>
 <pre><code>立方体天空盒采样，输出球面贴图，一般拿来做天空盒背景</code></pre><p><strong>Sample Texture 2Ds</strong>（很重要）    ⭐⭐⭐⭐⭐</p>
