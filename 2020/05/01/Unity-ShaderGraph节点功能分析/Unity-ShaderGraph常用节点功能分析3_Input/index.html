@@ -395,21 +395,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-01
+                    2020-05-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    131
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 				
@@ -430,51 +430,70 @@
 <p>（⭐常用度）</p>
 <h3 id="Input数值输入或获取"><a href="#Input数值输入或获取" class="headerlink" title="Input数值输入或获取"></a>Input数值输入或获取</h3><h4 id="Basic"><a href="#Basic" class="headerlink" title="Basic"></a><code>Basic</code></h4><hr>
 <p>Boolean    ⭐</p>
-<pre><code></code></pre><p><strong>Color</strong>（很重要）    ⭐⭐⭐⭐⭐</p>
-<pre><code></code></pre><p>Constant</p>
-<pre><code></code></pre><p>Integer    ⭐</p>
-<pre><code></code></pre><p><strong>Slider</strong>（很重要）    ⭐⭐⭐⭐</p>
-<pre><code></code></pre><p><strong>Time</strong>（很重要）    ⭐⭐⭐⭐⭐</p>
-<pre><code></code></pre><p><strong>Vectors</strong>（很重要）    ⭐⭐⭐⭐⭐</p>
-<pre><code></code></pre><h4 id="Geometry"><a href="#Geometry" class="headerlink" title="Geometry"></a><code>Geometry</code></h4><hr>
-<p>Bitangent Vector    ⭐</p>
-<pre><code></code></pre><p><strong>Normal Vector</strong>（很重要）    ⭐⭐⭐⭐</p>
-<pre><code></code></pre><p><strong>Position</strong>（很重要）    ⭐⭐⭐⭐⭐</p>
-<pre><code></code></pre><p><strong>Screen Position</strong>（重要）    ⭐⭐⭐</p>
-<pre><code></code></pre><p>Tangent Vector    ⭐⭐</p>
-<pre><code></code></pre><p><strong>UV</strong>（很重要）    ⭐⭐⭐⭐⭐</p>
-<pre><code></code></pre><p>Vertex Color    ⭐</p>
-<pre><code></code></pre><p><strong>View Direction</strong>（重要）    ⭐</p>
-<pre><code></code></pre><h4 id="Gradient"><a href="#Gradient" class="headerlink" title="Gradient"></a><code>Gradient</code></h4><hr>
+<pre><code>布尔开关，经常和branch连用来设置节点分支</code></pre><p><strong>Color</strong>（很重要）    ⭐⭐⭐⭐⭐</p>
+<pre><code>很普通的颜色</code></pre><p>Constant</p>
+<pre><code>很普通的常量，有PI，TAU，PHI，E，根号2</code></pre><p>Integer    ⭐</p>
+<pre><code>很普通的整数</code></pre><p><strong>Slider</strong>（很重要）    ⭐⭐⭐⭐</p>
+<pre><code>很普通的滑动条，要设置最大最小值</code></pre><p><strong>Time</strong>（很重要）    ⭐⭐⭐⭐⭐</p>
+<pre><code>Unity内部时间量，可用于动态调试：
+Time:Time.time    持续增长的量
+Sine Time:sin(Time.time)    在-1与1之间环绕的量
+Cosine Time:cos(Time.time)    在-1与1之间环绕的量
+Delta Time:Time.deltaTime    帧用时
+Smooth Delta:Time.smoothDeltaTime    平滑帧用时</code></pre><p><strong>Vectors</strong>（很重要）    ⭐⭐⭐⭐⭐</p>
+<pre><code>很普通的向量结构体，有Vector1~4四种，都表示浮点数向量</code></pre><h4 id="Geometry"><a href="#Geometry" class="headerlink" title="Geometry"></a><code>Geometry</code></h4><hr>
+<pre><code>Object物体空间：以该模型物体锚点为零点的坐标空间
+
+View视角空间：以活动摄像机为零点的坐标空间
+
+World世界空间：以世界场景零点为零点的坐标空间
+
+Tangent切线空间：以模型上所有面的法向量，切向量，副切向量为坐标轴，以顶点为零点的坐标空间</code></pre><p><strong>Normal Vector</strong>（很重要）    ⭐⭐⭐⭐</p>
+<pre><code>模型表面顶点的法向量，有四种坐标空间（Object物体空间/View视角空间/World世界空间/Tangent切线空间）
+标准法向量垂直于模型所有平面</code></pre><p>Tangent Vector    ⭐⭐</p>
+<pre><code>模型表面顶点的切线向量，有四种坐标空间（Object物体空间/View视角空间/World世界空间/Tangent切线空间）
+指纹理坐标UV中U轴</code></pre><p>Bitangent Vector    ⭐</p>
+<pre><code>模型表面顶点的副切线向量，有四种坐标空间（Object物体空间/View视角空间/World世界空间/Tangent切线空间）
+指纹理坐标UV中V轴</code></pre><p><strong>Position</strong>（很重要）    ⭐⭐⭐⭐⭐</p>
+<pre><code>模型表面顶点的位置，有四种坐标空间（Object物体空间/View视角空间/World世界空间/Tangent切线空间）
+所有顶点偏移特效都涉及position节点，尝试用split和combine分离组合，最终投送到Vertex Position里
+尝试使用时间和噪音等数学节点来调制</code></pre><p><strong>Screen Position</strong>（重要）    ⭐⭐⭐</p>
+<pre><code>屏幕坐标，模型表面顶点在屏幕上显示的位置，经常用于替换模型UV为屏幕映射UV
+Default:默认屏幕坐标，已除clip space position W
+Raw:原始屏幕坐标，未除clip space position W
+Center:以屏幕中心为坐标顶点的空间
+Tiled:重复以屏幕中心为坐标顶点的空间</code></pre><p><strong>UV</strong>（很重要）    ⭐⭐⭐⭐⭐</p>
+<pre><code>模型表面纹理着色排布坐标，用来控制纹理像素信息的位置，UV最多支持四个</code></pre><p>Vertex Color    ⭐</p>
+<pre><code>模型表面顶点颜色，拥有RGBA四通道，极端情况下可能用来做遮罩</code></pre><p><strong>View Direction</strong>（重要）    ⭐⭐</p>
+<pre><code>视角方向，从模型表面顶点到摄像机的方向向量，有四种坐标空间（Object物体空间/View视角空间/World世界空间/Tangent切线空间）
+是摄像机世界坐标减模型世界坐标获得的信息</code></pre><h4 id="Gradient"><a href="#Gradient" class="headerlink" title="Gradient"></a><code>Gradient</code></h4><hr>
 <p><strong>Gradient</strong>（重要）    ⭐⭐</p>
-<pre><code></code></pre><p>Sample Gradient    ⭐</p>
-<pre><code></code></pre><h4 id="Lighting"><a href="#Lighting" class="headerlink" title="Lighting"></a><code>Lighting</code></h4><hr>
-<p>Ambient</p>
-<pre><code></code></pre><p>Baked GI    ⭐⭐</p>
-<pre><code></code></pre><p>Reflection Probe</p>
-<pre><code></code></pre><h4 id="Matrix"><a href="#Matrix" class="headerlink" title="Matrix"></a><code>Matrix</code></h4><hr>
-<p>Matrixes</p>
-<pre><code></code></pre><p>Transformation Matrix</p>
-<pre><code></code></pre><h4 id="PBR"><a href="#PBR" class="headerlink" title="PBR"></a><code>PBR</code></h4><hr>
+<pre><code>很普通的过渡色</code></pre><p>Sample Gradient    ⭐</p>
+<pre><code>获取一个过渡色，用0~1来控制过渡位置</code></pre><h4 id="PBR"><a href="#PBR" class="headerlink" title="PBR"></a><code>PBR</code></h4><hr>
 <p>Dielectric Specular</p>
-<pre><code></code></pre><p>Metal Reflectance</p>
-<pre><code></code></pre><h4 id="Scene"><a href="#Scene" class="headerlink" title="Scene"></a><code>Scene</code></h4><hr>
+<pre><code>高光介质系数，用于玄学计算不同材质的真实高光属性</code></pre><p>Metal Reflectance</p>
+<pre><code>不同材质的反射比
+如果PBR主节点使用Specular工作流，则输出Specular高光数
+如果PBR主节点使用Metallic工作流，则输出Albedo反射率</code></pre><h4 id="Scene"><a href="#Scene" class="headerlink" title="Scene"></a><code>Scene</code></h4><hr>
 <p>Camera    ⭐⭐</p>
-<pre><code></code></pre><p>Fog</p>
-<pre><code></code></pre><p>Object    ⭐</p>
-<pre><code></code></pre><p>Scene Color</p>
-<pre><code></code></pre><p>Scene Depth    ⭐⭐</p>
-<pre><code></code></pre><p>Screen</p>
-<pre><code></code></pre><h4 id="Texture"><a href="#Texture" class="headerlink" title="Texture"></a><code>Texture</code></h4><hr>
-<p>Cubemap Asset    ⭐</p>
-<pre><code></code></pre><p>Sample Cubemap</p>
-<pre><code></code></pre><p><strong>Sample Texture 2Ds</strong>（很重要）    ⭐⭐⭐⭐⭐</p>
-<pre><code></code></pre><p>Sample Texture 3D    ⭐</p>
-<pre><code></code></pre><p>Sampler State</p>
-<pre><code></code></pre><p>Texel Size</p>
-<pre><code></code></pre><p>Texture 2D Assets</p>
-<pre><code></code></pre><p>Texture 3D Asset</p>
-<pre><code></code></pre>
+<pre><code>获取当前相机组件的参数，包括位置，方向等</code></pre><p>Fog</p>
+<pre><code>获取场景雾效颜色和浓度</code></pre><p>Object    ⭐</p>
+<pre><code>获取材质附着物体的位置和缩放</code></pre><p>Scene Color    ⭐</p>
+<pre><code>获取片元着色器的颜色，获取当前摄像机的颜色缓存，但是超出了我的理解范围</code></pre><p>Scene Depth    ⭐⭐</p>
+<pre><code>获取当前摄像机片元着色器的深度缓冲区信息？？？</code></pre><p>Screen</p>
+<pre><code>获取屏幕的宽高像素</code></pre><h4 id="Texture"><a href="#Texture" class="headerlink" title="Texture"></a><code>Texture</code></h4><hr>
+<p>Cubemap Asset</p>
+<pre><code>立方体天空盒文件，使用时需要加Sample Cubemap</code></pre><p>Sample Cubemap    ⭐</p>
+<pre><code>立方体天空盒采样，输出球面贴图，一般拿来做天空盒背景</code></pre><p><strong>Sample Texture 2Ds</strong>（很重要）    ⭐⭐⭐⭐⭐</p>
+<pre><code>Sample Texture 2D:2D贴图采样，显示你所有输入的纹理
+Sample Texture 2D Array:2D贴图数组采样，很难会用到
+Sample Texture 2D LOD:带LOD的2D贴图采样，适用于需要LOD的情况</code></pre><p>Sample Texture 3D    ⭐</p>
+<pre><code>3D贴图采样，用于表现体积区域</code></pre><p>Sampler State</p>
+<pre><code>所有采样节点里都有这么一个输入，用作重载抗锯齿和循环设置</code></pre><p>Texel Size</p>
+<pre><code>纹素大小，用于获取纹理贴图的像素宽高</code></pre><p>Texture 2D Assets</p>
+<pre><code>Texture 2D Asset:2D贴图文件，一般不会拿这个来装载贴图
+Texture 2D Array Asset:2D贴图数组文件</code></pre><p>Texture 3D Asset</p>
+<pre><code>3D贴图文件，一般不会拿这个来装载贴图</code></pre>
             </div>
             <hr/>
 
@@ -771,9 +790,8 @@ Unity ShaderGraph常用节点功能分析2_Channel
 持续更新，不定时更新
 （⭐常用度）
 Channel通道整理Combine（很重要）    ⭐⭐⭐⭐⭐
-Flip    ⭐
-Split（很重要）    ⭐⭐⭐⭐⭐
-Swi
+将最多四个通道进行合并Flip    ⭐
+反转任意几个通道Spli
                         
                     </div>
                     <div class="publish-info">
@@ -995,7 +1013,7 @@ Swi
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.6k</span>&nbsp;字
+                class="white-color">3.7k</span>&nbsp;字
             
             
             
