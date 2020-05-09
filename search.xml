@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Unity ShaderGraph常用节点功能分析8_UV</title>
+      <link href="/2020/05/06/Unity-ShaderGraph%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%90/Unity-ShaderGraph%E5%B8%B8%E7%94%A8%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%908_UV/"/>
+      <url>/2020/05/06/Unity-ShaderGraph%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%90/Unity-ShaderGraph%E5%B8%B8%E7%94%A8%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%908_UV/</url>
+      
+        <content type="html"><![CDATA[<blockquote><h1 id="Unity-ShaderGraph常用节点功能分析8-UV"><a href="#Unity-ShaderGraph常用节点功能分析8-UV" class="headerlink" title="Unity ShaderGraph常用节点功能分析8_UV"></a>Unity ShaderGraph常用节点功能分析8_UV</h1></blockquote><p>持续更新，不定时更新</p><p>（⭐常用度）</p><h3 id="UV贴图映射坐标"><a href="#UV贴图映射坐标" class="headerlink" title="UV贴图映射坐标"></a>UV贴图映射坐标</h3><p><strong>Flipbook</strong>（重要）    ⭐⭐⭐</p><pre><code></code></pre><p><strong>Polar Coordinates</strong>（重要）    ⭐</p><pre><code></code></pre><p>Radial Shear</p><pre><code></code></pre><p><strong>Rotate</strong>（很重要）    ⭐⭐</p><pre><code></code></pre><p>Spherize    ⭐⭐</p><pre><code></code></pre><p><strong>Tiling And Offset</strong>（很重要）    ⭐⭐⭐⭐⭐</p><pre><code></code></pre><p><strong>Triplanar</strong>（重要）    ⭐⭐</p><pre><code></code></pre><p>Twirl    ⭐</p><pre><code></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> unity </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 记录 </tag>
+            
+            <tag> 技术 </tag>
+            
+            <tag> unity </tag>
+            
+            <tag> shadergraph </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Unity ShaderGraph常用节点功能分析7_Utility</title>
+      <link href="/2020/05/05/Unity-ShaderGraph%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%90/Unity-ShaderGraph%E5%B8%B8%E7%94%A8%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%907_Utility/"/>
+      <url>/2020/05/05/Unity-ShaderGraph%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%90/Unity-ShaderGraph%E5%B8%B8%E7%94%A8%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%907_Utility/</url>
+      
+        <content type="html"><![CDATA[<blockquote><h1 id="Unity-ShaderGraph常用节点功能分析7-Utility"><a href="#Unity-ShaderGraph常用节点功能分析7-Utility" class="headerlink" title="Unity ShaderGraph常用节点功能分析7_Utility"></a>Unity ShaderGraph常用节点功能分析7_Utility</h1></blockquote><p>持续更新，不定时更新</p><p>（⭐常用度）</p><h3 id="Utility辅助功能"><a href="#Utility辅助功能" class="headerlink" title="Utility辅助功能"></a>Utility辅助功能</h3><p><strong>Custom Function</strong>（很重要）    ⭐⭐⭐⭐⭐</p><pre><code></code></pre><p><strong>Preview</strong>（很重要）    ⭐⭐⭐⭐⭐</p><pre><code></code></pre><h4 id="Logic"><a href="#Logic" class="headerlink" title="Logic"></a><code>Logic</code></h4><hr><p>All    ⭐</p><pre><code></code></pre><p>And    ⭐⭐</p><pre><code></code></pre><p>Any</p><pre><code></code></pre><p>Branch</p><pre><code></code></pre><p>Comparison</p><pre><code></code></pre><p>Is Front Face</p><pre><code></code></pre><p>Is Infinite</p><pre><code></code></pre><p>Is NaN</p><pre><code></code></pre><p>Nand    ⭐⭐</p><pre><code></code></pre><p>Not    ⭐⭐</p><pre><code></code></pre><p>Or    ⭐⭐</p><pre><code></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> unity </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 记录 </tag>
+            
+            <tag> 技术 </tag>
+            
+            <tag> unity </tag>
+            
+            <tag> shadergraph </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Unity ShaderGraph常用节点功能分析6_Procedural</title>
+      <link href="/2020/05/04/Unity-ShaderGraph%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%90/Unity-ShaderGraph%E5%B8%B8%E7%94%A8%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%906_Procedural/"/>
+      <url>/2020/05/04/Unity-ShaderGraph%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%90/Unity-ShaderGraph%E5%B8%B8%E7%94%A8%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%906_Procedural/</url>
+      
+        <content type="html"><![CDATA[<blockquote><h1 id="Unity-ShaderGraph常用节点功能分析6-Procedural"><a href="#Unity-ShaderGraph常用节点功能分析6-Procedural" class="headerlink" title="Unity ShaderGraph常用节点功能分析6_Procedural"></a>Unity ShaderGraph常用节点功能分析6_Procedural</h1></blockquote><p>持续更新，不定时更新</p><p>（⭐常用度）</p><h3 id="Procedural程序化生成"><a href="#Procedural程序化生成" class="headerlink" title="Procedural程序化生成"></a>Procedural程序化生成</h3><p>Checkerboard    ⭐⭐</p><pre><code></code></pre><p><strong>Noise</strong>（重要）    ⭐⭐⭐⭐</p><pre><code></code></pre><p><strong>Shape</strong>（重要）    ⭐⭐⭐</p><pre><code></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> unity </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 记录 </tag>
+            
+            <tag> 技术 </tag>
+            
+            <tag> unity </tag>
+            
+            <tag> shadergraph </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Unity ShaderGraph常用节点功能分析5_Math</title>
+      <link href="/2020/05/03/Unity-ShaderGraph%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%90/Unity-ShaderGraph%E5%B8%B8%E7%94%A8%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%905_Math/"/>
+      <url>/2020/05/03/Unity-ShaderGraph%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%90/Unity-ShaderGraph%E5%B8%B8%E7%94%A8%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%905_Math/</url>
+      
+        <content type="html"><![CDATA[<blockquote><h1 id="Unity-ShaderGraph常用节点功能分析5-Math"><a href="#Unity-ShaderGraph常用节点功能分析5-Math" class="headerlink" title="Unity ShaderGraph常用节点功能分析5_Math"></a>Unity ShaderGraph常用节点功能分析5_Math</h1></blockquote><p>持续更新，不定时更新</p><p>（⭐常用度）</p><h3 id="Math数学计算"><a href="#Math数学计算" class="headerlink" title="Math数学计算"></a>Math数学计算</h3><h4 id="Advanced"><a href="#Advanced" class="headerlink" title="Advanced"></a><code>Advanced</code></h4><hr><p><strong>Absolute</strong>（重要）    ⭐⭐⭐</p><pre><code></code></pre><p>Exponential</p><pre><code></code></pre><p><strong>Length</strong>（重要）    ⭐⭐</p><pre><code></code></pre><p>Log</p><pre><code></code></pre><p><strong>Modulo</strong>（重要）    ⭐⭐⭐</p><pre><code></code></pre><p><strong>Negate</strong>（重要）    ⭐⭐</p><pre><code></code></pre><p><strong>Normalize</strong>（重要）    ⭐⭐</p><pre><code></code></pre><p><strong>Posterize</strong>（很重要）    ⭐⭐⭐⭐</p><pre><code></code></pre><p>Reciprocal</p><pre><code></code></pre><p>Reciprocal Square Root</p><pre><code></code></pre><h4 id="Basic"><a href="#Basic" class="headerlink" title="Basic"></a><code>Basic</code></h4><hr><p><strong>Add</strong>（很重要）    ⭐⭐⭐⭐⭐</p><pre><code></code></pre><p>Divide    ⭐⭐</p><pre><code></code></pre><p><strong>Multiply</strong>（很重要）    ⭐⭐⭐⭐⭐</p><pre><code></code></pre><p><strong>Power</strong>（重要）    ⭐⭐⭐</p><pre><code></code></pre><p>Square Root    ⭐⭐</p><pre><code></code></pre><p>Subtract    ⭐⭐</p><pre><code></code></pre><h4 id="Derivative"><a href="#Derivative" class="headerlink" title="Derivative"></a><code>Derivative</code></h4><hr><p>DDX</p><pre><code></code></pre><p>DDXY</p><pre><code></code></pre><p>DDY</p><pre><code></code></pre><h4 id="Interpolation"><a href="#Interpolation" class="headerlink" title="Interpolation"></a><code>Interpolation</code></h4><hr><p><strong>Inverse Lerp</strong>（重要）    ⭐⭐⭐⭐</p><pre><code></code></pre><p><strong>Lerp</strong>（很重要）    ⭐⭐⭐⭐⭐</p><pre><code></code></pre><p><strong>Smoothstep</strong>（很重要）    ⭐⭐⭐⭐</p><pre><code></code></pre><h4 id="Matrix"><a href="#Matrix" class="headerlink" title="Matrix"></a><code>Matrix</code></h4><hr><p>Matrix Construction</p><pre><code></code></pre><p>Matrix Determinant</p><pre><code></code></pre><p>Matrix Split</p><pre><code></code></pre><p>Matrix Transpose</p><pre><code></code></pre><h4 id="Range"><a href="#Range" class="headerlink" title="Range"></a><code>Range</code></h4><hr><p><strong>Clamp</strong>（重要）    ⭐⭐⭐</p><pre><code></code></pre><p><strong>Fraction</strong>（很重要）    ⭐⭐⭐⭐</p><pre><code></code></pre><p><strong>Maximum</strong>（重要）    ⭐⭐</p><pre><code></code></pre><p><strong>Minimum</strong>（重要）    ⭐⭐</p><pre><code></code></pre><p><strong>One Minus</strong>（很重要）    ⭐⭐⭐⭐⭐</p><pre><code></code></pre><p><strong>Random Range</strong>（重要）    ⭐</p><pre><code></code></pre><p><strong>Remap</strong>（很重要）    ⭐⭐⭐⭐⭐</p><pre><code></code></pre><p><strong>Saturate</strong>（很重要）    ⭐⭐</p><pre><code></code></pre><h4 id="Round"><a href="#Round" class="headerlink" title="Round"></a><code>Round</code></h4><hr><p>Ceiling    ⭐</p><pre><code></code></pre><p>Floor    ⭐</p><pre><code></code></pre><p>Round    ⭐⭐</p><pre><code></code></pre><p>Sign    ⭐</p><pre><code></code></pre><p><strong>Step</strong>（很重要）    ⭐⭐⭐⭐⭐</p><pre><code></code></pre><p>Truncate    ⭐</p><pre><code></code></pre><h4 id="Trigonometry"><a href="#Trigonometry" class="headerlink" title="Trigonometry"></a><code>Trigonometry</code></h4><hr><p>Arccosine    ⭐</p><pre><code></code></pre><p>Arcsine    ⭐</p><pre><code></code></pre><p>Arctangent    ⭐</p><pre><code></code></pre><p>Arctangent2    ⭐⭐</p><pre><code></code></pre><p><strong>Cosine</strong>（很重要）    ⭐⭐⭐⭐</p><pre><code></code></pre><p><strong>Degrees To Radians</strong>（重要）    ⭐⭐</p><pre><code></code></pre><p>Hyperbolic Cosine</p><pre><code></code></pre><p>Hyperbolic Sine</p><pre><code></code></pre><p>Hyperbolic Tangent</p><pre><code></code></pre><p><strong>Sine</strong>（很重要）    ⭐⭐⭐⭐</p><pre><code></code></pre><p><strong>Tangent</strong>（很重要）    ⭐⭐⭐</p><pre><code></code></pre><h4 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a><code>Vector</code></h4><hr><p><strong>Cross Product</strong>（重要）    ⭐⭐⭐</p><pre><code></code></pre><p><strong>Distance</strong>（很重要）    ⭐⭐⭐⭐</p><pre><code></code></pre><p><strong>Dot Product</strong>（很重要）    ⭐⭐⭐⭐</p><pre><code></code></pre><p><strong>Fresnel Effect</strong>（很重要）    ⭐⭐⭐</p><pre><code></code></pre><p>Projection    ⭐</p><pre><code></code></pre><p>Reflection    ⭐</p><pre><code></code></pre><p>Rejection    ⭐</p><pre><code></code></pre><p><strong>Rotate About Axis</strong>（重要）    ⭐⭐</p><pre><code></code></pre><p>Sphere Mask    ⭐</p><pre><code></code></pre><p>Transform</p><pre><code></code></pre><h4 id="Wave"><a href="#Wave" class="headerlink" title="Wave"></a><code>Wave</code></h4><hr><p><strong>Noise Sine Wave</strong>（重要）    ⭐⭐</p><pre><code></code></pre><p><strong>Sawtooth Wave</strong>（重要）    ⭐⭐</p><pre><code></code></pre><p><strong>Square Wave</strong>（重要）    ⭐⭐</p><pre><code></code></pre><p><strong>Triangle Wave</strong>（重要）    ⭐⭐</p><pre><code></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> unity </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 记录 </tag>
+            
+            <tag> 技术 </tag>
+            
+            <tag> unity </tag>
+            
+            <tag> shadergraph </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Unity ShaderGraph常用节点功能分析4_Master</title>
+      <link href="/2020/05/02/Unity-ShaderGraph%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%90/Unity-ShaderGraph%E5%B8%B8%E7%94%A8%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%904_Master/"/>
+      <url>/2020/05/02/Unity-ShaderGraph%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%90/Unity-ShaderGraph%E5%B8%B8%E7%94%A8%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%904_Master/</url>
+      
+        <content type="html"><![CDATA[<blockquote><h1 id="Unity-ShaderGraph常用节点功能分析4-Master"><a href="#Unity-ShaderGraph常用节点功能分析4-Master" class="headerlink" title="Unity ShaderGraph常用节点功能分析4_Master"></a>Unity ShaderGraph常用节点功能分析4_Master</h1></blockquote><p>持续更新，不定时更新</p><p>（⭐常用度）</p><h3 id="Master根节点种类"><a href="#Master根节点种类" class="headerlink" title="Master根节点种类"></a>Master根节点种类</h3><p><strong>PBR</strong>（很重要）    ⭐⭐⭐⭐⭐</p><pre><code></code></pre><p>Sprite Lit(Ex)    ⭐⭐</p><pre><code></code></pre><p>Sprite Unlit(Ex)    ⭐⭐</p><pre><code></code></pre><p><strong>Unit</strong>（很重要）    ⭐⭐⭐⭐</p><pre><code></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> unity </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 记录 </tag>
+            
+            <tag> 技术 </tag>
+            
+            <tag> unity </tag>
+            
+            <tag> shadergraph </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Unity ShaderGraph常用节点功能分析3_Input</title>
+      <link href="/2020/05/01/Unity-ShaderGraph%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%90/Unity-ShaderGraph%E5%B8%B8%E7%94%A8%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%903_Input/"/>
+      <url>/2020/05/01/Unity-ShaderGraph%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%90/Unity-ShaderGraph%E5%B8%B8%E7%94%A8%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%903_Input/</url>
+      
+        <content type="html"><![CDATA[<blockquote><h1 id="Unity-ShaderGraph常用节点功能分析3-Input"><a href="#Unity-ShaderGraph常用节点功能分析3-Input" class="headerlink" title="Unity ShaderGraph常用节点功能分析3_Input"></a>Unity ShaderGraph常用节点功能分析3_Input</h1></blockquote><p>持续更新，不定时更新</p><p>（⭐常用度）</p><h3 id="Input数值输入或获取"><a href="#Input数值输入或获取" class="headerlink" title="Input数值输入或获取"></a>Input数值输入或获取</h3><h4 id="Basic"><a href="#Basic" class="headerlink" title="Basic"></a><code>Basic</code></h4><hr><p>Boolean    ⭐</p><pre><code></code></pre><p><strong>Color</strong>（很重要）    ⭐⭐⭐⭐⭐</p><pre><code></code></pre><p>Constant</p><pre><code></code></pre><p>Integer    ⭐</p><pre><code></code></pre><p><strong>Slider</strong>（很重要）    ⭐⭐⭐⭐</p><pre><code></code></pre><p><strong>Time</strong>（很重要）    ⭐⭐⭐⭐⭐</p><pre><code></code></pre><p><strong>Vectors</strong>（很重要）    ⭐⭐⭐⭐⭐</p><pre><code></code></pre><h4 id="Geometry"><a href="#Geometry" class="headerlink" title="Geometry"></a><code>Geometry</code></h4><hr><p>Bitangent Vector    ⭐</p><pre><code></code></pre><p><strong>Normal Vector</strong>（很重要）    ⭐⭐⭐⭐</p><pre><code></code></pre><p><strong>Position</strong>（很重要）    ⭐⭐⭐⭐⭐</p><pre><code></code></pre><p><strong>Screen Position</strong>（重要）    ⭐⭐⭐</p><pre><code></code></pre><p>Tangent Vector    ⭐⭐</p><pre><code></code></pre><p><strong>UV</strong>（很重要）    ⭐⭐⭐⭐⭐</p><pre><code></code></pre><p>Vertex Color    ⭐</p><pre><code></code></pre><p><strong>View Direction</strong>（重要）    ⭐</p><pre><code></code></pre><h4 id="Gradient"><a href="#Gradient" class="headerlink" title="Gradient"></a><code>Gradient</code></h4><hr><p><strong>Gradient</strong>（重要）    ⭐⭐</p><pre><code></code></pre><p>Sample Gradient    ⭐</p><pre><code></code></pre><h4 id="Lighting"><a href="#Lighting" class="headerlink" title="Lighting"></a><code>Lighting</code></h4><hr><p>Ambient</p><pre><code></code></pre><p>Baked GI    ⭐⭐</p><pre><code></code></pre><p>Reflection Probe</p><pre><code></code></pre><h4 id="Matrix"><a href="#Matrix" class="headerlink" title="Matrix"></a><code>Matrix</code></h4><hr><p>Matrixes</p><pre><code></code></pre><p>Transformation Matrix</p><pre><code></code></pre><h4 id="PBR"><a href="#PBR" class="headerlink" title="PBR"></a><code>PBR</code></h4><hr><p>Dielectric Specular</p><pre><code></code></pre><p>Metal Reflectance</p><pre><code></code></pre><h4 id="Scene"><a href="#Scene" class="headerlink" title="Scene"></a><code>Scene</code></h4><hr><p>Camera    ⭐⭐</p><pre><code></code></pre><p>Fog</p><pre><code></code></pre><p>Object    ⭐</p><pre><code></code></pre><p>Scene Color</p><pre><code></code></pre><p>Scene Depth    ⭐⭐</p><pre><code></code></pre><p>Screen</p><pre><code></code></pre><h4 id="Texture"><a href="#Texture" class="headerlink" title="Texture"></a><code>Texture</code></h4><hr><p>Cubemap Asset    ⭐</p><pre><code></code></pre><p>Sample Cubemap</p><pre><code></code></pre><p><strong>Sample Texture 2Ds</strong>（很重要）    ⭐⭐⭐⭐⭐</p><pre><code></code></pre><p>Sample Texture 3D    ⭐</p><pre><code></code></pre><p>Sampler State</p><pre><code></code></pre><p>Texel Size</p><pre><code></code></pre><p>Texture 2D Assets</p><pre><code></code></pre><p>Texture 3D Asset</p><pre><code></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> unity </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 记录 </tag>
+            
+            <tag> 技术 </tag>
+            
+            <tag> unity </tag>
+            
+            <tag> shadergraph </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Unity ShaderGraph常用节点功能分析2_Channel</title>
+      <link href="/2020/04/30/Unity-ShaderGraph%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%90/Unity-ShaderGraph%E5%B8%B8%E7%94%A8%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%902_Channel/"/>
+      <url>/2020/04/30/Unity-ShaderGraph%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%90/Unity-ShaderGraph%E5%B8%B8%E7%94%A8%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%902_Channel/</url>
+      
+        <content type="html"><![CDATA[<blockquote><h1 id="Unity-ShaderGraph常用节点功能分析2-Channel"><a href="#Unity-ShaderGraph常用节点功能分析2-Channel" class="headerlink" title="Unity ShaderGraph常用节点功能分析2_Channel"></a>Unity ShaderGraph常用节点功能分析2_Channel</h1></blockquote><p>持续更新，不定时更新</p><p>（⭐常用度）</p><h3 id="Channel通道整理"><a href="#Channel通道整理" class="headerlink" title="Channel通道整理"></a>Channel通道整理</h3><p><strong>Combine</strong>（很重要）    ⭐⭐⭐⭐⭐</p><pre><code></code></pre><p>Flip    ⭐</p><pre><code></code></pre><p><strong>Split</strong>（很重要）    ⭐⭐⭐⭐⭐</p><pre><code></code></pre><p>Swizzle    ⭐</p><pre><code></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> unity </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 记录 </tag>
+            
+            <tag> 技术 </tag>
+            
+            <tag> unity </tag>
+            
+            <tag> shadergraph </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Unity ShaderGraph常用节点功能分析1_Artistic</title>
+      <link href="/2020/04/29/Unity-ShaderGraph%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%90/Unity-ShaderGraph%E5%B8%B8%E7%94%A8%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%901_Artistic/"/>
+      <url>/2020/04/29/Unity-ShaderGraph%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%90/Unity-ShaderGraph%E5%B8%B8%E7%94%A8%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%901_Artistic/</url>
+      
+        <content type="html"><![CDATA[<blockquote><h1 id="Unity-ShaderGraph常用节点功能分析1-Artistic"><a href="#Unity-ShaderGraph常用节点功能分析1-Artistic" class="headerlink" title="Unity ShaderGraph常用节点功能分析1_Artistic"></a>Unity ShaderGraph常用节点功能分析1_Artistic</h1></blockquote><p>持续更新，不定时更新</p><p>（⭐常用度）</p><h3 id="Artistic风格化调整"><a href="#Artistic风格化调整" class="headerlink" title="Artistic风格化调整"></a>Artistic风格化调整</h3><h4 id="Adjustment调整"><a href="#Adjustment调整" class="headerlink" title="Adjustment调整"></a><code>Adjustment</code>调整</h4><hr><p><strong>Channel Mixer</strong>（重要）    ⭐⭐⭐</p><pre><code>调节输入端RGB比率，用于调色。</code></pre><p>Contrast    ⭐</p><pre><code>说是可以调整对比度，但我怎么感觉饱和度也被调整了。</code></pre><p>Hue    ⭐</p><pre><code>色调调整，有两种模式。Degrees模式范围是0~360，Normalized模式范围是0~1。</code></pre><p>Invert Colors    ⭐</p><pre><code>取反色，可以选择反转的通道。</code></pre><p>Replace Colors</p><pre><code>替换颜色，输入2和3是替换颜色，输入4范围0~1，是扫辐，输入5范围0~1，是阈值范围。</code></pre><p>Saturation    ⭐</p><pre><code>饱和度，范围未知，0是纯灰，1是原图，-1是反色。</code></pre><p>White Balance</p><pre><code>白平衡，推荐范围0~1，输入2调整黄蓝，输入3调整粉绿，超出范围会有极端颜色。</code></pre><h4 id="Blend混合"><a href="#Blend混合" class="headerlink" title="Blend混合"></a><code>Blend</code>混合</h4><hr><p><strong>Blend</strong>（很重要）    ⭐⭐⭐⭐</p><pre><code>混合模式，将输入1和2进行混合。一共有21种混合模式。Burn = 1 - ( 1 - Blend) / BaseDarken = min( Blend, Base)Difference = abs( Blend - Base); Dodge = Base / (1.0 - Blend);Divide = Base / (Blend + 0.000000000001); Exclusion = Blend + Base - (2.0 * Blend * Base); A = 1.0 - 2.0 * (1.0 - Base) * (1.0 - Blend); B = 2.0 * Base * Blend; C = step(Blend, 0.5); HardLight = B * C + (1 - C) * A; HardMix = step(1 - Base, Blend); Lighten = max(Blend, Base); LinearBurn = Base + Blend - 1.0; LinearDodge = Base + Blend; LinearLight = Blend &lt; 0.5 ? max(Base + (2 * Blend) - 1, 0) : min(Base + 2 * (Blend - 0.5), 1); LinearLightAddSub = Blend + 2.0 * Base - 1.0; Multiply = Base * Blend; Negation = 1.0 - abs(1.0 - Blend - Base);Screen = 1.0 - (1.0 - Blend) * (1.0 - Base); A = 1.0 - 2.0 * (1.0 - Base) * (1.0 - Blend); B = 2.0 * Base * Blend; C = step(Base, 0.5); Overlay = B * C + (1 - C) * A; A = step (0.5, Blend); B = check * max(2.0 * (Base - 0.5), Blend); PinLight = B + (1.0 - A) * min(2.0 * Base, Blend); A = 2.0 * Base * Blend + Base * Base * (1.0 - 2.0 * Blend); B = sqrt(Base) * (2.0 * Blend - 1.0) + 2.0 * Base * (1.0 - Blend); C = step(0.5, Blend); SoftLight = B * C + (1 - C) * A; A = 1.0 - (1.0 - Blend) / (2.0 * Base); B = Blend / (2.0 * (1.0 - Base)); C = step(0.5, Base); VividLight = B * C + (1 - C) * A; Subtract = Base - Blend; </code></pre><h4 id="Filter滤镜"><a href="#Filter滤镜" class="headerlink" title="Filter滤镜"></a><code>Filter</code>滤镜</h4><hr><p>Dither</p><pre><code>“抖动是一种有意的噪声形式，用于随机化量化误差。它用于防止大规模图案，例如图像中的色带。抖动节点在屏幕空间中应用抖动，以确保图案的均匀分布。可以通过将另一个节点连接到输入Screen Position来进行调整。该节点通常用作主节点上Alpha剪辑阈值的输入，以使不透明对象具有透明外观。这对于创建看起来透明但具有渲染为不透明（例如书写深度和/或延迟渲染）的优点很有用。”上面是官方解释，实践发现它可以将透明显示变得更加有质感，半透明处会显示麻点。看多了对眼睛不好。</code></pre><h4 id="Mask遮罩"><a href="#Mask遮罩" class="headerlink" title="Mask遮罩"></a><code>Mask</code>遮罩</h4><hr><p>Channel Mask</p><pre><code>通道遮罩可以选择需要显示和隐藏的通道（RGBA）。</code></pre><p><strong>Color Mask</strong>（很重要）    ⭐⭐⭐</p><pre><code>颜色遮罩可以选择一个颜色来用单通道显示。输入3范围0~1，是扫辐，输入4范围0~1，是阈值范围。</code></pre><h4 id="Normal法线相关"><a href="#Normal法线相关" class="headerlink" title="Normal法线相关"></a><code>Normal</code>法线相关</h4><hr><p><strong>Normal Blend</strong>（重要）    ⭐⭐</p><pre><code>专门用来混合叠加两张法线图。</code></pre><p>Normal From Height    ⭐</p><pre><code>尝试将一张高度贴图转成法线贴图。</code></pre><p>Normal From Texture    ⭐</p><pre><code>尝试将一张着色贴图转成法线贴图。</code></pre><p>Normal Reconstruct Z</p><pre><code>尝试将一张缺失Z轴的法线贴图添加一个Z轴。</code></pre><p><strong>Normal Strength</strong>（很重要）    ⭐⭐⭐⭐</p><pre><code>加强一张法线贴图的强度不要再用乘法了，要用这个，绝对不会出坐标问题。</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> unity </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 记录 </tag>
+            
+            <tag> 技术 </tag>
+            
+            <tag> unity </tag>
+            
+            <tag> shadergraph </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>从零开始hexo个人网站博客搭建指南</title>
+      <link href="/2020/04/27/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bhexo%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/"/>
+      <url>/2020/04/27/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bhexo%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/</url>
+      
+        <content type="html"><![CDATA[<h1 id="从零开始Hexo个人网站博客搭建指南（简略）"><a href="#从零开始Hexo个人网站博客搭建指南（简略）" class="headerlink" title="从零开始Hexo个人网站博客搭建指南（简略）"></a>从零开始Hexo个人网站博客搭建指南（简略）</h1><p>我就是拿这个方法建的博客，方法来源自互联网，特此记录。</p><h2 id="注册Github，申请Repository资料库"><a href="#注册Github，申请Repository资料库" class="headerlink" title="注册Github，申请Repository资料库"></a>注册Github，申请Repository资料库</h2><h2 id="下载安装node-js"><a href="#下载安装node-js" class="headerlink" title="下载安装node.js"></a>下载安装node.js</h2><p>cmd–&gt;<strong>node -v</strong> 查看版号，确认已安装</p><p>在安装地址下新增<strong>node_global</strong>和<strong>node_cache</strong>文件夹<br>cmd–&gt;<strong>npm config set prefix”D:\blabla\node_global”</strong><br>cmd–&gt;<strong>npm config set cache”D:\blabla\node_cache”</strong></p><p>新增系统环境变量：</p><p>​    变量名：<strong>NODE-PATH</strong></p><p>​    变量值：<strong>D:\blabla\node_modules</strong></p><p>修改用户变量中PATH的值：</p><p>​    新建：<strong>D:\blabla\node_global.</strong></p><h2 id="下载安装git"><a href="#下载安装git" class="headerlink" title="下载安装git"></a>下载安装git</h2><p>安装完后，在任意目录下<strong>右键Git Bash Here</strong>就会打开当前目录下的git</p><p><a href="https://hexoscript.gitbook.io/hexo-script/" target="_blank" rel="noopener">HEXO脚本参考之一</a> </p><p><strong>bash窗口不支持ctrl+cv的复制，启用鼠标右键来复制和粘贴，ctrl+d退出bash，ctrl+c退出本地服务器</strong></p><h2 id="install-sh检测"><a href="#install-sh检测" class="headerlink" title="install.sh检测"></a>install.sh检测</h2><p>bash–&gt;<strong>curl -O <a href="https://cdn.jsdelivr.net/gh/kjhuanhao/hexo-script@master/install.sh" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/kjhuanhao/hexo-script@master/install.sh</a></strong>获得install.sh验证文件</p><p>​    在intall.sh存放目录下打开bash–&gt;<strong>source install.sh test_node</strong>若输出版本号则表示node.js安装完毕<br>​    在intall.sh存放目录下打开bash–&gt;<strong>source install.sh test_git</strong>若输出版本号则表示git安装完毕</p><h2 id="一键安装hexo"><a href="#一键安装hexo" class="headerlink" title="一键安装hexo"></a>一键安装hexo</h2><p>在intall.sh存放目录下打开bash–&gt;<strong>source install.sh hexo_win</strong>若输出<strong>Successful installation of hexo!</strong>则表示hexo博客安装完毕<br>并且弹出github登录窗口，登录<br>之后弹出创建网站密钥的<strong>OpenSSH</strong>窗口，输入github用户名和密码，等待bash窗口运行完毕</p><h2 id="配置npm镜像用于加速"><a href="#配置npm镜像用于加速" class="headerlink" title="配置npm镜像用于加速"></a>配置npm镜像用于加速</h2><p>​    <a href="https://www.cnblogs.com/luyuandatabase/p/12145707.html" target="_blank" rel="noopener">npm使用国内淘宝镜像的方法</a><br>​    cmd–&gt;<strong>node -v</strong>检测node.js<br>​    cmd–&gt;<strong>npm -v</strong>检测npm</p><p>​    在我的电脑目录下打开cmd–&gt;<strong>npm init</strong>初始化项目的配置依赖清单<br>​    在我的电脑目录下打开cmd–&gt;<strong>npm config set registry <a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></strong>安装淘宝云<br>​    在我的电脑目录下打开cmd–&gt;<strong>npm config get registry</strong>若输出网址则表示镜像配置成功<br>​    在我的电脑目录下打开cmd–&gt;<strong>cnpm -v</strong>不报错表示成功，后续npm操作使用cnpm会加快</p><h2 id="初始化博客服务器"><a href="#初始化博客服务器" class="headerlink" title="初始化博客服务器"></a>初始化博客服务器</h2><p>​    在博客根目录hexoblog打开bash–&gt;<strong>hexo s</strong>启动本地服务器</p><p>​    如果输出<strong>INFO  Hexo is running at <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> .</strong>则在浏览器上<a href="http://localhost:4000打开本地网站">http://localhost:4000打开本地网站</a></p><h2 id="生成SSH秘钥并上传github"><a href="#生成SSH秘钥并上传github" class="headerlink" title="生成SSH秘钥并上传github"></a>生成SSH秘钥并上传github</h2><p>​    在intall.sh存放目录下打开bash–&gt;<strong>./install.sh git_ssh</strong></p><p>​        <strong>执行1</strong>：一键生成秘钥，需要输入github账号名，密码*2，邮箱，秘钥存放地址，地址可在我的文档.ssh文件夹下（新建），这也是电脑里秘钥的唯一位置，秘钥是id_rsa，公钥是id_rsa.pub</p><p>​        <strong>执行2</strong>：检查电脑中的秘钥</p><p>​    在intall.sh存放目录下打开bash–&gt;cat ~/.ssh/id_rsa.pub查看公钥完整，并复制公钥，<br>​    登陆github帐户，点击头像，Settings –&gt; 左栏 SSH and GPG keys –&gt; New SSH key，复制公钥内容，粘贴进Key内，title起名字，点击 Add key</p><p>​    在intall.sh存放目录下打开bash–&gt;<strong>ssh -T <a href="mailto:git@github.com">git@github.com</a></strong>，输入<strong>yes</strong>，输入密码，若输出 <strong>You’ve successfully authenticated, but GitHub does not provide shell access.</strong>成功</p><h2 id="初始化部署hexo博客"><a href="#初始化部署hexo博客" class="headerlink" title="初始化部署hexo博客"></a>初始化部署hexo博客</h2><p>​    在intall.sh存放目录下打开bash–&gt;<strong>source install.sh deploy</strong>生成up.sh文件，将up.sh复制到hexoblog中<br>​    打开hexoblog里的<strong>_config.yml</strong>全局配置文件<br>​    将最后的deploy改成<br>​        <strong>deploy:</strong><br>              <strong>type: git</strong><br>              <strong>repo:</strong> 库地址（github仓库地址，登陆github帐户，点击头像，your repositories，下载页面，clone and download，useSSH，下面就是你的库地址）<br>              <strong>branch: master</strong><br>​    在hexoblog目录下打开bash–&gt;<strong>source up.sh</strong>自动部署到github，<strong>等bash运行完后还要输密码</strong><br>​    博客成功搭建！浏览器地址：<strong><a href="https://github名字.github.io/" target="_blank" rel="noopener">https://github名字.github.io/</a></strong></p><h2 id="网站基础配置"><a href="#网站基础配置" class="headerlink" title="网站基础配置"></a>网站基础配置</h2><p>​    <a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="noopener">网站配置文档</a><br>​    打开hexoblog里的<strong>_config.yml</strong>全局配置文件，<br>​    查看文档来配置（略）<br>​    完事之后，要将本地数据上传，采用四步更新法：在hexoblog目录下打开bash–&gt;<strong>hexo clean</strong>，<strong>hexo g</strong>，（<strong>hexo s</strong>，ctrl+c），<strong>hexo d</strong></p><h2 id="基础网站插件"><a href="#基础网站插件" class="headerlink" title="基础网站插件"></a>基础网站插件</h2><p><strong>搜索插件</strong>：在hexoblog目录下打开bash–&gt;<strong>cnpm install hexo-generator-search –save</strong><br>        _config.yml：<br>        search:<br>            path: search.xml<br>            field: post<br><strong>代码高亮</strong>：在hexoblog目录下打开bash–&gt;<strong>cnpm i -S hexo-prism-plugin</strong><br>        _config.yml：<br>        prism_plugin:<br>            mode: ‘preprocess’<br>            theme: ‘tomorrow’<br>            line_number: false<br>            custom_css:</p><p><strong>主题</strong>：<a href="https://hexo.io/themes/" target="_blank" rel="noopener">HEXO官网主题</a></p><h2 id="发表第一篇文章"><a href="#发表第一篇文章" class="headerlink" title="发表第一篇文章"></a>发表第一篇文章</h2><p>在hexoblog目录下打开bash–&gt;<strong>hexo new “文章名字”</strong>用于新建<strong>markdown文件</strong>，文件将会生成在<strong>hexoblog/source/_posts</strong>内</p><p>在<strong>md编辑器</strong>（任何文本编辑器）中编辑文章</p><p>四步发布法：在hexoblog目录下打开bash–&gt;</p><ol><li><strong>hexo clean</strong>清除缓存，</li><li><strong>hexo g</strong>生成网页，</li><li>（<strong>hexo s</strong>，ctrl+c）查看本地预览，</li><li><strong>hexo d</strong>发布</li></ol><p>发布后浏览器会有一会儿的反应时间，如果在网站中发现没有更新，尝试用其他浏览器或者刷新</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> 博客 </tag>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
