@@ -395,21 +395,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-01
+                    2020-05-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    41
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 				
@@ -428,11 +428,66 @@
 <h1 id="Unity-ShaderGraph常用节点功能分析4-Master"><a href="#Unity-ShaderGraph常用节点功能分析4-Master" class="headerlink" title="Unity ShaderGraph常用节点功能分析4_Master"></a>Unity ShaderGraph常用节点功能分析4_Master</h1></blockquote>
 <p>持续更新，不定时更新</p>
 <p>（⭐常用度）</p>
-<h3 id="Master根节点种类"><a href="#Master根节点种类" class="headerlink" title="Master根节点种类"></a>Master根节点种类</h3><p><strong>PBR</strong>（很重要）    ⭐⭐⭐⭐⭐</p>
-<pre><code></code></pre><p>Sprite Lit(Ex)    ⭐⭐</p>
-<pre><code></code></pre><p>Sprite Unlit(Ex)    ⭐⭐</p>
-<pre><code></code></pre><p><strong>Unit</strong>（很重要）    ⭐⭐⭐⭐</p>
-<pre><code></code></pre>
+<h3 id="Master根节点种类"><a href="#Master根节点种类" class="headerlink" title="Master根节点种类"></a>Master根节点种类</h3><p><strong>HDRP/Decal</strong>（很重要）    ⭐⭐⭐</p>
+<p>HDRP/Eye</p>
+<p>HDRP/Fabric</p>
+<p>HDRP/Hair</p>
+<p><strong>HDRP/Lit</strong>（很重要）    ⭐⭐⭐⭐</p>
+<p>HDRP/StackLit</p>
+<p><strong>HDRP/Unlit</strong>（很重要）    ⭐⭐</p>
+<p><strong>PBR</strong>（很重要）    ⭐⭐⭐⭐⭐</p>
+<p>Sprite Lit(Ex)    ⭐⭐</p>
+<p>Sprite Unlit(Ex)    ⭐⭐</p>
+<p><strong>Unit</strong>（很重要）    ⭐⭐⭐⭐</p>
+<p>Visual Effect    ⭐</p>
+<h3 id="具体可输入端口："><a href="#具体可输入端口：" class="headerlink" title="具体可输入端口："></a>具体可输入端口：</h3><h4 id="Vertex逐顶点"><a href="#Vertex逐顶点" class="headerlink" title="Vertex逐顶点"></a>Vertex逐顶点</h4><p>Vertex Position    物体空间顶点位置</p>
+<pre><code>获取顶点位置矩阵，进行重载修改</code></pre><p>Vertex Normal    物体空间法线朝向</p>
+<pre><code>获取顶点法线矩阵，进行重载修改</code></pre><p>Vertex Tangent    物体空间切线朝向</p>
+<pre><code>获取顶点切线矩阵，进行重载修改</code></pre><h4 id="Color固有色"><a href="#Color固有色" class="headerlink" title="Color固有色"></a>Color固有色</h4><p>Color    (unlit)    着色</p>
+<pre><code>普通顶点着色</code></pre><p>Albedo    (BaseColor/DiffuseColor)    反照率</p>
+<pre><code>三通道贴图，作为BaseColor和Diffuse的统称</code></pre><p>BaseColor    (Metallic Workflow)    基础色</p>
+<pre><code>在金属度为0时相当于漫反射颜色，在金属工作流下金属度不受BaseColor影响</code></pre><p>Diffuse    (Specular Workflow)    漫反射</p>
+<pre><code>存储的是漫反射部分的颜色，在高光工作流下漫反射与镜面反射互补，也就是电介度与金属度互补，越白越接近1越非金属，越黑越接近0越金属</code></pre><h4 id="Normal法线"><a href="#Normal法线" class="headerlink" title="Normal法线"></a>Normal法线</h4><p>Normal    切线空间法线贴图</p>
+<pre><code>以切线空间TBN为基准，用于拨乱模型点法线
+U方向映射切线，v方向映射副切线(副法线)，W方向映射法线
+使用三通道贴图，红通道将法线向横坐标偏移，绿通道将法线向纵坐标偏移，蓝通道修正偏移
+红通道将0~255映射至“朝左到朝右”
+绿通道将0~255映射至“朝上到朝下”</code></pre><p>IrisNormal    虹膜法线贴图</p>
+<pre><code>专门用来做眼珠子的法线，用于玄学体现眼睛折射</code></pre><p>BentNormal    世界空间法线贴图</p>
+<pre><code>以世界空间XYZ为基准，用于矫正模型点法线
+红通道将0~255映射至“朝左到朝右”
+绿通道将0~255映射至“朝上到朝下”
+蓝通道将0~255映射至“朝前到朝后”</code></pre><h4 id="Reflection反射"><a href="#Reflection反射" class="headerlink" title="Reflection反射"></a>Reflection反射</h4><p>Metallic</p>
+<pre><code>金属度，光泽对比度，与透光性对立，范围0~1</code></pre><p>Specular</p>
+<pre><code>带高光颜色信息的三通道贴图，可制作彩色高光</code></pre><p>Smoothness</p>
+<pre><code>平滑度，环境反射的清晰度及高光的尖锐程度，与偏心率互补，范围0~1</code></pre><p>CoatMask</p>
+<pre><code>釉层效果，改良平滑度</code></pre><h4 id="Transmmision透射"><a href="#Transmmision透射" class="headerlink" title="Transmmision透射"></a>Transmmision透射</h4><p>Diffusion Profile</p>
+<pre><code>有些Master主节点设置里有Subsurface Scattering选项或者有Materail Type下拉菜单，勾选SSS，在外部新建Diffusion Profile漫射光文件导入
+次表面散射主要会根据光线柔化物体边缘，在背光时尤其明显</code></pre><h4 id="Alpha透明"><a href="#Alpha透明" class="headerlink" title="Alpha透明"></a>Alpha透明</h4><p>Two Sided</p>
+<pre><code>双面显示在Master主节点设置里</code></pre><p>Alpha</p>
+<pre><code>当Master主节点设置里Surface为Transparent时才有效果，接收黑白Alpha图，黑色部分透明，白色部分不透明，灰色部分插值透明</code></pre><p>AlphaClipThreshold</p>
+<pre><code>当Master主节点设置里Surface为Transparent时：
+充当Alpha剪切域作用，可以输入单通道图，但会沿0.5生硬切除，默认1
+当Master主节点设置里Surface为Opaque时：
+若超过Alpha则不显示，可以输入单通道图，也会沿0.5生硬切除，是Opaque模式的透显方法</code></pre><h4 id="Refraction折射"><a href="#Refraction折射" class="headerlink" title="Refraction折射"></a>Refraction折射</h4><p>在Lit Master底下的设置里，Surface Type选择Transparent，Refraction Model里选择Sphere，就会多出RefractionIndex等接口</p>
+<p>RefractionIndex(IOR)</p>
+<pre><code>折射率，折射变形强度</code></pre><p>Transmittance Color</p>
+<pre><code>折射颜色</code></pre><p>Transmittance Absorption Distance</p>
+<pre><code>折射吸收，颜色透显度</code></pre><h4 id="Anisotropy各向异性"><a href="#Anisotropy各向异性" class="headerlink" title="Anisotropy各向异性"></a>Anisotropy各向异性</h4><p>在Lit Master底下的设置里，Materail Type选择Anisotropy，就会多出Anisotropy接口</p>
+<p>Anisotropy</p>
+<pre><code>当Smoothness不为1时，改变物体反射的方向，反射光不再是圆斑，会顺着物体形状进行偏折，主要受物体空间切线影响</code></pre><h4 id="Miscellaneous杂项"><a href="#Miscellaneous杂项" class="headerlink" title="Miscellaneous杂项"></a>Miscellaneous杂项</h4><p>Emission</p>
+<pre><code>自发光，适合结合PostProcessing中Bloom效果</code></pre><p>AmbientOcclution(Occlution)</p>
+<pre><code>环境光遮蔽，需要使用特定贴图</code></pre><h4 id="Lit标准着色器特性"><a href="#Lit标准着色器特性" class="headerlink" title="Lit标准着色器特性"></a>Lit标准着色器特性</h4><p>MaskMap</p>
+<pre><code>HDRP标准Lit着色器特性，通过四通道信息来制作合并通道贴图
+R:Metallic    金属度
+G:Occlution    环境遮蔽
+B:DetailMask    对于DetailMap的显示遮罩
+A:Smoothness    平滑度</code></pre><p>DetailMap</p>
+<pre><code>即SeconderyMap，一般需要很大的UV重复度，用于表现细节，需先查看MaskMap中B通道遮罩信息
+R:Unsaturated albedo    黑白反照率
+G:normal Y    法线贴图G通道
+B:detail smoothness    平滑度
+A:normal X    法线贴图R通道</code></pre>
             </div>
             <hr/>
 
@@ -954,7 +1009,7 @@ Boolean    ⭐
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">3.7k</span>&nbsp;字
+                class="white-color">4.7k</span>&nbsp;字
             
             
             
