@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>Markdown语法常用（基于Typora）</title>
+      <link href="2021/02/03/markdown%E8%AF%AD%E6%B3%95/"/>
+      <url>2021/02/03/markdown%E8%AF%AD%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Markdown语法常用（基于Typora）"><a href="#Markdown语法常用（基于Typora）" class="headerlink" title="Markdown语法常用（基于Typora）"></a>Markdown语法常用（基于Typora）</h1><h2 id="（一）标题"><a href="#（一）标题" class="headerlink" title="（一）标题"></a>（一）标题</h2><pre class=" language-markdown"><code class="language-markdown">一级标题<span class="token title important"><span class="token punctuation">#</span> 一级标题 </span>二级标题<span class="token title important"><span class="token punctuation">##</span> 二级标题</span>三级标题<span class="token title important"><span class="token punctuation">###</span> 三级标题 </span>四级标题<span class="token title important"><span class="token punctuation">####</span> 四级标题</span>五级标题<span class="token title important"><span class="token punctuation">#####</span> 五级标题 </span>六级标题<span class="token title important"><span class="token punctuation">######</span> 六级标题</span></code></pre><h2 id="（二）段落"><a href="#（二）段落" class="headerlink" title="（二）段落"></a>（二）段落</h2><pre class=" language-markdown"><code class="language-markdown">段落</code></pre><h2 id="（三）序列"><a href="#（三）序列" class="headerlink" title="（三）序列"></a>（三）序列</h2><pre class=" language-markdown"><code class="language-markdown">有序序列<span class="token list punctuation">1.</span> 一点空格无序序列<span class="token list punctuation">-</span> 减号空格</code></pre><h2 id="（四）标注"><a href="#（四）标注" class="headerlink" title="（四）标注"></a>（四）标注</h2><pre class=" language-markdown"><code class="language-markdown">粗体<span class="token bold"><span class="token punctuation">**</span>粗体<span class="token punctuation">**</span></span>斜体<span class="token italic"><span class="token punctuation">*</span>斜体<span class="token punctuation">*</span></span>删除线~~删除线~~引用<span class="token blockquote punctuation">></span> 引用注释<span class="token code keyword">`注释`</span>勾选框<span class="token list punctuation">-</span> [ ] 勾选框脚注[^ 脚注A ]:脚注内容水平线<span class="token hr punctuation">------</span></code></pre><h2 id="（五）超链接"><a href="#（五）超链接" class="headerlink" title="（五）超链接"></a>（五）超链接</h2><pre class=" language-markdown"><code class="language-markdown">超链接<span class="token url">[百度](https://www.baidu.com)</span>图片![](图片链接)链接脚注<span class="token url-reference url"><span class="token punctuation">[</span><span class="token variable">百度链接</span><span class="token punctuation">]</span><span class="token punctuation">:</span> https://www.baidu.com    <span class="token string">"百度"</span></span></code></pre><h2 id="（六）文件信息"><a href="#（六）文件信息" class="headerlink" title="（六）文件信息"></a>（六）文件信息</h2><pre class=" language-markdown"><code class="language-markdown">文件信息<span class="token hr punctuation">---</span><span class="token title important">date: 2013/7/13 20:46:25<span class="token punctuation">---</span></span></code></pre><h2 id="（七）功能块"><a href="#（七）功能块" class="headerlink" title="（七）功能块"></a>（七）功能块</h2><pre class=" language-markdown"><code class="language-markdown">代码块​```pythonprint('helloworld')​```公式块$$\alpha * (\beta + \gamma)$$</code></pre><h2 id="（八）表格"><a href="#（八）表格" class="headerlink" title="（八）表格"></a>（八）表格</h2><pre class=" language-markdown"><code class="language-markdown">表格| table | 1  | 2  | 3  || ----- | -- | -- | -- || A     | A1 | A2 | A3 || B     | B1 | B2 | B3 || C     | C1 | C2 | C3 |</code></pre><h2 id="（九）目录"><a href="#（九）目录" class="headerlink" title="（九）目录"></a>（九）目录</h2><pre class=" language-markdown"><code class="language-markdown">目录[TOC]</code></pre><h2 id="（十）html"><a href="#（十）html" class="headerlink" title="（十）html"></a>（十）html</h2><pre class=" language-markdown"><code class="language-markdown">标题<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>一级标题<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>二级标题<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span>三级标题<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">></span></span>四级标题<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h5</span><span class="token punctuation">></span></span>五级标题<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h5</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h6</span><span class="token punctuation">></span></span>六级标题<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h6</span><span class="token punctuation">></span></span>段落<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>段落<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/></span></span>换行<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>颜色<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>font</span> <span class="token attr-name">color</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>#00FF00<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>绿色<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>font</span><span class="token punctuation">></span></span>字号<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>font</span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span>50</span><span class="token punctuation">></span></span>字号<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>font</span><span class="token punctuation">></span></span>大字<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>big</span><span class="token punctuation">></span></span>大字<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>big</span><span class="token punctuation">></span></span>字体<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>font</span> <span class="token attr-name">face</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>幼圆<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>幼圆<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>font</span><span class="token punctuation">></span></span>粗体<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>b</span><span class="token punctuation">></span></span>粗体<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>b</span><span class="token punctuation">></span></span>斜体<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">></span></span>斜体<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span>下划线<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>u</span><span class="token punctuation">></span></span>下划线<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>u</span><span class="token punctuation">></span></span>删除线<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>s</span><span class="token punctuation">></span></span>删除线<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>s</span><span class="token punctuation">></span></span>超链接<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">herf</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>https://www.baidu.com<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>百度链接<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>列表<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">border</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>5px<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token code keyword">    &lt;tr bgcolor='#AACCAA'></span><span class="token code keyword">        &lt;th>tr为行&lt;/th>&lt;th bgcolor='#889999'>hello&lt;/th></span><span class="token code keyword">    &lt;/tr></span><span class="token code keyword">    &lt;tr></span><span class="token code keyword">        &lt;td>td为列&lt;/td>&lt;td>world&lt;/td></span><span class="token code keyword">    &lt;/tr></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span>区块<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">color</span><span class="token punctuation">:</span><span class="token hexcode">#00FF00</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token code keyword">    &lt;h3>header&lt;/h3></span><span class="token code keyword">    &lt;p>paragraph&lt;/p></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>内联样式&lt;p style=" <span class="token code keyword">          margin:0px;</span><span class="token code keyword">          padding:0px;</span><span class="token code keyword">          color:rgb(50,150,50);</span><span class="token code keyword">          font:italic bold 30px 华文中宋;</span><span class="token code keyword">          background-color:rgb(255,255,100);</span><span class="token code keyword">          text-align:center;</span><span class="token code keyword">          outline:#00FF00;</span><span class="token code keyword">          ">内联样式&lt;/p></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文档 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 简单 </tag>
+            
+            <tag> 博客 </tag>
+            
+            <tag> 文档 </tag>
+            
+            <tag> markdown </tag>
+            
+            <tag> 超好用 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Blender插件模板</title>
       <link href="2021/02/03/blender/Blender%E6%8C%87%E5%8D%97_%E4%BB%A3%E7%A0%81/"/>
       <url>2021/02/03/blender/Blender%E6%8C%87%E5%8D%97_%E4%BB%A3%E7%A0%81/</url>
@@ -82,11 +115,11 @@
             
             <tag> 教程 </tag>
             
-            <tag> 绘图 </tag>
-            
             <tag> python </tag>
             
             <tag> 长文 </tag>
+            
+            <tag> 绘图 </tag>
             
             <tag> Opencv </tag>
             
@@ -113,13 +146,13 @@
       
         <tags>
             
+            <tag> python </tag>
+            
             <tag> 小海龟 </tag>
             
             <tag> 指南 </tag>
             
             <tag> 绘图 </tag>
-            
-            <tag> python </tag>
             
             <tag> 幼儿编程 </tag>
             
@@ -146,13 +179,13 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 入门 </tag>
             
             <tag> 工具 </tag>
             
             <tag> 硬核 </tag>
+            
+            <tag> python </tag>
             
             <tag> Numpy </tag>
             
@@ -179,9 +212,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 工具 </tag>
+            
+            <tag> python </tag>
             
             <tag> 模板 </tag>
             
@@ -216,11 +249,11 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 工具 </tag>
             
             <tag> 硬核 </tag>
+            
+            <tag> python </tag>
             
             <tag> 模板 </tag>
             
@@ -251,9 +284,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 工具 </tag>
+            
+            <tag> python </tag>
             
             <tag> 基础 </tag>
             
@@ -284,9 +317,9 @@
       
         <tags>
             
-            <tag> 指南 </tag>
-            
             <tag> python </tag>
+            
+            <tag> 指南 </tag>
             
             <tag> pip </tag>
             
@@ -563,9 +596,9 @@
       
         <tags>
             
-            <tag> 教程 </tag>
-            
             <tag> 博客 </tag>
+            
+            <tag> 教程 </tag>
             
             <tag> hexo </tag>
             
