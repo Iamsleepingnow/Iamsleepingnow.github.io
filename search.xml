@@ -86,13 +86,13 @@
       
         <tags>
             
-            <tag> 工具 </tag>
-            
-            <tag> python </tag>
-            
             <tag> 入门 </tag>
             
+            <tag> 工具 </tag>
+            
             <tag> 硬核 </tag>
+            
+            <tag> python </tag>
             
             <tag> Numpy </tag>
             
@@ -119,17 +119,17 @@
       
         <tags>
             
-            <tag> 模板 </tag>
-            
             <tag> 工具 </tag>
+            
+            <tag> python </tag>
+            
+            <tag> 模板 </tag>
             
             <tag> 统计图 </tag>
             
             <tag> 数据可视化 </tag>
             
             <tag> 烂文 </tag>
-            
-            <tag> python </tag>
             
             <tag> Matplotlib </tag>
             
@@ -156,13 +156,13 @@
       
         <tags>
             
-            <tag> 模板 </tag>
-            
             <tag> 工具 </tag>
+            
+            <tag> 硬核 </tag>
             
             <tag> python </tag>
             
-            <tag> 硬核 </tag>
+            <tag> 模板 </tag>
             
             <tag> 桌面应用 </tag>
             
