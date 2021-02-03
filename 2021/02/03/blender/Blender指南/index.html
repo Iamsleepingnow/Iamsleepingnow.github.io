@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="shader,unity">
+    <meta name="keywords" content="blender,指南">
     <meta name="description" content="PYW个人博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Unity ShaderGraph常用节点功能分析1_Artistic | PYW个人博客</title>
+    <title>反人类三维软件Blender指南 | PYW个人博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -223,12 +223,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Unity ShaderGraph常用节点功能分析1_Artistic</h1>
+                    <h1 class="description center-align post-title">反人类三维软件Blender指南</h1>
                 </div>
             </div>
         </div>
@@ -345,20 +345,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%AE%B0%E5%BD%95/">
-                                <span class="chip bg-color">记录</span>
+                            <a href="/tags/%E6%8C%87%E5%8D%97/">
+                                <span class="chip bg-color">指南</span>
                             </a>
                         
-                            <a href="/tags/%E6%8A%80%E6%9C%AF/">
-                                <span class="chip bg-color">技术</span>
+                            <a href="/tags/blender/">
+                                <span class="chip bg-color">blender</span>
                             </a>
                         
-                            <a href="/tags/unity/">
-                                <span class="chip bg-color">unity</span>
-                            </a>
-                        
-                            <a href="/tags/shadergraph/">
-                                <span class="chip bg-color">shadergraph</span>
+                            <a href="/tags/%E5%8F%97%E8%8B%A6/">
+                                <span class="chip bg-color">受苦</span>
                             </a>
                         
                     </div>
@@ -369,8 +365,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/unity/" class="post-category">
-                                unity
+                            <a href="/categories/blender/" class="post-category">
+                                blender
                             </a>
                         
                     </div>
@@ -388,7 +384,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-29
+                    2021-02-03
                 </div>
                 
 
@@ -402,14 +398,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    849
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    7 分
                 </div>
                 
 				
@@ -424,95 +420,278 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<h1 id="Unity-ShaderGraph常用节点功能分析1-Artistic"><a href="#Unity-ShaderGraph常用节点功能分析1-Artistic" class="headerlink" title="Unity ShaderGraph常用节点功能分析1_Artistic"></a>Unity ShaderGraph常用节点功能分析1_Artistic</h1></blockquote>
-<p>持续更新，不定时更新</p>
-<p>（⭐常用度）</p>
-<h3 id="Artistic风格化调整"><a href="#Artistic风格化调整" class="headerlink" title="Artistic风格化调整"></a>Artistic风格化调整</h3><h4 id="Adjustment调整"><a href="#Adjustment调整" class="headerlink" title="Adjustment调整"></a><code>Adjustment</code>调整</h4><hr>
-<p><strong>Channel Mixer</strong>（重要）    ⭐⭐⭐</p>
-<pre><code>调节输入端RGB比率，用于调色。</code></pre><p>Contrast    ⭐</p>
-<pre><code>说是可以调整对比度，但我怎么感觉饱和度也被调整了。</code></pre><p>Hue    ⭐</p>
-<pre><code>色调调整，有两种模式。Degrees模式范围是0~360，Normalized模式范围是0~1。</code></pre><p>Invert Colors    ⭐</p>
-<pre><code>取反色，可以选择反转的通道。</code></pre><p>Replace Colors</p>
-<pre><code>替换颜色，输入2和3是替换颜色，输入4范围0~1，是扫辐，输入5范围0~1，是阈值范围。</code></pre><p>Saturation    ⭐</p>
-<pre><code>饱和度，范围未知，0是纯灰，1是原图，-1是反色。</code></pre><p>White Balance</p>
-<pre><code>白平衡，推荐范围0~1，输入2调整黄蓝，输入3调整粉绿，超出范围会有极端颜色。</code></pre><h4 id="Blend混合"><a href="#Blend混合" class="headerlink" title="Blend混合"></a><code>Blend</code>混合</h4><hr>
-<p><strong>Blend</strong>（很重要）    ⭐⭐⭐⭐</p>
-<pre><code>混合模式，将输入1和2进行混合。一共有21种混合模式。
+                <h1 id="反人类三维软件Blender指南"><a href="#反人类三维软件Blender指南" class="headerlink" title="反人类三维软件Blender指南"></a>反人类三维软件Blender指南</h1><h2 id="（〇）指南"><a href="#（〇）指南" class="headerlink" title="（〇）指南"></a>（〇）指南</h2><p><a href="https://docs.blender.org/manual/zh-hans/2.79/getting_started/index.html" target="_blank" rel="noopener">什么叫Blender入门呀</a></p>
+<h2 id="（一）视图操作"><a href="#（一）视图操作" class="headerlink" title="（一）视图操作"></a>（一）视图操作</h2><h3 id="修改键位成Unity"><a href="#修改键位成Unity" class="headerlink" title="修改键位成Unity"></a>修改键位成Unity</h3><pre><code>物体上下文菜单：修改为alt + rm，原rm
+网格调用菜单：修改为alt + rm，原 rm
+视图移动：修改为mm，原shift + mm
+视图旋转：修改为rm，原mm
+偏好设置 -&gt; SpaceBarAction -&gt; 工具</code></pre><h3 id="窗口"><a href="#窗口" class="headerlink" title="窗口"></a>窗口</h3><pre><code>ctrl + N 【新建文件】
+ctrl + O 【打开文件】
+ctrl + S 【保存文件】
+shift + ctrl + S 【另存为】
+ctrl + Q 【退出】
+ctrl + Z 【撤销】</code></pre><h3 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h3><pre><code>N 【属性栏显示/隐藏】
+T 【工具栏显示/隐藏】
+ctrl + space 【操作页面最大化】
+ctrl + alt + Q 【进入四视图】
+~ 【视图热盒】
+num1 【正交前视图】
+num3 【正交右视图】
+num7 【正交顶视图】
+num9 【正交底视图】
+num2 【仰视15度】
+num8 【俯视15度】
+num4 【左视15度】
+num6 【右视15度】
+num5 【正交/透视视图】
+num0 【进入/退出相机视图】
+num+ 【前进视图】
+num- 【后退视图】
+Z 【渲染模式热盒】
+alt + Z 【透明显示】
 
-Burn = 1 - ( 1 - Blend) / Base
+#独立视角漫游---------------------------------------------
+shift + ~ 【独立视角漫游】
+WASD 【移动】
+G 【重力】
+V 【跳跃】</code></pre><h3 id="编辑与游标"><a href="#编辑与游标" class="headerlink" title="编辑与游标"></a>编辑与游标</h3><pre><code>X/Del 【删除】
+A 【全选】 alt + A 【取消选择】
+f2 【重命名】
+shift + D 【复制物体】
 
-Darken = min( Blend, Base)
+#游标---------------------------------------------
+shift + S 【游标热盒】 shift + C 【重置游标 + 重置视图】 
+shift + rm 【游标移动】 space + space 【启用游标】</code></pre><h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><pre><code>W 【选择/切换选择】
+L 【选择非断离物体】
+O 【软选择】
+G 【自由移动，按xyz限制轴向，(再按数字调整移动距离)再按xyz限制非轴向】
+R 【自由旋转，按xyz限制轴向，(再按数字调整旋转角度)再按xyz限制非轴向】
+S 【自由缩放，按xyz限制轴向，(再按数字调整缩放大小)再按xyz限制非轴向】
+alt + G 【恢复移动至初始值】
+alt + R 【恢复旋转至初始值】
+alt + S 【恢复缩放至初始值】
+R + R 【自由沿自身旋转】
+T 【自由变换】
+alt + S 【法向缩放】
+shift + A 【创建物体】
+shift + D 【复制物体】
+Tab 【进入/退出编辑模式】
+ctrl + Tab 【进入/退出骨骼模式】【模式切换热盒】
+shift + Tab 【吸附/取消吸附】
+123 【切换点线面模式】
+H 【隐藏物体】 alt + H 【取消隐藏】
+shift + R 【重复上一操作】
+. 【物体变换原点调整热盒】
 
-Difference = abs( Blend - Base); 
+#属性传递---------------------------------------------
+ctrl + L 【属性传递】
+先选择所有关联物体，再选择被关联物体，再ctrl + L
+可关联属性：场景/物体数据/材质/动画/集合/实例集合/修改器/字体/UV</code></pre><h2 id="（二）基础几何体编辑"><a href="#（二）基础几何体编辑" class="headerlink" title="（二）基础几何体编辑"></a>（二）基础几何体编辑</h2><h3 id="基础几何体操作"><a href="#基础几何体操作" class="headerlink" title="基础几何体操作"></a>基础几何体操作</h3><pre><code>#循环选择---------------------------------------------
+alt + lm 【选中循环边】 shift + alt + lm 【选中并排边】
 
-Dodge = Base / (1.0 - Blend);
+#挤出倒角切割---------------------------------------------
+E 【挤出】
+I 【内部挤出】 I + I 【单独内部挤出】
+ctrl + B 【倒角】
+ctrl + R 【环切】
+K 【切割】 shift + K 【双面切割】
 
-Divide = Base / (Blend + 0.000000000001); 
+#拆分缝合分离合并---------------------------------------------
+M 【缝合点线】 alt + M / Y 【拆分点线】
+P 【分离物体】 ctrl + J 【合并物体】
+V 【点线断离】 alt + V 【点线断离填充】
 
-Exclusion = Blend + Base - (2.0 * Blend * Base); 
+#封闭---------------------------------------------
+F 【填充孔洞】 alt + F 【三角形填充孔洞】
+J 【点桥接】
 
-A = 1.0 - 2.0 * (1.0 - Base) * (1.0 - Blend); 
-B = 2.0 * Base * Blend; 
-C = step(Blend, 0.5); 
-HardLight = B * C + (1 - C) * A; 
+#父子集---------------------------------------------
+ctrl + P 【父子集连接】 alt + P 【断开父级】
+在Hierarchy面板按住shift拖动物体可以设置父子集
 
-HardMix = step(1 - Base, Blend); 
+#三角面---------------------------------------------
+ctrl + T 【三角化】 alt + J 【四边化】
 
-Lighten = max(Blend, Base); 
+#凸包几何体---------------------------------------------
+选择点云
+选择面-&gt;工具栏-&gt;网格-&gt;凸壳
 
-LinearBurn = Base + Blend - 1.0; 
+#壳---------------------------------------------
+1:
+选择面-&gt;工具栏-&gt;面-&gt;面实体化
+2:
+使用修改器：实体化
 
-LinearDodge = Base + Blend; 
+#滑动---------------------------------------------
+G + G 【滑动点线】
 
-LinearLight = Blend &lt; 0.5 ? max(Base + (2 * Blend) - 1, 0) : min(Base + 2 * (Blend - 0.5), 1); 
+#球形化圆形化---------------------------------------------
+shift + alt + S 【球形化/圆形化】
 
-LinearLightAddSub = Blend + 2.0 * Base - 1.0; 
+#捕捉步幅---------------------------------------------
+shift + tab 【开启捕捉步幅】
+最顶上的吸铁石图标，有捕捉，也有步幅
+按住ctrl再操作可以切换到步幅模式
 
-Multiply = Base * Blend; 
+#软选择---------------------------------------------
+O 【开启软选择】
+操作的过程中使用鼠标滚轮来调整软选择范围
+最顶上的衰减图标，可以选择衰减类型
 
-Negation = 1.0 - abs(1.0 - Blend - Base);
+#法线平滑组--------------------------------------------
+选择面-&gt;工具栏-&gt;面-&gt;平滑着色平直着色
+选择面-&gt;面上下文-&gt;平滑着色平直着色
 
-Screen = 1.0 - (1.0 - Blend) * (1.0 - Base); 
+#应用预变换(冻结变换)--------------------------------------------
+选择物体-&gt;工具栏-&gt;物体-&gt;应用-&gt;...
+ctrl + A 【冻结变换】
 
-A = 1.0 - 2.0 * (1.0 - Base) * (1.0 - Blend); 
-B = 2.0 * Base * Blend; 
-C = step(Base, 0.5); 
-Overlay = B * C + (1 - C) * A; 
+#原点--------------------------------------------
+选择物体-&gt;工具栏-&gt;物体-&gt;设置原点-&gt;游标
 
-A = step (0.5, Blend); 
-B = check * max(2.0 * (Base - 0.5), Blend); 
-PinLight = B + (1.0 - A) * min(2.0 * Base, Blend); 
+#折痕--------------------------------------------
+shift + E 【折痕】</code></pre><h2 id="（三）复杂几何体编辑"><a href="#（三）复杂几何体编辑" class="headerlink" title="（三）复杂几何体编辑"></a>（三）复杂几何体编辑</h2><pre><code>#雕刻---------------------------------------------
+见顶上Sculpting工作区
+另外，blender的优化不适合拿来做雕刻
 
-A = 2.0 * Base * Blend + Base * Base * (1.0 - 2.0 * Blend); 
-B = sqrt(Base) * (2.0 * Blend - 1.0) + 2.0 * Base * (1.0 - Blend); 
-C = step(0.5, Blend); 
-SoftLight = B * C + (1 - C) * A; 
+#布尔---------------------------------------------
+1:
+使用ctrl + J合并两个布尔几何体
+使用L选择相连物体
+选择面-&gt;工具栏-&gt;面-&gt;交集(切割/布尔)
+2:
+使用修改器：布尔
 
-A = 1.0 - (1.0 - Blend) / (2.0 * Base); 
-B = Blend / (2.0 * (1.0 - Base)); 
-C = step(0.5, Base); 
-VividLight = B * C + (1 - C) * A; 
+#样条投射---------------------------------------------
+先选被切物体，再选曲线，按tab进入编辑界面
+选择面-&gt;工具栏-&gt;网格-&gt;投影切割
 
-Subtract = Base - Blend; </code></pre><h4 id="Filter滤镜"><a href="#Filter滤镜" class="headerlink" title="Filter滤镜"></a><code>Filter</code>滤镜</h4><hr>
-<p>Dither</p>
-<pre><code>“抖动是一种有意的噪声形式，用于随机化量化误差。
-它用于防止大规模图案，例如图像中的色带。
-抖动节点在屏幕空间中应用抖动，以确保图案的均匀分布。
-可以通过将另一个节点连接到输入Screen Position来进行调整。
-该节点通常用作主节点上Alpha剪辑阈值的输入，以使不透明对象具有透明外观。
-这对于创建看起来透明但具有渲染为不透明（例如书写深度和/或延迟渲染）的优点很有用。”
+#修改器---------------------------------------------
+在属性编辑器里有个修改器属性，就是修改器
+修改器中，顶点组是点集，物体是其他物体
 
-上面是官方解释，实践发现它可以将透明显示变得更加有质感，半透明处会显示麻点。看多了对眼睛不好。</code></pre><h4 id="Mask遮罩"><a href="#Mask遮罩" class="headerlink" title="Mask遮罩"></a><code>Mask</code>遮罩</h4><hr>
-<p>Channel Mask</p>
-<pre><code>通道遮罩可以选择需要显示和隐藏的通道（RGBA）。</code></pre><p><strong>Color Mask</strong>（很重要）    ⭐⭐⭐</p>
-<pre><code>颜色遮罩可以选择一个颜色来用单通道显示。输入3范围0~1，是扫辐，输入4范围0~1，是阈值范围。</code></pre><h4 id="Normal法线相关"><a href="#Normal法线相关" class="headerlink" title="Normal法线相关"></a><code>Normal</code>法线相关</h4><hr>
-<p><strong>Normal Blend</strong>（重要）    ⭐⭐</p>
-<pre><code>专门用来混合叠加两张法线图。</code></pre><p>Normal From Height    ⭐</p>
-<pre><code>尝试将一张高度贴图转成法线贴图。</code></pre><p>Normal From Texture    ⭐</p>
-<pre><code>尝试将一张着色贴图转成法线贴图。</code></pre><p>Normal Reconstruct Z</p>
-<pre><code>尝试将一张缺失Z轴的法线贴图添加一个Z轴。</code></pre><p><strong>Normal Strength</strong>（很重要）    ⭐⭐⭐⭐</p>
-<pre><code>加强一张法线贴图的强度不要再用乘法了，要用这个，绝对不会出坐标问题。</code></pre>
+#对齐物体---------------------------------------------
+加选所有要对齐的物体，最后加选所对齐的物体
+工具栏-&gt;物体-&gt;变换-&gt;对齐物体</code></pre><h2 id="（-）快捷键插件Node-Wrangler"><a href="#（-）快捷键插件Node-Wrangler" class="headerlink" title="（#）快捷键插件Node Wrangler"></a>（#）快捷键插件Node Wrangler</h2><pre><code>ctrl + T 【自动纹理映射】</code></pre><h2 id="（四）曲面建模"><a href="#（四）曲面建模" class="headerlink" title="（四）曲面建模"></a>（四）曲面建模</h2><p>曲线</p>
+<p>曲面</p>
+<h2 id="（五）物理和约束"><a href="#（五）物理和约束" class="headerlink" title="（五）物理和约束"></a>（五）物理和约束</h2><h2 id="（六）UV和拓补"><a href="#（六）UV和拓补" class="headerlink" title="（六）UV和拓补"></a>（六）UV和拓补</h2><pre><code>RetopoFlow</code></pre><h2 id="（七）渲染和特效"><a href="#（七）渲染和特效" class="headerlink" title="（七）渲染和特效"></a>（七）渲染和特效</h2><pre><code>f12 【渲染单帧】
+ctrl + f12 【渲染多帧】
+f11 【查看渲染图像】
+ctrl + f11 【查看渲染动画】
+ctrl + B 【区域渲染】
+ctrl + alt + B 【取消区域渲染】
+J 【图像渲染槽切换】</code></pre><p>灯光阴影体积光<br>摄像头渲染<br>材质着色器渲染<br>渲染导出<br>粒子</p>
+<h2 id="（八）动画"><a href="#（八）动画" class="headerlink" title="（八）动画"></a>（八）动画</h2><pre><code>i 【关键帧菜单】
+alt + i 【清除关键帧】
+shift + alt + i 
+space 【播放】
+shift + left 【回到起始帧】
+shift + right 【回到末尾帧】
+left 【上一帧】
+right 【下一帧】
+P 【框选预览范围】
+alt + P 【取消预览范围】
+ctrl + alt + P 【自动预览范围】
+ctrl + tab 【摄影表曲线表转换】
+M 【标记】</code></pre><h2 id="（九）骨骼"><a href="#（九）骨骼" class="headerlink" title="（九）骨骼"></a>（九）骨骼</h2><pre><code>Rigify</code></pre><h2 id="（十）插件"><a href="#（十）插件" class="headerlink" title="（十）插件"></a>（十）插件</h2><pre><code>快捷——MACHIN3tools
+https://www.bilibili.com/video/av43265671/
+
+建模——LoopTools
+https://zhuanlan.zhihu.com/p/146754822
+
+材质——Node Wrangler
+https://www.jianshu.com/p/1f08a333f440
+
+材质列表——All Material List
+
+拓补——RetopoFlow
+https://blog.csdn.net/ttm2d/article/details/104165980
+
+骨骼——Rigify
+https://www.bilibili.com/video/BV1MT4y1T7UW?from=search&amp;seid=16689810737298655838
+https://orzgame.blog.csdn.net/article/details/105519642
+https://blog.csdn.net/ttm2d/article/details/105527919
+https://orzgame.blog.csdn.net/article/details/105555112
+https://orzgame.blog.csdn.net/article/details/105578266
+https://orzgame.blog.csdn.net/article/details/105799304
+https://orzgame.blog.csdn.net/article/details/106027723
+https://blog.csdn.net/ttm2d/article/details/106041755
+https://orzgame.blog.csdn.net/article/details/108013679
+https://orzgame.blog.csdn.net/article/details/108285440
+
+https://www.bilibili.com/video/av82845919
+藤蔓——IvyGen
+植树——Sapling Tree Gen</code></pre><h2 id="（十一）MACHIN3"><a href="#（十一）MACHIN3" class="headerlink" title="（十一）MACHIN3"></a>（十一）MACHIN3</h2><pre><code>下载链接 https://www.blender-3d.cn/plugin/7564.html
+PageUp 【显示设置热盒】
+PageDown 【摄像机热盒】
+alt + A 【对齐】
+tab 【模式转换热盒】
+ctrl + 1 【合并点/原1】
+ctrl + 2 【旋转边（连接）/原2】
+ctrl + 3 【优化/原3】
+ctrl + 4 【面复制分离/原4】
+num/ 【方位热盒/原shift + M4】
+num* 【集合热盒/原shift + C】
+F 【聚焦物体】
+ctrl + alt + S 【保存热盒/原ctrl + S】</code></pre><h2 id="（十二）蜡笔"><a href="#（十二）蜡笔" class="headerlink" title="（十二）蜡笔"></a>（十二）蜡笔</h2><pre><code>Y 【蜡笔层菜单】
+U 【蜡笔材质菜单】
+M 【移动到图层】</code></pre><h2 id="（十三）自制插件模板"><a href="#（十三）自制插件模板" class="headerlink" title="（十三）自制插件模板"></a>（十三）自制插件模板</h2><pre class=" language-python"><code class="language-python">bl_info <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"pyw_tools"</span><span class="token punctuation">,</span>
+    <span class="token string">"author"</span><span class="token punctuation">:</span> <span class="token string">"PYW"</span><span class="token punctuation">,</span>
+    <span class="token string">"version"</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token string">"blender"</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token string">"location"</span><span class="token punctuation">:</span> <span class="token string">"见视图右边工具栏"</span><span class="token punctuation">,</span>
+    <span class="token string">"description"</span><span class="token punctuation">:</span> <span class="token string">"PYW实用工具"</span><span class="token punctuation">,</span>
+    <span class="token string">"warning"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+    <span class="token string">"doc_url"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+    <span class="token string">"category"</span><span class="token punctuation">:</span> <span class="token string">"PYW"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">import</span> bpy  <span class="token comment" spellcheck="true"># 引入blender-python模块</span>
+<span class="token comment" spellcheck="true"># ---------------------------------</span>
+<span class="token comment" spellcheck="true"># 创建类，用于实现功能</span>
+<span class="token keyword">class</span> <span class="token class-name">drop2floor</span><span class="token punctuation">(</span>bpy<span class="token punctuation">.</span>types<span class="token punctuation">.</span>Operator<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    bl_idname <span class="token operator">=</span> <span class="token string">"obj.align_to_floor"</span>  <span class="token comment" spellcheck="true"># 槽值</span>
+    bl_label <span class="token operator">=</span> <span class="token string">"对齐地面"</span>  <span class="token comment" spellcheck="true"># 显示名</span>
+
+    <span class="token keyword">def</span> <span class="token function">execute</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> context<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># execute执行类函数</span>
+        bpy<span class="token punctuation">.</span>ops<span class="token punctuation">.</span>object<span class="token punctuation">.</span>align<span class="token punctuation">(</span>
+            align_mode <span class="token operator">=</span> <span class="token string">'OPT_1'</span><span class="token punctuation">,</span> 
+            relative_to <span class="token operator">=</span> <span class="token string">'OPT_1'</span><span class="token punctuation">,</span> 
+            align_axis <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'Z'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span><span class="token punctuation">{</span><span class="token string">'FINISHED'</span><span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true"># 创建类，用于显示界面</span>
+<span class="token keyword">class</span> <span class="token class-name">drop2floor_UI</span><span class="token punctuation">(</span>bpy<span class="token punctuation">.</span>types<span class="token punctuation">.</span>Panel<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    bl_label <span class="token operator">=</span> <span class="token string">"align_to_floor"</span>
+    bl_idname <span class="token operator">=</span> <span class="token string">"align_to_floor"</span>
+    bl_space_type <span class="token operator">=</span> <span class="token string">"VIEW_3D"</span>
+    bl_region_type <span class="token operator">=</span> <span class="token string">"UI"</span>
+    bl_category <span class="token operator">=</span> <span class="token string">"PYW"</span>
+
+    <span class="token keyword">def</span> <span class="token function">draw</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>context<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># draw绘制类函数</span>
+        layout <span class="token operator">=</span> self<span class="token punctuation">.</span>layout
+        <span class="token comment" spellcheck="true"># ----------------</span>
+        row <span class="token operator">=</span> layout<span class="token punctuation">.</span>row<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        row<span class="token punctuation">.</span>label<span class="token punctuation">(</span>text<span class="token operator">=</span><span class="token string">'将物体对齐地面'</span><span class="token punctuation">,</span> icon<span class="token operator">=</span><span class="token string">'SHADING_SOLID'</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># ----------------</span>
+        row <span class="token operator">=</span> layout<span class="token punctuation">.</span>row<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        row<span class="token punctuation">.</span>operator<span class="token punctuation">(</span><span class="token string">"obj.align_to_floor"</span><span class="token punctuation">,</span> icon<span class="token operator">=</span><span class="token string">"PMARKER_SEL"</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 信号槽</span>
+
+<span class="token comment" spellcheck="true"># 安装模块</span>
+<span class="token keyword">def</span> <span class="token function">register</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    bpy<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>register_class<span class="token punctuation">(</span>drop2floor<span class="token punctuation">)</span>
+    bpy<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>register_class<span class="token punctuation">(</span>drop2floor_UI<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 卸载模块</span>
+<span class="token keyword">def</span> <span class="token function">unregister</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    bpy<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>unregister_class<span class="token punctuation">(</span>drop2floor<span class="token punctuation">)</span>
+    bpy<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>unregister_class<span class="token punctuation">(</span>drop2floor_UI<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 测试模块</span>
+<span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    register<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
             </div>
             <hr/>
 
@@ -540,20 +719,16 @@ Subtract = Base - Blend; </code></pre><h4 id="Filter滤镜"><a href="#Filter滤�
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%AE%B0%E5%BD%95/">
-                                    <span class="chip bg-color">记录</span>
+                                <a href="/tags/%E6%8C%87%E5%8D%97/">
+                                    <span class="chip bg-color">指南</span>
                                 </a>
                             
-                                <a href="/tags/%E6%8A%80%E6%9C%AF/">
-                                    <span class="chip bg-color">技术</span>
+                                <a href="/tags/blender/">
+                                    <span class="chip bg-color">blender</span>
                                 </a>
                             
-                                <a href="/tags/unity/">
-                                    <span class="chip bg-color">unity</span>
-                                </a>
-                            
-                                <a href="/tags/shadergraph/">
-                                    <span class="chip bg-color">shadergraph</span>
+                                <a href="/tags/%E5%8F%97%E8%8B%A6/">
+                                    <span class="chip bg-color">受苦</span>
                                 </a>
                             
                         </div>
@@ -725,37 +900,35 @@ Subtract = Base - Blend; </code></pre><h4 id="Filter滤镜"><a href="#Filter滤�
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/04/30/Unity-ShaderGraph%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%90/Unity-ShaderGraph%E5%B8%B8%E7%94%A8%E8%8A%82%E7%82%B9%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%902_Channel/">
+                <a href="/2021/02/03/blender/Blender%E6%8C%87%E5%8D%97_%E4%BB%A3%E7%A0%81/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Unity ShaderGraph常用节点功能分析2_Channel">
+                        <img src="/medias/featureimages/32.jpg" class="responsive-img" alt="Blender插件模板">
                         
-                        <span class="card-title">Unity ShaderGraph常用节点功能分析2_Channel</span>
+                        <span class="card-title">Blender插件模板</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-Unity ShaderGraph常用节点功能分析2_Channel
-持续更新，不定时更新
-（⭐常用度）
-Channel通道整理Combine（很重要）    ⭐⭐⭐⭐⭐
-将最多四个通道进行合并Flip    ⭐
-反转任意几个通道Spli
+                            Blender插件模板自制插件模板bl_info = {
+    "name": "pyw_tools",
+    "author": "PYW",
+    "version": (1, 0),
+    "blender": (2, 80,
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-30
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-03
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/unity/" class="post-category">
-                                    unity
+                            <a href="/categories/blender/" class="post-category">
+                                    blender
                                 </a>
                             
                             
@@ -765,20 +938,20 @@ Channel通道整理Combine（很重要）    ⭐⭐⭐⭐⭐
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AE%B0%E5%BD%95/">
-                        <span class="chip bg-color">记录</span>
+                    <a href="/tags/%E6%8C%87%E5%8D%97/">
+                        <span class="chip bg-color">指南</span>
                     </a>
                     
-                    <a href="/tags/%E6%8A%80%E6%9C%AF/">
-                        <span class="chip bg-color">技术</span>
+                    <a href="/tags/blender/">
+                        <span class="chip bg-color">blender</span>
                     </a>
                     
-                    <a href="/tags/unity/">
-                        <span class="chip bg-color">unity</span>
+                    <a href="/tags/%E5%8F%97%E8%8B%A6/">
+                        <span class="chip bg-color">受苦</span>
                     </a>
                     
-                    <a href="/tags/shadergraph/">
-                        <span class="chip bg-color">shadergraph</span>
+                    <a href="/tags/%E6%8F%92%E4%BB%B6/">
+                        <span class="chip bg-color">插件</span>
                     </a>
                     
                 </div>
@@ -792,33 +965,35 @@ Channel通道整理Combine（很重要）    ⭐⭐⭐⭐⭐
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/27/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bhexo%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/">
+                <a href="/2021/02/03/Python/opencvPython%E6%95%99%E7%A8%8B/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="从零开始hexo个人网站博客搭建指南">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="OpencvPython正经教程">
                         
-                        <span class="card-title">从零开始hexo个人网站博客搭建指南</span>
+                        <span class="card-title">OpencvPython正经教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            从零开始Hexo个人网站博客搭建指南（简略）我就是拿这个方法建的博客，方法来源自互联网，特此记录。
-注册Github，申请Repository资料库下载安装node.jscmd–&gt;node -v 查看版号，确认已安装
-在安装地址下新增
+                            OpencvPython正经教程■（〇）标准模板import cv2 as cv
+import numpy as np
+import os.path as pa
+from matplotlib import pyplot as plt
+# 
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-03
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/hexo/" class="post-category">
-                                    hexo
+                            <a href="/categories/python/" class="post-category">
+                                    python
                                 </a>
                             
                             
@@ -832,12 +1007,20 @@ Channel通道整理Combine（很重要）    ⭐⭐⭐⭐⭐
                         <span class="chip bg-color">教程</span>
                     </a>
                     
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                        <span class="chip bg-color">博客</span>
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
+                    <a href="/tags/%E7%BB%98%E5%9B%BE/">
+                        <span class="chip bg-color">绘图</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%95%BF%E6%96%87/">
+                        <span class="chip bg-color">长文</span>
+                    </a>
+                    
+                    <a href="/tags/Opencv/">
+                        <span class="chip bg-color">Opencv</span>
                     </a>
                     
                 </div>
