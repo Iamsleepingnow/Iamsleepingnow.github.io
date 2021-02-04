@@ -249,6 +249,20 @@
   </url>
   
   <url>
+    <loc>http://iamsleepingnow.github.io/tags/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://iamsleepingnow.github.io/tags/hexo/</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://iamsleepingnow.github.io/tags/Git/</loc>
     <lastmod>2021-02-04</lastmod>
     <changefreq>daily</changefreq>
@@ -292,20 +306,6 @@
   
   <url>
     <loc>http://iamsleepingnow.github.io/tags/%E5%A4%9A%E5%9B%BE%E9%A2%84%E8%AD%A6/</loc>
-    <lastmod>2021-02-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://iamsleepingnow.github.io/tags/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2021-02-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://iamsleepingnow.github.io/tags/hexo/</loc>
     <lastmod>2021-02-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -431,27 +431,6 @@
   </url>
   
   <url>
-    <loc>http://iamsleepingnow.github.io/tags/%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2021-02-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://iamsleepingnow.github.io/tags/%E9%95%BF%E6%96%87/</loc>
-    <lastmod>2021-02-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://iamsleepingnow.github.io/tags/%E8%89%AF%E5%BF%83/</loc>
-    <lastmod>2021-02-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://iamsleepingnow.github.io/tags/pip/</loc>
     <lastmod>2021-02-04</lastmod>
     <changefreq>daily</changefreq>
@@ -474,6 +453,27 @@
   
   <url>
     <loc>http://iamsleepingnow.github.io/tags/PySide2/</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://iamsleepingnow.github.io/tags/%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://iamsleepingnow.github.io/tags/%E9%95%BF%E6%96%87/</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://iamsleepingnow.github.io/tags/%E8%89%AF%E5%BF%83/</loc>
     <lastmod>2021-02-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -517,14 +517,14 @@
   </url>
   
   <url>
-    <loc>http://iamsleepingnow.github.io/categories/Github/</loc>
+    <loc>http://iamsleepingnow.github.io/categories/hexo/</loc>
     <lastmod>2021-02-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://iamsleepingnow.github.io/categories/hexo/</loc>
+    <loc>http://iamsleepingnow.github.io/categories/Github/</loc>
     <lastmod>2021-02-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
