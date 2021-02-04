@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="blender,指南,插件">
+    <meta name="keywords" content="Git,Github,GitKraken">
     <meta name="description" content="PYW个人博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Blender插件模板 | PYW个人博客</title>
+    <title>Git操作步骤图解_界面版 | PYW个人博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -223,12 +223,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/32.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Blender插件模板</h1>
+                    <h1 class="description center-align post-title">Git操作步骤图解_界面版</h1>
                 </div>
             </div>
         </div>
@@ -345,20 +345,28 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%8C%87%E5%8D%97/">
-                                <span class="chip bg-color">指南</span>
+                            <a href="/tags/Git/">
+                                <span class="chip bg-color">Git</span>
                             </a>
                         
-                            <a href="/tags/blender/">
-                                <span class="chip bg-color">blender</span>
+                            <a href="/tags/Github/">
+                                <span class="chip bg-color">Github</span>
                             </a>
                         
-                            <a href="/tags/%E5%8F%97%E8%8B%A6/">
-                                <span class="chip bg-color">受苦</span>
+                            <a href="/tags/Git-workflow/">
+                                <span class="chip bg-color">Git_workflow</span>
                             </a>
                         
-                            <a href="/tags/%E6%8F%92%E4%BB%B6/">
-                                <span class="chip bg-color">插件</span>
+                            <a href="/tags/%E5%AD%98%E6%A1%A3%E7%A5%9E%E5%99%A8/">
+                                <span class="chip bg-color">存档神器</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%A1%AC%E6%A0%B8/">
+                                <span class="chip bg-color">硬核</span>
+                            </a>
+                        
+                            <a href="/tags/GitKraken/">
+                                <span class="chip bg-color">GitKraken</span>
                             </a>
                         
                     </div>
@@ -369,8 +377,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/blender/" class="post-category">
-                                blender
+                            <a href="/categories/Github/" class="post-category">
+                                Github
                             </a>
                         
                     </div>
@@ -388,28 +396,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-03
+                    2021-02-04
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-02-03
+                    2021-02-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    198
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
 				
@@ -424,63 +432,206 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Blender插件模板"><a href="#Blender插件模板" class="headerlink" title="Blender插件模板"></a>Blender插件模板</h1><h2 id="自制插件模板"><a href="#自制插件模板" class="headerlink" title="自制插件模板"></a>自制插件模板</h2><pre class=" language-python"><code class="language-python">bl_info <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"pyw_tools"</span><span class="token punctuation">,</span>
-    <span class="token string">"author"</span><span class="token punctuation">:</span> <span class="token string">"PYW"</span><span class="token punctuation">,</span>
-    <span class="token string">"version"</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token string">"blender"</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token string">"location"</span><span class="token punctuation">:</span> <span class="token string">"见视图右边工具栏"</span><span class="token punctuation">,</span>
-    <span class="token string">"description"</span><span class="token punctuation">:</span> <span class="token string">"PYW实用工具"</span><span class="token punctuation">,</span>
-    <span class="token string">"warning"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
-    <span class="token string">"doc_url"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
-    <span class="token string">"category"</span><span class="token punctuation">:</span> <span class="token string">"PYW"</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span>
+                <h1 id="Git操作步骤图解-界面版"><a href="#Git操作步骤图解-界面版" class="headerlink" title="Git操作步骤图解_界面版"></a>Git操作步骤图解_界面版</h1><h2 id="GitKraken基础"><a href="#GitKraken基础" class="headerlink" title="GitKraken基础"></a>GitKraken基础</h2><ul>
+<li>下载 <code>GitKraken</code> 软件，版本是6.5.0</li>
+<li>这个软件在6.5.0之后要收费，所以要下6.5.0，<a href="https://release.axocdn.com/win64/GitKrakenSetup-6.5.0.exe" target="_blank" rel="noopener">复制链接去迅雷</a></li>
+<li>安装好之后不打开</li>
+<li>防火墙配置：（只是为了防止它更新）</li>
+</ul>
+<pre><code>控制面板\系统和安全\Windows Defender 防火墙:
+左边高级设置
+左边：出站规则
+右边：新建规则
+左边：程序
+找到GitKraken的程序目录，一般是：
+C:\Users\user\AppData\Local\gitkraken\Update.exe
+接着全是下一步</code></pre><ul>
+<li>Hosts配置：（还是为了防止它更新）</li>
+</ul>
+<pre><code>一般在：C:\Windows\System32\drivers\etc\hosts 这里
+最底下加入：
+# gitKraken 更新屏蔽
+127.0.0.1 release.gitkraken.com api.gitkraken
+127.0.0.1 release.gitkraken.com
+就行了</code></pre><ul>
+<li>然后打开kraken，注册，可以拿github的号来绑定</li>
+</ul>
+<hr>
+<ul>
+<li>好，我们开始：</li>
+<li>这次拿gitee举例（之后都用Github），首先注册</li>
+<li>先在gitee上创建一个仓库</li>
+</ul>
+<p><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/68_kraken.png" alt=""></p>
+<ul>
+<li>可以发现它和github如出一辙</li>
+</ul>
+<p><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/69_kraken.png" alt=""></p>
+<ul>
+<li>自动有一个master分支，八错</li>
+<li>如果要进行合作使用的时候，这里推荐克隆服务器仓库，这样就不用自己设置了</li>
+</ul>
+<h2 id="GitKraken进阶-克隆新仓库"><a href="#GitKraken进阶-克隆新仓库" class="headerlink" title="GitKraken进阶_克隆新仓库"></a>GitKraken进阶_克隆新仓库</h2><ul>
+<li>打开一个空文件夹，假设说这是仓库</li>
+<li>右键会发现多了个 <code>Open with gitkraken</code> ，进入</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/70_kraken.png"  height="300">
 
-<span class="token keyword">import</span> bpy  <span class="token comment" spellcheck="true"># 引入blender-python模块</span>
-<span class="token comment" spellcheck="true"># ---------------------------------</span>
-<span class="token comment" spellcheck="true"># 创建类，用于实现功能</span>
-<span class="token keyword">class</span> <span class="token class-name">drop2floor</span><span class="token punctuation">(</span>bpy<span class="token punctuation">.</span>types<span class="token punctuation">.</span>Operator<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    bl_idname <span class="token operator">=</span> <span class="token string">"obj.align_to_floor"</span>  <span class="token comment" spellcheck="true"># 槽值</span>
-    bl_label <span class="token operator">=</span> <span class="token string">"对齐地面"</span>  <span class="token comment" spellcheck="true"># 显示名</span>
+<ul>
+<li><code>Clone a repo</code> 来克隆仓库</li>
+</ul>
+<p><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/71_kraken.png" alt=""></p>
+<ul>
+<li>把gitee上的地址拷进去</li>
+</ul>
+<p><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/72_kraken.png" alt=""></p>
+<ul>
+<li>输入密码（应该是Kraken的密码，也有可能不是，可以一个一个试）</li>
+</ul>
+<p><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/73_kraken.png" alt=""></p>
+<ul>
+<li>就是这个界面了</li>
+<li>左边 <code>LOCAL</code> 底下有 <code>master</code> 分支，表示你本地的分支</li>
+<li>左边 <code>REMOTE</code> 底下有 <code>origin</code> ，表示服务器的名字，<code>master</code> 表示服务器上的分支</li>
+<li>中间的 <code>Initial Commit</code> 就是gitee自动创建好的默认版本，不用管它</li>
+</ul>
+<p><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/74_kraken.png" alt=""></p>
+<ul>
+<li>我在本地地址底下创建一个Unity工程，导入素材文件</li>
+</ul>
+<p><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/75_kraken.png" alt=""></p>
+<p><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/76_kraken.png" alt=""></p>
+<ul>
+<li>然后关闭</li>
+<li>在kraken里就有了提示：（说我增加了3859个文件）</li>
+</ul>
+<p><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/77_kraken.png" alt=""></p>
+<ul>
+<li>点击那个3859，发现右边变了</li>
+<li>Unstaged Files窗口表示无效文件</li>
+<li><code>Stage all changes</code> 就是 <code>git add .</code> 的意思</li>
+<li>Staged Files窗口表示暂存文件</li>
+<li>Commit Message里可以输入要保存的版本名以及描述信息</li>
+<li>如果是修改最后保存的版本，可以启用Amend</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/78_kraken.png"  height="500">
 
-    <span class="token keyword">def</span> <span class="token function">execute</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> context<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># execute执行类函数</span>
-        bpy<span class="token punctuation">.</span>ops<span class="token punctuation">.</span>object<span class="token punctuation">.</span>align<span class="token punctuation">(</span>
-            align_mode <span class="token operator">=</span> <span class="token string">'OPT_1'</span><span class="token punctuation">,</span> 
-            relative_to <span class="token operator">=</span> <span class="token string">'OPT_1'</span><span class="token punctuation">,</span> 
-            align_axis <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'Z'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span><span class="token punctuation">{</span><span class="token string">'FINISHED'</span><span class="token punctuation">}</span>
+<ul>
+<li>我们保存成一个版本，它就用树状图的形式显示出来</li>
+</ul>
+<p><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/79_kraken.png" alt=""></p>
+<ul>
+<li>刷新网页，发现工程上传了</li>
+</ul>
+<p><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/80_kraken.png" alt=""></p>
+<h2 id="GitKraken进阶-下载新仓库"><a href="#GitKraken进阶-下载新仓库" class="headerlink" title="GitKraken进阶_下载新仓库"></a>GitKraken进阶_下载新仓库</h2><ul>
+<li>这里模拟一个新人，也想修改并上传该工程</li>
+<li>先随便新建文件夹，右键进入kraken，点击最上面的加号，添加仓库</li>
+<li>这里不使用克隆，使用 <code>Start a local repo</code> 即新建，模拟本地与服务器不一致的情况</li>
+<li>鼠标放 <code>REMOTE</code> 上有个加号，添加远程服务器，这里填服务器地址，名字自定义</li>
+</ul>
+<p><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/81_kraken.png" alt=""></p>
+<ul>
+<li>然后就是这样的</li>
+<li>青色分支表示本地版本，蓝色分支表示远程版本，一目了然</li>
+<li>青色分支上的符号表示该分支拥有本地版本，蓝色分支上的符号表示该分支拥有远程版本</li>
+<li>也有一个分支同时拥有两个符号的情况</li>
+</ul>
+<p><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/82_kraken.png" alt=""></p>
+<ul>
+<li>双击左边 <code>REMOTE</code> 底下的 <code>master</code> ，切换当前分支到 <code>origin/master</code> ，相当于 <code>git fetch</code> + <code>git merge</code> ，会提示你应当创建一个新的分支来保存这个版本</li>
+</ul>
+<p><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/83_kraken.png" alt=""></p>
+<ul>
+<li>然后你的文件夹就变出了Unity工程</li>
+<li>双击 <code>REMOTE</code> 和 <code>LOCAL</code> 底下的分支，工作区的文件夹也会来回切换，相当于 <code>git checkout</code> </li>
+</ul>
+<p><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/84_kraken.png" alt=""></p>
+<h2 id="GitKraken进阶-修改仓库"><a href="#GitKraken进阶-修改仓库" class="headerlink" title="GitKraken进阶_修改仓库"></a>GitKraken进阶_修改仓库</h2><ul>
+<li>使用 <code>another_local_repo</code> 也就是刚刚新创建的第二个仓库，打开Unity工程</li>
+<li>做亿点点修改</li>
+</ul>
+<p><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/85_kraken.png" alt=""></p>
+<ul>
+<li>这里显示也有亿点点变化（1008个修改文件，1291个新增文件，应该是配置文件）</li>
+</ul>
+<p><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/86_kraken.png" alt=""></p>
+<ul>
+<li>加入暂存，设置版本</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/87_kraken.png"  height="500">
 
-<span class="token comment" spellcheck="true"># 创建类，用于显示界面</span>
-<span class="token keyword">class</span> <span class="token class-name">drop2floor_UI</span><span class="token punctuation">(</span>bpy<span class="token punctuation">.</span>types<span class="token punctuation">.</span>Panel<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    bl_label <span class="token operator">=</span> <span class="token string">"align_to_floor"</span>
-    bl_idname <span class="token operator">=</span> <span class="token string">"align_to_floor"</span>
-    bl_space_type <span class="token operator">=</span> <span class="token string">"VIEW_3D"</span>
-    bl_region_type <span class="token operator">=</span> <span class="token string">"UI"</span>
-    bl_category <span class="token operator">=</span> <span class="token string">"PYW"</span>
+<ul>
+<li>观察一下如果勾选了 <code>Amend</code> 的情况↓</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/88_kraken.png"  height="173">
 
-    <span class="token keyword">def</span> <span class="token function">draw</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>context<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># draw绘制类函数</span>
-        layout <span class="token operator">=</span> self<span class="token punctuation">.</span>layout
-        <span class="token comment" spellcheck="true"># ----------------</span>
-        row <span class="token operator">=</span> layout<span class="token punctuation">.</span>row<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        row<span class="token punctuation">.</span>label<span class="token punctuation">(</span>text<span class="token operator">=</span><span class="token string">'将物体对齐地面'</span><span class="token punctuation">,</span> icon<span class="token operator">=</span><span class="token string">'SHADING_SOLID'</span><span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># ----------------</span>
-        row <span class="token operator">=</span> layout<span class="token punctuation">.</span>row<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        row<span class="token punctuation">.</span>operator<span class="token punctuation">(</span><span class="token string">"obj.align_to_floor"</span><span class="token punctuation">,</span> icon<span class="token operator">=</span><span class="token string">"PMARKER_SEL"</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 信号槽</span>
+<ul>
+<li>这里是树状图的变化：</li>
+<li>意思是：继远程图标 <code>master</code> 的 <code>Unity测试版本_1</code> 之后，在本地的 <code>分支1</code> 新建了 <code>Unity测试版本_2</code></li>
+<li>但它是本地的，还没有上传</li>
+</ul>
+<p><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/89_kraken.png" alt=""></p>
+<ul>
+<li>上传点 <code>Push</code> </li>
+</ul>
+<p><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/90_kraken.png" alt=""></p>
+<ul>
+<li>等了一段时间之后（gitee比github快多了，但还是很慢，这次有个15分钟左右）</li>
+<li>你会发现，服务器上的文件被替代了，这不是我们想要的，我们需要一次次的迭代</li>
+<li>所以就需要先在本地里新建分支，再push到分支上，这样才有迭代的感觉</li>
+<li>就像之前提到的 <code>git push 远程主机名 本地分支名:远程分支名</code> 差不多</li>
+<li>所以我们在 <code>LOCAL/master</code> 这里右键，新建一个分支，姑且叫它 <code>modify_1</code></li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/91_kraken.png"  height="300">
 
-<span class="token comment" spellcheck="true"># 安装模块</span>
-<span class="token keyword">def</span> <span class="token function">register</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    bpy<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>register_class<span class="token punctuation">(</span>drop2floor<span class="token punctuation">)</span>
-    bpy<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>register_class<span class="token punctuation">(</span>drop2floor_UI<span class="token punctuation">)</span>
+<ul>
+<li>这里就提示我们要push到服务器的哪个分支，这里填一个服务器里没有的分支（modify_1）</li>
+</ul>
+<p><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/92_kraken.png" alt=""></p>
+<ul>
+<li>发现创建了服务器的 <code>modify_1</code>，合着我们刚才是在替换服务器源文件吗</li>
+<li>所以，提交前要先新建分支</li>
+</ul>
+<h2 id="GitKraken进阶-更新本地文件"><a href="#GitKraken进阶-更新本地文件" class="headerlink" title="GitKraken进阶_更新本地文件"></a>GitKraken进阶_更新本地文件</h2><ul>
+<li>回到之前创建的第一个本地仓库，发现里面的东西还是老版本的，所以这时我们要更新</li>
+<li>但这个软件很优秀，它能实时更新数据，已经检测到服务器的新版本了</li>
+</ul>
+<p><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/93_kraken.png" alt=""></p>
+<ul>
+<li>如果村里刚通网，可以使用上面的 <code>fetch</code> 按钮来将服务器文件拉回来</li>
+<li>这时，如果双击 <code>REMOTE</code> 底下的 <code>modify_1</code> 分支，就能进入这个新分支，本地工程也随之更新了</li>
+<li>然后会发现一个规律：<ul>
+<li>双击远程分支后，git 将远程分支拉到了本地，这是因为本地只能修改本地的东西</li>
+<li>树形图上，<code>modify_1</code> 的右边两个图标同时存在，这是因为本分支本地与远程同步</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/94_kraken.png" alt=""></p>
+<ul>
+<li>然后就是按照这个流程进行迭代，记住，多建分支</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/95_kraken.png"  height="250">
 
-<span class="token comment" spellcheck="true"># 卸载模块</span>
-<span class="token keyword">def</span> <span class="token function">unregister</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    bpy<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>unregister_class<span class="token punctuation">(</span>drop2floor<span class="token punctuation">)</span>
-    bpy<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>unregister_class<span class="token punctuation">(</span>drop2floor_UI<span class="token punctuation">)</span>
+<ul>
+<li>多提一嘴：</li>
+</ul>
+<pre><code>分支使用要求：
 
-<span class="token comment" spellcheck="true"># 测试模块</span>
-<span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">"__main__"</span><span class="token punctuation">:</span>
-    register<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+①：如果存档是直线式的，
+    必须保证最后版本上至少有一个分支，
+    创建活动分支可以用来跳转版本
 
+②：如果存档是叉树式的，
+    必须保证该叉树上的最后版本上至少有一个分支，
+    开辟叉树的时候一定要新建一个分支，用来保护这个叉树
+    创建活动分支可以用来跳转版本
+
+③：合并分支时，Git能够处理非二进制文件的合并，但二进制文件只能选择性保留</code></pre><ul>
+<li>以及：</li>
+</ul>
+<p><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/97_kraken.png" alt="pics/git_pics/97_kraken.png"></p>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/96_all.png"  height="350">
             </div>
             <hr/>
 
@@ -508,20 +659,28 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%8C%87%E5%8D%97/">
-                                    <span class="chip bg-color">指南</span>
+                                <a href="/tags/Git/">
+                                    <span class="chip bg-color">Git</span>
                                 </a>
                             
-                                <a href="/tags/blender/">
-                                    <span class="chip bg-color">blender</span>
+                                <a href="/tags/Github/">
+                                    <span class="chip bg-color">Github</span>
                                 </a>
                             
-                                <a href="/tags/%E5%8F%97%E8%8B%A6/">
-                                    <span class="chip bg-color">受苦</span>
+                                <a href="/tags/Git-workflow/">
+                                    <span class="chip bg-color">Git_workflow</span>
                                 </a>
                             
-                                <a href="/tags/%E6%8F%92%E4%BB%B6/">
-                                    <span class="chip bg-color">插件</span>
+                                <a href="/tags/%E5%AD%98%E6%A1%A3%E7%A5%9E%E5%99%A8/">
+                                    <span class="chip bg-color">存档神器</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%A1%AC%E6%A0%B8/">
+                                    <span class="chip bg-color">硬核</span>
+                                </a>
+                            
+                                <a href="/tags/GitKraken/">
+                                    <span class="chip bg-color">GitKraken</span>
                                 </a>
                             
                         </div>
@@ -689,78 +848,74 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/02/03/markdown%E8%AF%AD%E6%B3%95/">
+                <a href="/2021/02/04/Git/Git%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E5%9B%BE%E8%A7%A3_%E7%95%8C%E9%9D%A2%E7%89%88/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Markdown语法常用（基于Typora）">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Git操作步骤图解_界面版">
                         
-                        <span class="card-title">Markdown语法常用（基于Typora）</span>
+                        <span class="card-title">Git操作步骤图解_界面版</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Markdown语法常用（基于Typora）（一）标题一级标题
-# 一级标题 
+                            Git操作步骤图解_界面版GitKraken基础
+下载 GitKraken 软件，版本是6.5.0
+这个软件在6.5.0之后要收费，所以要下6.5.0，复制链接去迅雷
+安装好之后不打开
+防火墙配置：（只是为了防止它更新）
 
-二级标题
-## 二级标题
-
-三级标题
-### 三级标题 
-
-四级标题
-#### 四级标题
-
-五级标题
-##### 五级标题 
-
-六级标题
-###### 六级标
+控制面板\系统和
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%96%87%E6%A1%A3/" class="post-category">
-                                    文档
+                            <a href="/categories/Github/" class="post-category">
+                                    Github
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%96%87%E6%A1%A3/">
-                        <span class="chip bg-color">文档</span>
+                    <a href="/tags/Git/">
+                        <span class="chip bg-color">Git</span>
                     </a>
                     
-                    <a href="/tags/%E7%AE%80%E5%8D%95/">
-                        <span class="chip bg-color">简单</span>
+                    <a href="/tags/Github/">
+                        <span class="chip bg-color">Github</span>
                     </a>
                     
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                        <span class="chip bg-color">博客</span>
+                    <a href="/tags/Git-workflow/">
+                        <span class="chip bg-color">Git_workflow</span>
                     </a>
                     
-                    <a href="/tags/markdown/">
-                        <span class="chip bg-color">markdown</span>
+                    <a href="/tags/%E5%AD%98%E6%A1%A3%E7%A5%9E%E5%99%A8/">
+                        <span class="chip bg-color">存档神器</span>
                     </a>
                     
-                    <a href="/tags/%E8%B6%85%E5%A5%BD%E7%94%A8/">
-                        <span class="chip bg-color">超好用</span>
+                    <a href="/tags/%E7%A1%AC%E6%A0%B8/">
+                        <span class="chip bg-color">硬核</span>
+                    </a>
+                    
+                    <a href="/tags/GitKraken/">
+                        <span class="chip bg-color">GitKraken</span>
                     </a>
                     
                 </div>
@@ -774,34 +929,38 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/02/03/blender/Blender%E6%8C%87%E5%8D%97/">
+                <a href="/2021/02/04/Git/Git%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E5%9B%BE%E8%A7%A3_%E5%B0%8F%E9%BB%91%E7%AA%97/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="反人类三维软件Blender指南">
+                        <img src="/medias/featureimages/35.jpg" class="responsive-img" alt="Git操作步骤图解_小黑窗">
                         
-                        <span class="card-title">反人类三维软件Blender指南</span>
+                        <span class="card-title">Git操作步骤图解_小黑窗</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            反人类三维软件Blender指南（〇）指南什么叫Blender入门呀
-（一）视图操作修改键位成Unity物体上下文菜单：修改为alt + rm，原rm
-网格调用菜单：修改为alt + rm，原 rm
-视图移动：修改为mm，原shift + 
+                            Git操作步骤图解_小黑窗（〇）前戏比较重要的内容
+Git下载链接     清华镜像Git下载链接
+
+记得要在github上注册账户，或者gitee（国内的比较快）
+
+Bash窗口里只要是没有输入符 $ 就不能输入
+
+Bash窗口里用鼠标右
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-04
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/blender/" class="post-category">
-                                    blender
+                            <a href="/categories/Github/" class="post-category">
+                                    Github
                                 </a>
                             
                             
@@ -811,16 +970,24 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%8C%87%E5%8D%97/">
-                        <span class="chip bg-color">指南</span>
+                    <a href="/tags/Git/">
+                        <span class="chip bg-color">Git</span>
                     </a>
                     
-                    <a href="/tags/blender/">
-                        <span class="chip bg-color">blender</span>
+                    <a href="/tags/Github/">
+                        <span class="chip bg-color">Github</span>
                     </a>
                     
-                    <a href="/tags/%E5%8F%97%E8%8B%A6/">
-                        <span class="chip bg-color">受苦</span>
+                    <a href="/tags/Git-workflow/">
+                        <span class="chip bg-color">Git_workflow</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%AD%98%E6%A1%A3%E7%A5%9E%E5%99%A8/">
+                        <span class="chip bg-color">存档神器</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%A1%AC%E6%A0%B8/">
+                        <span class="chip bg-color">硬核</span>
                     </a>
                     
                 </div>
@@ -1007,7 +1174,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">36.5k</span>&nbsp;字
+                class="white-color">42.2k</span>&nbsp;字
             
             
             
