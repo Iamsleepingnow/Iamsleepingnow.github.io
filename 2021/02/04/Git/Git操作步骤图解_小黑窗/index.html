@@ -365,6 +365,10 @@
                                 <span class="chip bg-color">硬核</span>
                             </a>
                         
+                            <a href="/tags/%E5%A4%9A%E5%9B%BE%E9%A2%84%E8%AD%A6/">
+                                <span class="chip bg-color">多图预警</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -1002,6 +1006,10 @@ git push origin --delete &lt;该删除的分支名&gt; 【删除服务器分支�
                                     <span class="chip bg-color">硬核</span>
                                 </a>
                             
+                                <a href="/tags/%E5%A4%9A%E5%9B%BE%E9%A2%84%E8%AD%A6/">
+                                    <span class="chip bg-color">多图预警</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1171,7 +1179,7 @@ git push origin --delete &lt;该删除的分支名&gt; 【删除服务器分支�
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/02/04/Git/Git%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E5%9B%BE%E8%A7%A3_%E7%95%8C%E9%9D%A2%E7%89%88/">
+                <a href="/2021/02/04/Git/Git%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E5%9B%BE%E8%A7%A3_GitKraken/">
                     <div class="card-image">
                         
                         
@@ -1183,13 +1191,13 @@ git push origin --delete &lt;该删除的分支名&gt; 【删除服务器分支�
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Git操作步骤图解_界面版GitKraken基础
+                            Git操作步骤图解_GitKrakenGitKraken基础
 下载 GitKraken 软件，版本是6.5.0
 这个软件在6.5.0之后要收费，所以要下6.5.0，复制链接去迅雷
 安装好之后不打开
 防火墙配置：（只是为了防止它更新）
 
-控制面板\系统和
+控制
                         
                     </div>
                     <div class="publish-info">
@@ -1223,6 +1231,10 @@ git push origin --delete &lt;该删除的分支名&gt; 【删除服务器分支�
                         <span class="chip bg-color">Git_workflow</span>
                     </a>
                     
+                    <a href="/tags/GitKraken/">
+                        <span class="chip bg-color">GitKraken</span>
+                    </a>
+                    
                     <a href="/tags/%E5%AD%98%E6%A1%A3%E7%A5%9E%E5%99%A8/">
                         <span class="chip bg-color">存档神器</span>
                     </a>
@@ -1231,8 +1243,8 @@ git push origin --delete &lt;该删除的分支名&gt; 【删除服务器分支�
                         <span class="chip bg-color">硬核</span>
                     </a>
                     
-                    <a href="/tags/GitKraken/">
-                        <span class="chip bg-color">GitKraken</span>
+                    <a href="/tags/%E5%A4%9A%E5%9B%BE%E9%A2%84%E8%AD%A6/">
+                        <span class="chip bg-color">多图预警</span>
                     </a>
                     
                 </div>
@@ -1397,7 +1409,7 @@ https://github.com/texstudio
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h2, h3, h4, h5'
         });
 
         // modify the toc link href to support Chinese.
@@ -1409,7 +1421,7 @@ https://github.com/texstudio
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h2, h3, h4, h5').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 

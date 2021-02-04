@@ -395,7 +395,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-02-03
+                    2021-02-04
                 </div>
                 
 
@@ -768,7 +768,10 @@
 
 <span class="token function selector">\rule</span><span class="token punctuation">{</span>120pt<span class="token punctuation">}</span><span class="token punctuation">{</span>40pt<span class="token punctuation">}</span> <span class="token comment" spellcheck="true">% 标尺盒子</span>
 A <span class="token function selector">\rule</span><span class="token punctuation">[</span>-.4pt<span class="token punctuation">]</span><span class="token punctuation">{</span>3em<span class="token punctuation">}</span><span class="token punctuation">{</span>.4pt<span class="token punctuation">}</span> line.</code></pre>
-<h2 id="（二十）颜色"><a href="#（二十）颜色" class="headerlink" title="（二十）颜色"></a>（二十）颜色</h2><p>\newcommend … [][]{}</p>
+<h2 id="（二十）颜色"><a href="#（二十）颜色" class="headerlink" title="（二十）颜色"></a>（二十）颜色</h2><p>\color[rgb]{}</p>
+<p>\textcolor[rgb]{}</p>
+<p>\colorbox[rgb]{}</p>
+<p>\fcolorbox[rgb]{}</p>
 <pre class=" language-latex"><code class="language-latex"><span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">xcolor</span><span class="token punctuation">}</span> <span class="token comment" spellcheck="true">% 使用颜色宏包</span>
 <span class="token comment" spellcheck="true">%</span>
 <span class="token punctuation">{</span><span class="token function selector">\color</span><span class="token punctuation">[</span>rgb<span class="token punctuation">]</span><span class="token punctuation">{</span>1,0,0<span class="token punctuation">}</span> 红色<span class="token punctuation">}</span> <span class="token function selector">\\</span>
@@ -1071,6 +1074,10 @@ Bash窗口里用鼠标右
                         <span class="chip bg-color">硬核</span>
                     </a>
                     
+                    <a href="/tags/%E5%A4%9A%E5%9B%BE%E9%A2%84%E8%AD%A6/">
+                        <span class="chip bg-color">多图预警</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1248,7 +1255,7 @@ Bash窗口里用鼠标右
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h2, h3, h4, h5'
         });
 
         // modify the toc link href to support Chinese.
@@ -1260,7 +1267,7 @@ Bash窗口里用鼠标右
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h2, h3, h4, h5').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 

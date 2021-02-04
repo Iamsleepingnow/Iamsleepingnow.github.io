@@ -345,12 +345,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%8C%87%E5%8D%97/">
-                                <span class="chip bg-color">指南</span>
-                            </a>
-                        
                             <a href="/tags/python/">
                                 <span class="chip bg-color">python</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%8C%87%E5%8D%97/">
+                                <span class="chip bg-color">指南</span>
                             </a>
                         
                             <a href="/tags/pip/">
@@ -549,12 +549,12 @@ conda config --set show_channel_urls yes</code></pre></li>
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%8C%87%E5%8D%97/">
-                                    <span class="chip bg-color">指南</span>
-                                </a>
-                            
                                 <a href="/tags/python/">
                                     <span class="chip bg-color">python</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%8C%87%E5%8D%97/">
+                                    <span class="chip bg-color">指南</span>
                                 </a>
                             
                                 <a href="/tags/pip/">
@@ -772,12 +772,12 @@ print(15 * 20)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
-                    </a>
-                    
                     <a href="/tags/%E5%B7%A5%E5%85%B7/">
                         <span class="chip bg-color">工具</span>
+                    </a>
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
                     <a href="/tags/%E5%9F%BA%E7%A1%80/">
@@ -956,7 +956,7 @@ Rot
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h2, h3, h4, h5'
         });
 
         // modify the toc link href to support Chinese.
@@ -968,7 +968,7 @@ Rot
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h2, h3, h4, h5').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
