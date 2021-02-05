@@ -1274,7 +1274,7 @@ article .article-tags .chip {
 #articleContent ol li {
     display: list-item;
     line-height: 1.8rem;
-    font-size: 1rem;
+    font-size: 1.25rem;
 }
 
 #articleContent ul li {
