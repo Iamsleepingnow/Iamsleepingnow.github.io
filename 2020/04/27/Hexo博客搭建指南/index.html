@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>从零开始hexo个人网站博客搭建指南 | PYW个人博客</title>
+    <title>Hexo博客搭建指南 | PYW个人博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -223,12 +223,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">从零开始hexo个人网站博客搭建指南</h1>
+                    <h1 class="description center-align post-title">Hexo博客搭建指南</h1>
                 </div>
             </div>
         </div>
@@ -391,21 +391,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-02-03
+                    2021-02-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 				
@@ -420,43 +420,141 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="从零开始Hexo个人网站博客搭建指南（简略）"><a href="#从零开始Hexo个人网站博客搭建指南（简略）" class="headerlink" title="从零开始Hexo个人网站博客搭建指南（简略）"></a>从零开始Hexo个人网站博客搭建指南（简略）</h1><p>我就是拿这个方法建的博客，方法来源自互联网，特此记录。</p>
-<h2 id="注册Github，申请Repository资料库"><a href="#注册Github，申请Repository资料库" class="headerlink" title="注册Github，申请Repository资料库"></a>注册Github，申请Repository资料库</h2><h2 id="下载安装node-js"><a href="#下载安装node-js" class="headerlink" title="下载安装node.js"></a>下载安装node.js</h2><p>cmd–&gt;<strong>node -v</strong> 查看版号，确认已安装</p>
-<p>在安装地址下新增<strong>node_global</strong>和<strong>node_cache</strong>文件夹<br>cmd–&gt;<strong>npm config set prefix”D:\blabla\node_global”</strong><br>cmd–&gt;<strong>npm config set cache”D:\blabla\node_cache”</strong></p>
-<p>新增系统环境变量：</p>
-<p>​    变量名：<strong>NODE-PATH</strong></p>
-<p>​    变量值：<strong>D:\blabla\node_modules</strong></p>
-<p>修改用户变量中PATH的值：</p>
-<p>​    新建：<strong>D:\blabla\node_global.</strong></p>
-<h2 id="下载安装git"><a href="#下载安装git" class="headerlink" title="下载安装git"></a>下载安装git</h2><p>安装完后，在任意目录下<strong>右键Git Bash Here</strong>就会打开当前目录下的git</p>
-<p><a href="https://hexoscript.gitbook.io/hexo-script/" target="_blank" rel="noopener">HEXO脚本参考之一</a> </p>
-<p><strong>bash窗口不支持ctrl+cv的复制，启用鼠标右键来复制和粘贴，ctrl+d退出bash，ctrl+c退出本地服务器</strong></p>
-<h2 id="install-sh检测"><a href="#install-sh检测" class="headerlink" title="install.sh检测"></a>install.sh检测</h2><p>bash–&gt;<strong>curl -O <a href="https://cdn.jsdelivr.net/gh/kjhuanhao/hexo-script@master/install.sh" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/kjhuanhao/hexo-script@master/install.sh</a></strong>获得install.sh验证文件</p>
-<p>​    在intall.sh存放目录下打开bash–&gt;<strong>source install.sh test_node</strong>若输出版本号则表示node.js安装完毕<br>​    在intall.sh存放目录下打开bash–&gt;<strong>source install.sh test_git</strong>若输出版本号则表示git安装完毕</p>
-<h2 id="一键安装hexo"><a href="#一键安装hexo" class="headerlink" title="一键安装hexo"></a>一键安装hexo</h2><p>在intall.sh存放目录下打开bash–&gt;<strong>source install.sh hexo_win</strong>若输出<strong>Successful installation of hexo!</strong>则表示hexo博客安装完毕<br>并且弹出github登录窗口，登录<br>之后弹出创建网站密钥的<strong>OpenSSH</strong>窗口，输入github用户名和密码，等待bash窗口运行完毕</p>
-<h2 id="配置npm镜像用于加速"><a href="#配置npm镜像用于加速" class="headerlink" title="配置npm镜像用于加速"></a>配置npm镜像用于加速</h2><p>​    <a href="https://www.cnblogs.com/luyuandatabase/p/12145707.html" target="_blank" rel="noopener">npm使用国内淘宝镜像的方法</a><br>​    cmd–&gt;<strong>node -v</strong>检测node.js<br>​    cmd–&gt;<strong>npm -v</strong>检测npm</p>
-<p>​    在我的电脑目录下打开cmd–&gt;<strong>npm init</strong>初始化项目的配置依赖清单<br>​    在我的电脑目录下打开cmd–&gt;<strong>npm config set registry <a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></strong>安装淘宝云<br>​    在我的电脑目录下打开cmd–&gt;<strong>npm config get registry</strong>若输出网址则表示镜像配置成功<br>​    在我的电脑目录下打开cmd–&gt;<strong>cnpm -v</strong>不报错表示成功，后续npm操作使用cnpm会加快</p>
-<h2 id="初始化博客服务器"><a href="#初始化博客服务器" class="headerlink" title="初始化博客服务器"></a>初始化博客服务器</h2><p>​    在博客根目录hexoblog打开bash–&gt;<strong>hexo s</strong>启动本地服务器</p>
-<p>​    如果输出<strong>INFO  Hexo is running at <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> .</strong>则在浏览器上<a href="http://localhost:4000打开本地网站">http://localhost:4000打开本地网站</a></p>
-<h2 id="生成SSH秘钥并上传github"><a href="#生成SSH秘钥并上传github" class="headerlink" title="生成SSH秘钥并上传github"></a>生成SSH秘钥并上传github</h2><p>​    在intall.sh存放目录下打开bash–&gt;<strong>./install.sh git_ssh</strong></p>
-<p>​        <strong>执行1</strong>：一键生成秘钥，需要输入github账号名，密码*2，邮箱，秘钥存放地址，地址可在我的文档.ssh文件夹下（新建），这也是电脑里秘钥的唯一位置，秘钥是id_rsa，公钥是id_rsa.pub</p>
-<p>​        <strong>执行2</strong>：检查电脑中的秘钥</p>
-<p>​    在intall.sh存放目录下打开bash–&gt;cat ~/.ssh/id_rsa.pub查看公钥完整，并复制公钥，<br>​    登陆github帐户，点击头像，Settings –&gt; 左栏 SSH and GPG keys –&gt; New SSH key，复制公钥内容，粘贴进Key内，title起名字，点击 Add key</p>
-<p>​    在intall.sh存放目录下打开bash–&gt;<strong>ssh -T <a href="mailto:git@github.com">git@github.com</a></strong>，输入<strong>yes</strong>，输入密码，若输出 <strong>You’ve successfully authenticated, but GitHub does not provide shell access.</strong>成功</p>
-<h2 id="初始化部署hexo博客"><a href="#初始化部署hexo博客" class="headerlink" title="初始化部署hexo博客"></a>初始化部署hexo博客</h2><p>​    在intall.sh存放目录下打开bash–&gt;<strong>source install.sh deploy</strong>生成up.sh文件，将up.sh复制到hexoblog中<br>​    打开hexoblog里的<strong>_config.yml</strong>全局配置文件<br>​    将最后的deploy改成<br>​        <strong>deploy:</strong><br>              <strong>type: git</strong><br>              <strong>repo:</strong> 库地址（github仓库地址，登陆github帐户，点击头像，your repositories，下载页面，clone and download，useSSH，下面就是你的库地址）<br>              <strong>branch: master</strong><br>​    在hexoblog目录下打开bash–&gt;<strong>source up.sh</strong>自动部署到github，<strong>等bash运行完后还要输密码</strong><br>​    博客成功搭建！浏览器地址：<strong><a href="https://github名字.github.io/" target="_blank" rel="noopener">https://github名字.github.io/</a></strong></p>
-<h2 id="网站基础配置"><a href="#网站基础配置" class="headerlink" title="网站基础配置"></a>网站基础配置</h2><p>​    <a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="noopener">网站配置文档</a><br>​    打开hexoblog里的<strong>_config.yml</strong>全局配置文件，<br>​    查看文档来配置（略）<br>​    完事之后，要将本地数据上传，采用四步更新法：在hexoblog目录下打开bash–&gt;<strong>hexo clean</strong>，<strong>hexo g</strong>，（<strong>hexo s</strong>，ctrl+c），<strong>hexo d</strong></p>
-<h2 id="基础网站插件"><a href="#基础网站插件" class="headerlink" title="基础网站插件"></a>基础网站插件</h2><p><strong>搜索插件</strong>：在hexoblog目录下打开bash–&gt;<strong>cnpm install hexo-generator-search –save</strong><br>        _config.yml：<br>        search:<br>            path: search.xml<br>            field: post<br><strong>代码高亮</strong>：在hexoblog目录下打开bash–&gt;<strong>cnpm i -S hexo-prism-plugin</strong><br>        _config.yml：<br>        prism_plugin:<br>            mode: ‘preprocess’<br>            theme: ‘tomorrow’<br>            line_number: false<br>            custom_css:</p>
-<p><strong>主题</strong>：<a href="https://hexo.io/themes/" target="_blank" rel="noopener">HEXO官网主题</a></p>
-<h2 id="发表第一篇文章"><a href="#发表第一篇文章" class="headerlink" title="发表第一篇文章"></a>发表第一篇文章</h2><p>在hexoblog目录下打开bash–&gt;<strong>hexo new “文章名字”</strong>用于新建<strong>markdown文件</strong>，文件将会生成在<strong>hexoblog/source/_posts</strong>内</p>
-<p>在<strong>md编辑器</strong>（任何文本编辑器）中编辑文章</p>
-<p>四步发布法：在hexoblog目录下打开bash–&gt;</p>
-<ol>
-<li><strong>hexo clean</strong>清除缓存，</li>
-<li><strong>hexo g</strong>生成网页，</li>
-<li>（<strong>hexo s</strong>，ctrl+c）查看本地预览，</li>
-<li><strong>hexo d</strong>发布</li>
-</ol>
-<p>发布后浏览器会有一会儿的反应时间，如果在网站中发现没有更新，尝试用其他浏览器或者刷新</p>
+                <h1 id="Hexo博客搭建指南"><a href="#Hexo博客搭建指南" class="headerlink" title="Hexo博客搭建指南"></a>Hexo博客搭建指南</h1><ul>
+<li>本博客就是拿这个方法建的，方法来源自互联网，但忘了是哪个网了，特此记录。</li>
+</ul>
+<h2 id="（一）注册Github"><a href="#（一）注册Github" class="headerlink" title="（一）注册Github"></a>（一）注册Github</h2><ul>
+<li>申请一个仓库（Repository），仓库名可自定义，但习惯性写作：<code>&lt;github用户名&gt;.github.io</code></li>
+</ul>
+<h2 id="（二）下载安装node-js"><a href="#（二）下载安装node-js" class="headerlink" title="（二）下载安装node.js"></a>（二）下载安装node.js</h2><ul>
+<li><p>cmd–&gt; <code>node -v</code> 查看版号，确认已安装</p>
+</li>
+<li><p>在安装地址下新增 <code>node_global</code> 和 <code>node_cache</code> 文件夹<br>cmd–&gt; <code>npm config set prefix&quot;D:\blabla\node_global&quot;</code><br>cmd–&gt; <code>npm config set cache&quot;D:\blabla\node_cache&quot;</code> </p>
+</li>
+<li><p>新增系统环境变量：</p>
+<ul>
+<li>变量名：<strong>NODE-PATH</strong></li>
+<li>变量值：<strong>D:\blabla\node_modules</strong></li>
+</ul>
+</li>
+<li><p>修改用户变量中PATH的值：</p>
+<ul>
+<li>新建：<strong>D:\blabla\node_global.</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="（三）下载安装git"><a href="#（三）下载安装git" class="headerlink" title="（三）下载安装git"></a>（三）下载安装git</h2><ul>
+<li><p>安装完后，在任意目录下<strong>右键Git Bash Here</strong>就会打开当前目录下的git</p>
+</li>
+<li><p><a href="https://hexoscript.gitbook.io/hexo-script/" target="_blank" rel="noopener">HEXO脚本参考之一</a> </p>
+</li>
+<li><p><strong>bash窗口不支持ctrl+cv的复制，启用鼠标右键来复制和粘贴，ctrl+d退出bash，ctrl+c退出本地服务器</strong></p>
+</li>
+</ul>
+<h2 id="（四）install-sh检测"><a href="#（四）install-sh检测" class="headerlink" title="（四）install.sh检测"></a>（四）install.sh检测</h2><ul>
+<li><p>bash–&gt; <code>curl -O https://cdn.jsdelivr.net/gh/kjhuanhao/hexo-script@master/install.sh</code> 获得install.sh验证文件</p>
+</li>
+<li><p>在intall.sh存放目录下打开bash–&gt; <code>source install.sh test_node</code> 若输出版本号则表示node.js安装完毕</p>
+</li>
+<li><p>在intall.sh存放目录下打开bash–&gt; <code>source install.sh test_git</code> 若输出版本号则表示git安装完毕</p>
+</li>
+</ul>
+<h2 id="（五）一键安装hexo"><a href="#（五）一键安装hexo" class="headerlink" title="（五）一键安装hexo"></a>（五）一键安装hexo</h2><ul>
+<li>在intall.sh存放目录下打开bash–&gt; <code>source install.sh hexo_win</code> 若输出 <code>Successful installation of hexo!</code> 则表示hexo博客安装完毕</li>
+<li>并且弹出github登录窗口，登录</li>
+<li>之后弹出创建网站密钥的<strong>OpenSSH</strong>窗口，输入github用户名和密码，等待bash窗口运行完毕</li>
+</ul>
+<h2 id="（六）配置npm镜像用于加速"><a href="#（六）配置npm镜像用于加速" class="headerlink" title="（六）配置npm镜像用于加速"></a>（六）配置npm镜像用于加速</h2><ul>
+<li><p>npm<a href="https://www.cnblogs.com/luyuandatabase/p/12145707.html" target="_blank" rel="noopener">使用国内淘宝镜像的方法</a></p>
+<pre><code>cmd--&gt; `node -v` 检查node.js是否安装
+  cmd--&gt; `npm -v` 检查npm是否安装</code></pre></li>
+<li><p>在我的电脑目录下cmd–&gt; <code>npm init</code> 初始化项目的配置依赖清单</p>
+</li>
+<li><p>在我的电脑目录下cmd–&gt; <code>npm config set registry https://registry.npm.taobao.org</code> 安装淘宝云</p>
+</li>
+<li><p>在我的电脑目录下cmd–&gt; <code>npm config get registry</code> 若输出网址则表示镜像配置成功</p>
+</li>
+<li><p>在我的电脑目录下cmd–&gt; <code>cnpm -v</code> 不报错表示成功，后续npm操作使用cnpm会加快</p>
+</li>
+</ul>
+<h2 id="（七）初始化博客服务器"><a href="#（七）初始化博客服务器" class="headerlink" title="（七）初始化博客服务器"></a>（七）初始化博客服务器</h2><ul>
+<li>在博客根目录hexoblog打开bash–&gt; <code>hexo s</code> 启动本地服务器</li>
+<li>如果输出 <code>INFO  Hexo is running at http://localhost:4000 .</code> </li>
+<li>则在浏览器上<a href="http://localhost:4000打开本地网站">http://localhost:4000打开本地网站</a></li>
+<li>当然， <code>ctrl + C</code> 是退出本地网站</li>
+</ul>
+<h2 id="（八）生成SSH秘钥并上传github"><a href="#（八）生成SSH秘钥并上传github" class="headerlink" title="（八）生成SSH秘钥并上传github"></a>（八）生成SSH秘钥并上传github</h2><ul>
+<li><p>在intall.sh存放目录下打开bash–&gt;<code>./install.sh git_ssh</code> </p>
+</li>
+<li><p><strong>执行1</strong>：一键生成秘钥，需要输入github账号名，密码*2，邮箱，秘钥存放地址，地址可在我的文档.ssh文件夹下（新建），这也是电脑里秘钥的唯一位置，秘钥是id_rsa，公钥是id_rsa.pub</p>
+</li>
+<li><p><strong>执行2</strong>：检查电脑中的秘钥，并上传Github</p>
+<ul>
+<li>在intall.sh存放目录下打开bash–&gt;cat ~/.ssh/id_rsa.pub查看公钥完整，并复制公钥</li>
+<li>登陆github帐户，点击头像，Settings –&gt; 左栏 SSH and GPG keys –&gt; New SSH key</li>
+<li>复制公钥内容，粘贴进Key内，title起名字，点击 Add key</li>
+</ul>
+</li>
+<li><p>在intall.sh存放目录下打开bash–&gt; <code>ssh -T git@github.com</code> ，输入<strong>yes</strong>，输入密码，若输出 <code>You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code> 则成功</p>
+</li>
+</ul>
+<h2 id="（九）初始化部署hexo博客"><a href="#（九）初始化部署hexo博客" class="headerlink" title="（九）初始化部署hexo博客"></a>（九）初始化部署hexo博客</h2><ul>
+<li><p>在intall.sh存放目录下打开bash–&gt; <code>source install.sh deploy</code> 生成up.sh文件</p>
+</li>
+<li><p>将up.sh复制到hexoblog中</p>
+</li>
+<li><p>找到你的Github库地址：登陆github帐户，点击头像，your repositories，下载页面，clone and download，useSSH，下面就是你的库地址</p>
+</li>
+<li><p>打开hexoblog里的 <code>_config.yml</code> 全局配置文件，将最后的deploy改成：</p>
+<pre><code>deploy:
+  type: git
+  repo: 库地址
+  branch: master</code></pre></li>
+<li><p>在hexoblog目录下打开bash–&gt; <code>source up.sh</code> 自动部署到github，<strong>等bash运行完后还要输密码</strong></p>
+</li>
+<li><p>博客成功搭建！浏览器地址：<code>https://&lt;github名字&gt;.github.io/</code> </p>
+</li>
+</ul>
+<h2 id="（十）网站基础配置"><a href="#（十）网站基础配置" class="headerlink" title="（十）网站基础配置"></a>（十）网站基础配置</h2><ul>
+<li><a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="noopener">网站配置文档</a></li>
+<li>打开hexoblog里的 <code>_config.yml</code> 全局配置文件，查看文档来配置（略）</li>
+<li>完事之后，要将本地数据上传，采用四步更新法：<ul>
+<li>在hexoblog目录下打开bash–&gt; <code>hexo clean</code> ， <code>hexo g</code> ， <code>（hexo s，ctrl+c）</code> ， <code>hexo d</code> </li>
+</ul>
+</li>
+</ul>
+<h2 id="（十一）基础网站插件"><a href="#（十一）基础网站插件" class="headerlink" title="（十一）基础网站插件"></a>（十一）基础网站插件</h2><ul>
+<li><p><strong>搜索插件</strong>：在hexoblog目录下打开bash–&gt; <code>cnpm install hexo-generator-search --save</code> </p>
+<pre><code>    _config.yml：
+      search:
+          path: search.xml
+          field: post</code></pre></li>
+<li><p><strong>代码高亮</strong>：在hexoblog目录下打开bash–&gt; <code>cnpm i -S hexo-prism-plugin</code> </p>
+<pre><code>    _config.yml：
+      prism_plugin:
+          mode: &#39;preprocess&#39; 
+          theme: &#39;tomorrow&#39;
+          line_number: false 
+          custom_css:</code></pre></li>
+<li><p><strong>主题</strong>：<a href="https://hexo.io/themes/" target="_blank" rel="noopener">HEXO官网主题</a></p>
+</li>
+</ul>
+<h2 id="（十二）发表第一篇文章"><a href="#（十二）发表第一篇文章" class="headerlink" title="（十二）发表第一篇文章"></a>（十二）发表第一篇文章</h2><ul>
+<li><p>在hexoblog目录下打开bash–&gt; <code>hexo new &quot;文章名字&quot;</code> 用于新建<strong>markdown文件</strong>，文件将会生成在 <code>hexoblog/source/_posts</code> 内</p>
+</li>
+<li><p>在<strong>md编辑器</strong>（任何文本编辑器，推荐Typora）中编辑文章</p>
+</li>
+<li><p>四步发布法：在hexoblog目录下打开bash–&gt;</p>
+<ul>
+<li><code>hexo clean</code> 清除缓存，</li>
+<li><code>hexo g</code> 生成网页，</li>
+<li><code>（hexo s，ctrl+c）</code> 查看本地预览，</li>
+<li><code>hexo d</code> 发布</li>
+</ul>
+</li>
+<li><p>发布后浏览器会有一会儿的反应时间，如果在网站中发现没有更新，尝试用其他浏览器或者刷新</p>
+</li>
+</ul>
 
             </div>
             <hr/>
@@ -733,21 +831,23 @@ Channel Mixer（重要）    ⭐⭐⭐
                 本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/27/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bhexo%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/">
+                <a href="/2020/04/27/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="从零开始hexo个人网站博客搭建指南">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Hexo博客搭建指南">
                         
-                        <span class="card-title">从零开始hexo个人网站博客搭建指南</span>
+                        <span class="card-title">Hexo博客搭建指南</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            从零开始Hexo个人网站博客搭建指南（简略）我就是拿这个方法建的博客，方法来源自互联网，特此记录。
-注册Github，申请Repository资料库下载安装node.jscmd–&gt;node -v 查看版号，确认已安装
-在安装地址下新增
+                            Hexo博客搭建指南
+本博客就是拿这个方法建的，方法来源自互联网，但忘了是哪个网了，特此记录。
+
+（一）注册Github
+申请一个仓库（Repository），仓库名可自定义，但习惯性写作：&lt;github用户名&gt;.github.
                         
                     </div>
                     <div class="publish-info">
@@ -966,7 +1066,7 @@ Channel Mixer（重要）    ⭐⭐⭐
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">44.6k</span>&nbsp;字
+                class="white-color">44.9k</span>&nbsp;字
             
             
             
