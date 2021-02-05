@@ -37,52 +37,52 @@
 body {
     background-color: #1F1F1F;/*#eaeaea*//*后面背景的颜色*/
     margin: 0;
-    color: #5B626A; /*#34495e;*//*body底下所有文字的颜色*/
+    color: #3a3f46; /*#34495e;*//*body底下所有文字的颜色*/
 }
 
 h1 {
     margin: 48px 0 22px -5px;
-    font-size: 2.0rem;
+    font-size: 2.5rem;/*2.0rem*/
     font-weight: bold;
     line-height: 2.0rem;
 }
 
 h2 {
     margin: 42px 0 18px -5px;
-    font-size: 1.8rem;
+    font-size: 2.25rem;/*1.8rem*/
     font-weight: bold;
     line-height: 1.8rem;
 }
 
 h3 {
     margin: 38px 0 15px -4px;
-    font-size: 1.6rem;
+    font-size: 2rem;/*1.6rem*/
     font-weight: bold;
     line-height: 1.7rem;
 }
 
 h4 {
     margin: 32px 0 12px -4px;
-    font-size: 1.45rem;
+    font-size: 1.82rem;/*1.45rem*/
     font-weight: bold;
     line-height: 1.45rem;
 }
 
 h5 {
     margin: 28px 0 8px -4px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;/*1.2rem*/
     font-weight: bold;
     line-height: 1.2rem;
 }
 
 h6 {
     margin: 22px 0 4px -4px;
-    font-size: 1.1rem;
+    font-size: 1.38rem;/*1.1rem*/
     line-height: 1.1rem;
 }
 /*段落*/
 p {
-    font-size: 1rem;
+    font-size: 1.25rem;/*1rem*/
     line-height: 1.5rem;
 }
 /*水平线*/
