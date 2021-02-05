@@ -37,7 +37,7 @@
 body {
     background-color: #1F1F1F;/*#eaeaea*//*后面背景的颜色*/
     margin: 0;
-    color: #3a3f46; /*#34495e;*//*body底下所有文字的颜色*/
+    color: #4c535c; /*#34495e;*//*body底下所有文字的颜色*/
 }
 
 h1 {
@@ -139,7 +139,7 @@ code {
     padding: 1px 5px;
     top: 13px !important;
     font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
-    font-size: 0.91rem;
+    font-size: 1.2rem;
     color: #e96900;
     background-color: #f8f8f8;
     border-radius: 2px;
@@ -2006,7 +2006,7 @@ footer .copy-right {
 }
 
 .img-margin {
-    margin: 25px auto 10px auto;
+    margin: 8px auto 8px auto;
 }
 
 .caption {
