@@ -465,17 +465,14 @@
 <li>之后弹出创建网站密钥的<strong>OpenSSH</strong>窗口，输入github用户名和密码，等待bash窗口运行完毕</li>
 </ul>
 <h2 id="（六）配置npm镜像用于加速"><a href="#（六）配置npm镜像用于加速" class="headerlink" title="（六）配置npm镜像用于加速"></a>（六）配置npm镜像用于加速</h2><ul>
-<li><p>npm<a href="https://www.cnblogs.com/luyuandatabase/p/12145707.html" target="_blank" rel="noopener">使用国内淘宝镜像的方法</a></p>
-<pre><code>cmd--&gt; `node -v` 检查node.js是否安装
-  cmd--&gt; `npm -v` 检查npm是否安装</code></pre></li>
-<li><p>在我的电脑目录下cmd–&gt; <code>npm init</code> 初始化项目的配置依赖清单</p>
+<li>npm<a href="https://www.cnblogs.com/luyuandatabase/p/12145707.html" target="_blank" rel="noopener">使用国内淘宝镜像的方法</a><pre><code>- cmd--&gt; `node -v` 检查node.js是否安装</code></pre><ul>
+<li>cmd–&gt; <code>npm -v</code> 检查npm是否安装</li>
+</ul>
 </li>
-<li><p>在我的电脑目录下cmd–&gt; <code>npm config set registry https://registry.npm.taobao.org</code> 安装淘宝云</p>
-</li>
-<li><p>在我的电脑目录下cmd–&gt; <code>npm config get registry</code> 若输出网址则表示镜像配置成功</p>
-</li>
-<li><p>在我的电脑目录下cmd–&gt; <code>cnpm -v</code> 不报错表示成功，后续npm操作使用cnpm会加快</p>
-</li>
+<li>在我的电脑目录下cmd–&gt; <code>npm init</code> 初始化项目的配置依赖清单</li>
+<li>在我的电脑目录下cmd–&gt; <code>npm config set registry https://registry.npm.taobao.org</code> 安装淘宝云</li>
+<li>在我的电脑目录下cmd–&gt; <code>npm config get registry</code> 若输出网址则表示镜像配置成功</li>
+<li>在我的电脑目录下cmd–&gt; <code>cnpm -v</code> 不报错表示成功，后续npm操作使用cnpm会加快</li>
 </ul>
 <h2 id="（七）初始化博客服务器"><a href="#（七）初始化博客服务器" class="headerlink" title="（七）初始化博客服务器"></a>（七）初始化博客服务器</h2><ul>
 <li>在博客根目录hexoblog打开bash–&gt; <code>hexo s</code> 启动本地服务器</li>
@@ -524,20 +521,17 @@
 </li>
 </ul>
 <h2 id="（十一）基础网站插件"><a href="#（十一）基础网站插件" class="headerlink" title="（十一）基础网站插件"></a>（十一）基础网站插件</h2><ul>
-<li><p><strong>搜索插件</strong>：在hexoblog目录下打开bash–&gt; <code>cnpm install hexo-generator-search --save</code> </p>
-<pre><code>    _config.yml：
-      search:
-          path: search.xml
-          field: post</code></pre></li>
-<li><p><strong>代码高亮</strong>：在hexoblog目录下打开bash–&gt; <code>cnpm i -S hexo-prism-plugin</code> </p>
-<pre><code>    _config.yml：
-      prism_plugin:
-          mode: &#39;preprocess&#39; 
-          theme: &#39;tomorrow&#39;
-          line_number: false 
-          custom_css:</code></pre></li>
-<li><p><strong>主题</strong>：<a href="https://hexo.io/themes/" target="_blank" rel="noopener">HEXO官网主题</a></p>
-</li>
+<li><strong>搜索插件</strong>：在hexoblog目录下打开bash–&gt; <code>cnpm install hexo-generator-search --save</code> <pre><code>在_config.yml里面：
+  search:
+      path: search.xml
+      field: post</code></pre></li>
+<li><strong>代码高亮</strong>：在hexoblog目录下打开bash–&gt; <code>cnpm i -S hexo-prism-plugin</code> <pre><code>在_config.yml里面：
+  prism_plugin:
+      mode: &#39;preprocess&#39; 
+      theme: &#39;tomorrow&#39;
+      line_number: false 
+      custom_css:</code></pre></li>
+<li><strong>主题</strong>：<a href="https://hexo.io/themes/" target="_blank" rel="noopener">HEXO官网主题</a></li>
 </ul>
 <h2 id="（十二）发表第一篇文章"><a href="#（十二）发表第一篇文章" class="headerlink" title="（十二）发表第一篇文章"></a>（十二）发表第一篇文章</h2><ul>
 <li><p>在hexoblog目录下打开bash–&gt; <code>hexo new &quot;文章名字&quot;</code> 用于新建<strong>markdown文件</strong>，文件将会生成在 <code>hexoblog/source/_posts</code> 内</p>
