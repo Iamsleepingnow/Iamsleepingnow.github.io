@@ -90,13 +90,13 @@
             
             <tag> Git_workflow </tag>
             
-            <tag> GitKraken </tag>
-            
             <tag> 存档神器 </tag>
             
             <tag> 硬核 </tag>
             
             <tag> 多图预警 </tag>
+            
+            <tag> GitKraken </tag>
             
         </tags>
       
@@ -156,11 +156,11 @@
       
         <tags>
             
+            <tag> 文档 </tag>
+            
             <tag> 超纲 </tag>
             
             <tag> 论文 </tag>
-            
-            <tag> 文档 </tag>
             
             <tag> LaTeX </tag>
             
@@ -189,9 +189,9 @@
             
             <tag> 博客 </tag>
             
-            <tag> 文档 </tag>
-            
             <tag> 简单 </tag>
+            
+            <tag> 文档 </tag>
             
             <tag> markdown </tag>
             
@@ -348,11 +348,11 @@
             
             <tag> 硬核 </tag>
             
+            <tag> 入门 </tag>
+            
             <tag> 工具 </tag>
             
             <tag> python </tag>
-            
-            <tag> 入门 </tag>
             
             <tag> Numpy </tag>
             
@@ -379,11 +379,11 @@
       
         <tags>
             
-            <tag> 模板 </tag>
-            
             <tag> 工具 </tag>
             
             <tag> python </tag>
+            
+            <tag> 模板 </tag>
             
             <tag> 统计图 </tag>
             
@@ -418,13 +418,13 @@
             
             <tag> 硬核 </tag>
             
-            <tag> 模板 </tag>
-            
             <tag> 工具 </tag>
             
-            <tag> 桌面应用 </tag>
-            
             <tag> python </tag>
+            
+            <tag> 模板 </tag>
+            
+            <tag> 桌面应用 </tag>
             
             <tag> PySide2 </tag>
             
