@@ -37,7 +37,7 @@
       <link href="2021/02/05/Git/Git%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E5%9B%BE%E8%A7%A3_Sourcetree/"/>
       <url>2021/02/05/Git/Git%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E5%9B%BE%E8%A7%A3_Sourcetree/</url>
       
-        <content type="html"><![CDATA[<h1 id="Git操作步骤图解-Sourcetree"><a href="#Git操作步骤图解-Sourcetree" class="headerlink" title="Git操作步骤图解_Sourcetree"></a>Git操作步骤图解_Sourcetree</h1><ul><li>自从被GitKraken的免费7天骗了之后，我突然觉得Sourcetree应该挺香的</li><li>先去下一个<a href="https://product-downloads.atlassian.com/software/sourcetree/ga/Sourcetree_4.0.2_236.zip" target="_blank" rel="noopener">Sourcetree</a>，建议第三方加速，不然慢的一</li></ul><h2 id="（一）前戏"><a href="#（一）前戏" class="headerlink" title="（一）前戏"></a>（一）前戏</h2><ul><li>下载之后打开</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/97_st.png"  height="200"><ul><li>它会让你注册，你就点这个注册Bitbucket，不过上网要科学</li><li>网页上的内容就是一般的平台注册，英文阅读障碍可以用下翻译，这里不演示了</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/98_st.png"  height="300"><ul><li>就假装到这一步了</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/99_st.png"  height="300"><ul><li>会让你选插件，当然是全都要</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/100_st.png"  height="300"><ul><li>然后就是下一步下一步</li><li>应该会提醒链接你的Github账号，这时就可以链接一下</li><li>突然弹出这么一个框，因为现在还没有SSH（st专属的版本），就点否</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/101_st.png"  height="100"><ul><li>然后第一件事就是整SSH</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/102_st.png"  height="100"><ul><li>英文界面不要慌，Generate（生成）一下</li><li>然后 <code>Save public key</code> 和 <code>Save private key</code> 保存到 <code>C:/Users/user/.ssh</code> 里，格式是ppk</li><li>记得重命名不要覆盖之前已经有的密钥</li><li>如果完事后没反应可以加个载（Load）</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/103_st.png"  height="400"><ul><li>然后进入选项</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/102_st.png"  height="100"><ul><li>Theme（主题）可以换成黑的（护眼）</li><li>还可以检查一下SSH有没有配置好</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/104_st.png"  height="400"><ul><li>换到Git选项卡，把底下的 <code>启用强制推送</code> 开起来</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/105_st.png"  height="400"><ul><li>芜湖，配置成功</li></ul><h2 id="（二）怎么用"><a href="#（二）怎么用" class="headerlink" title="（二）怎么用"></a>（二）怎么用</h2><h3 id="如何高效导入Unity工程"><a href="#如何高效导入Unity工程" class="headerlink" title="如何高效导入Unity工程"></a>如何高效导入Unity工程</h3><ul><li>现场来做个示范吧</li><li>比如说一个Unity工程的步骤存档</li><li>先在Github上弄一个仓库，网慢修改Host（无情）</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/106_st.png"  height="450"><ul><li>这里复制仓库地址（经典操作）</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/107_st.png"  height="200"><ul><li>点击标签页的加号，再点克隆（Clone）</li><li>填入仓库地址，本地文件位置，本地仓库文件夹名</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/108_st.png"  height="450"><ul><li>打开慈祥的Unity，在本地仓库里新建工程</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/109_st.png"  height="350"><ul><li>这时Sourcetree躁动不安</li><li>骚粉和紫色就是<strong>无效区</strong>和<strong>暂存区</strong>，无效区包含<strong>Git未托管的文件</strong>以及各种各样的<strong>修改了的文件</strong>，文件需要暂存了之后再来保存成版本</li><li>青色是版本提交区，可以写一些版本描述</li><li>绿色是检视面板，<code>分支</code> 是本地的分支，<code>远程</code> 是服务器的分支</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/110_st.png"  height="450"><ul><li>点击暂存所有，文件就都跑到暂存区了（报红就关一下Unity再暂存，当然也可以不关）</li><li>作为工程的起始，保存成 <code>版本初始化</code> ，好了提交</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/111_st.png"  height="450"><ul><li>本地存档了，但万一本地坏了，就应该去奢求上传服务器远程</li><li>点击上头的推送</li><li>这个意思是将本地 <code>main</code> 分支下的存档投递到服务器Github上的 <code>main</code> 分支</li><li>如果远程与本地有出入，本地想覆盖远程，可以勾选强制推送</li><li>由于Unity空工程有个50M，初始化需要投递一定的时间（1分钟）</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/112_st.png"  height="250"><ul><li>切换检视面板到 <code>History</code> ，查看历史版本</li><li>发现在刚创建的初始版本之前，Git还创建了个版本，不用管它</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/113_st.png"  height="450"><ul><li>如果创建版本感觉后悔，可以选择追加修改（仅最后提交的版本）</li><li>这里我加入了DoTween插件</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/114_st.png"  height="250"><ul><li><p>切换到文件状态视图，暂存，一条龙</p></li><li><p>选择 <code>修改最后一次提交</code> ，在弹出框里选是，再提交，再推送（要强制推送）</p></li><li><p>这样就修改了刚提交的分支</p></li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/115_st.png"  height="450"><ul><li>但是我突然发现Unity里文件一大堆，主要是配置文件，如果Unity版本不一致会出很多Bug，所以Unity工程需要多余的配置</li><li>所以删掉我们刚才的版本存档，我们重新来过（不要真去删文件啊）</li><li>右键原始版本 <code>Initial commit</code> 撤回分支，再强制提交</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/116_st.png"  height="250"><ul><li>回到文件状态视图，发现Git并没有删除原工程，只是将暂存退回了</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/117_st.png"  height="450"><ul><li>这里在网上（gitee）找到一个 <code>Git忽略</code> 文件，用来控制Unity忽略什么类型的文件</li></ul><pre><code>[Ll]ibrary/[Tt]emp/[Oo]bj/[Bb]uild/[Bb]uilds/[Ll]ogs/# Uncomment this line if you wish to ignore the asset store tools plugin# [Aa]ssets/AssetStoreTools*# Visual Studio cache directory.vs/# Gradle cache directory.gradle/# Autogenerated VS/MD/Consulo solution and project filesExportedObj/.consulo/*.csproj*.unityproj*.sln*.suo*.tmp*.user*.userprefs*.pidb*.booproj*.svd*.pdb*.mdb*.opendb*.VC.db# Unity3D generated meta files*.pidb.meta*.pdb.meta*.mdb.meta# Unity3D generated file on crash reportssysinfo.txt# Builds*.apk*.unitypackage# Crashlytics generated filecrashlytics-build.properties</code></pre><ul><li><p>把它保存成 <code>.gitignore</code> ，删除文件拓展名，对，它就叫这个</p><ul><li>这个文件也可以自定义，比如：</li><li><code>*.psd</code> 指所有psd不予暂存</li><li><code>test.*</code> 指所有叫test的文件不予暂存</li><li><code>test.psd</code> 指这个文件不予暂存</li></ul></li><li><p>保存到仓库根目录</p></li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/118_st.png"  height="250"><ul><li>选择这个忽略文件，暂存所选，单独为这个文件保存成一个版本，推送远程</li><li>再来暂存Unity工程，保存成版本，推送远程</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/119_st.png"  height="450"><ul><li>前往Github，来下载这个分支，发现这个文件贼他马小，说明它不包含Unity本地的配置信息</li><li>小到1M，压缩后300K，难以置信</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/120_st.png"  height="350"><ul><li><p>我不相信这个上传的文件是不是正常文件，事实胜于雄辩，版本需要检验</p></li><li><p>于是我重新克隆了一下服务器到本地，重新打开Unity</p></li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/121_st.png"  height="250"><ul><li>草了，东西一分不少</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/114_st.png"  height="250"><ul><li>回想一下，如果没有忽略文件，上传的Unity空工程将高达50M</li></ul><h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><ul><li><p>回到原来的仓库，顺便把测试用的仓库删掉（无情）</p></li><li><p>随便加点东西（一直转的立方体）</p></li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/122_st.png"  height="550"><ul><li><p>保存，暂存，版本（想必也会了）</p></li><li><p>这里多做了几个版本，不展示了</p></li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/123_st.png"  height="250"><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/124_st.png"  height="250"><ul><li>来介绍一下这是什么意思</li><li>正如图谱所示，这个仓库的版本是直线式的，没有分支</li><li>如果做到版本5，也就是上材质这一步，开始做出不一样的变化，就需要使用分支</li><li>我们从版本4支出两个分支，一个橙色材质，一个蓝色材质</li><li><strong>因为本地Main分支呆在版本5上，如果我回退到版本4，版本5就将会被移除，就必须得用gitbush指令才能调出来，所以，在版本5创建一个分支，用来“钉固”版本5的存档</strong>（这句话很重要）</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/125_st.png"  height="250"><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/126_st.png"  height="200"><ul><li>可以发现，版本5上停了两个分支（可以比作图钉）</li><li>双击左边检视面板的分支1，确保当前位置在分支1而不是main上</li><li>可以猜到，版本1上的两个origin是服务器上的分支，因为我们还没有推送上去</li><li>右键版本4，重置分支1的位置</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/128_st.png"  height="270"><ul><li>修改Unity，将材质调成蓝的</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/127_st.png"  height="250"><ul><li>暂存，保存成版本6</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/129_st.png"  height="200"><ul><li><p>这样就一目了然了</p></li><li><p>Git遵循这些定理：</p><ul><li><strong>如果存档是直线式的，必须保证最后版本上至少有一个分支</strong></li><li><strong>如果存档是叉树式的，必须保证该叉树上的最后版本上至少有一个分支</strong></li><li><strong>开辟叉树的时候一定要新建一个分支，用来保护这个叉树</strong></li></ul></li><li><p>双击左边检视面板的某个分支，Unity会自动跳转到分支下的版本的样子</p></li><li><p>问题又来了，我只想查看每个版本里的文件，不想建那么多复杂的分支怎么办</p></li><li><p>可以在想要跳转的版本那里右键，检出</p></li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/130_st.png"  height="150"><ul><li>会提示一个信息，意思是：你<strong>只能停留在分支上</strong>，而检出时会创建一个叫 <code>HEAD</code> 的标签，来替代停留的分支，如果再双击左边检视面板的某个分支，你就会跳到分支上，<code>HEAD</code> 就<strong>会被移除</strong> </li><li>它的提示里有一句话很重要：“<strong>除非你后面创建一个新分支</strong>”，提示了<strong>如果检出，想要在检出上发展新版本，就必须要新建个分支来保存这个版本</strong></li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/131_st.png"  height="250"><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/132_st.png"  height="200"><ul><li>因为Git控制了工程版本，Unity也会做出反映，要你重新加载（现在在版本3）</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/133_st.png"  height="200"><ul><li>新建分支2来保存</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/134_st.png"  height="225"><h3 id="合并"><a href="#合并" class="headerlink" title="合并"></a>合并</h3><ul><li>这里还有一个合并的功能，但是在这里不太顶用，但是在修改文本文件时还算可以</li><li>双击main分支，点合并，这里选择与版本7合并</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/135_st.png"  height="550"><ul><li>它一定会提示你发生冲突，没有冲突的情况特别少</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/136_st.png"  height="225"><ul><li>点击未暂存文件夹，右边就可以看见冲突代码</li><li>如果单说是脚本修改的话，那还好说，因为它用这种方法来表示冲突：</li></ul><pre><code> + &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD 目前所在分支的代码 + ======= 要与之合并的分支的代码 + &gt;&gt;&gt;&gt;&gt;&gt;&gt; 要合并的分支名</code></pre><ul><li>只留下需要的代码，这些等号和尖括号什么都要删掉（好他马奇怪）</li><li>（如果不想要这些合并纠错，可以点顶上的丢弃）</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/137_st.png"  height="550"><ul><li>于是我把等号和尖括号都删掉了</li><li>而且事实证明，在vscode里这种东西更好修改（但是vscode没有很图形化的git表达）<ul><li>比如说要保留某一方的修改或者保留双方时，按个键就行了（这才是可视化）</li><li>所以推荐这个vscode（vscode天下第一！）</li></ul></li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/138_st.png"  height="150"><ul><li>这时我们提交以下这个合并，让这个合并保存成一个新版本</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/139_st.png"  height="225"><ul><li>很明显，左边的图谱很直白了，版本3和版本7合并了</li><li>但是Unity报错了，说明这种场景文件的冲突不要乱合并，因为这种代码不是给人看的，所以<strong>要避免这种非代码的合并</strong> （但Unity里至少有些效果）</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/140_st.png"  height="500"><ul><li>回退这个合并的气人版本，再丢弃合并信息</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/141_st.png"  height="250"><ul><li>最后我们再推送上去（分支要一个一个推）</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/142_st.png"  height="250"><ul><li>就是这么用的</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/143_st.png"  height="200">]]></content>
+        <content type="html"><![CDATA[<h1 id="Git操作步骤图解-Sourcetree"><a href="#Git操作步骤图解-Sourcetree" class="headerlink" title="Git操作步骤图解_Sourcetree"></a>Git操作步骤图解_Sourcetree</h1><ul><li>自从被GitKraken的免费7天骗了之后，我突然觉得Sourcetree应该挺香的</li><li>先去下一个<a href="https://product-downloads.atlassian.com/software/sourcetree/ga/Sourcetree_4.0.2_236.zip" target="_blank" rel="noopener">Sourcetree</a>，建议第三方加速，不然慢的一</li></ul><h2 id="（一）前戏"><a href="#（一）前戏" class="headerlink" title="（一）前戏"></a>（一）前戏</h2><ul><li>下载之后打开</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/97_st.png"  height="200"><ul><li>它会让你注册，你就点这个注册Bitbucket，不过上网要科学</li><li>网页上的内容就是一般的平台注册，英文阅读障碍可以用下翻译，这里不演示了</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/98_st.png"  height="300"><ul><li>就假装到这一步了</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/99_st.png"  height="300"><ul><li>会让你选插件，当然是全都要</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/100_st.png"  height="300"><ul><li>然后就是下一步下一步</li><li>应该会提醒链接你的Github账号，这时就可以链接一下</li><li>突然弹出这么一个框，因为现在还没有SSH（st专属的版本），就点否</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/101_st.png"  height="100"><ul><li>然后第一件事就是整SSH</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/102_st.png"  height="100"><ul><li>英文界面不要慌，Generate（生成）一下</li><li>然后 <code>Save public key</code> 和 <code>Save private key</code> 保存到 <code>C:/Users/user/.ssh</code> 里，格式是ppk</li><li>记得重命名不要覆盖之前已经有的密钥</li><li>如果完事后没反应可以加个载（Load）</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/103_st.png"  height="400"><ul><li>然后进入选项</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/102_st.png"  height="100"><ul><li>Theme（主题）可以换成黑的（护眼）</li><li>还可以检查一下SSH有没有配置好</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/104_st.png"  height="400"><ul><li>换到Git选项卡，把底下的 <code>启用强制推送</code> 开起来</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/105_st.png"  height="400"><ul><li>芜湖，配置成功</li></ul><h2 id="（二）怎么用"><a href="#（二）怎么用" class="headerlink" title="（二）怎么用"></a>（二）怎么用</h2><h3 id="如何高效导入Unity工程"><a href="#如何高效导入Unity工程" class="headerlink" title="如何高效导入Unity工程"></a>如何高效导入Unity工程</h3><ul><li>现场来做个示范吧</li><li>比如说一个Unity工程的步骤存档</li><li>先在Github上弄一个仓库，网慢修改Host（无情）</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/106_st.png"  height="450"><ul><li>这里复制仓库地址（经典操作）</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/107_st.png"  height="200"><ul><li>点击标签页的加号，再点克隆（Clone）</li><li>填入仓库地址，本地文件位置，本地仓库文件夹名</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/108_st.png"  height="450"><ul><li>打开慈祥的Unity，在本地仓库里新建工程</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/109_st.png"  height="350"><ul><li>这时Sourcetree躁动不安</li><li>骚粉和紫色就是<strong>无效区</strong>和<strong>暂存区</strong>，无效区包含<strong>Git未托管的文件</strong>以及各种各样的<strong>修改了的文件</strong>，文件需要暂存了之后再来保存成版本</li><li>青色是版本提交区，可以写一些版本描述</li><li>绿色是检视面板，<code>分支</code> 是本地的分支，<code>远程</code> 是服务器的分支</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/110_st.png"  height="450"><ul><li>点击暂存所有，文件就都跑到暂存区了（报红就关一下Unity再暂存，当然也可以不关）</li><li>作为工程的起始，保存成 <code>版本初始化</code> ，好了提交</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/111_st.png"  height="450"><ul><li>本地存档了，但万一本地坏了，就应该去奢求上传服务器远程</li><li>点击上头的推送</li><li>这个意思是将本地 <code>main</code> 分支下的存档投递到服务器Github上的 <code>main</code> 分支</li><li>如果远程与本地有出入，本地想覆盖远程，可以勾选强制推送</li><li>由于Unity空工程有个50M，初始化需要投递一定的时间（1分钟）</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/112_st.png"  height="250"><ul><li>切换检视面板到 <code>History</code> ，查看历史版本</li><li>发现在刚创建的初始版本之前，Git还创建了个版本，不用管它</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/113_st.png"  height="450"><ul><li>如果创建版本感觉后悔，可以选择追加修改（仅最后提交的版本）</li><li>这里我加入了DoTween插件</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/114_st.png"  height="250"><ul><li><p>切换到文件状态视图，暂存，一条龙</p></li><li><p>选择 <code>修改最后一次提交</code> ，在弹出框里选是，再提交，再推送（要强制推送）</p></li><li><p>这样就修改了刚提交的分支</p></li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/115_st.png"  height="450"><ul><li>但是我突然发现Unity里文件一大堆，主要是配置文件，如果Unity版本不一致会出很多Bug，所以Unity工程需要多余的配置</li><li>所以删掉我们刚才的版本存档，我们重新来过（不要真去删文件啊）</li><li>右键原始版本 <code>Initial commit</code> 撤回分支，再强制提交</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/116_st.png"  height="250"><ul><li>回到文件状态视图，发现Git并没有删除原工程，只是将暂存退回了</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/117_st.png"  height="450"><ul><li>这里在网上（gitee）找到一个 <code>Git忽略</code> 文件，用来控制Unity忽略什么类型的文件</li></ul><pre><code>[Ll]ibrary/[Tt]emp/[Oo]bj/[Bb]uild/[Bb]uilds/[Ll]ogs/# Uncomment this line if you wish to ignore the asset store tools plugin# [Aa]ssets/AssetStoreTools*# Visual Studio cache directory.vs/# Gradle cache directory.gradle/# Autogenerated VS/MD/Consulo solution and project filesExportedObj/.consulo/*.csproj*.unityproj*.sln*.suo*.tmp*.user*.userprefs*.pidb*.booproj*.svd*.pdb*.mdb*.opendb*.VC.db# Unity3D generated meta files*.pidb.meta*.pdb.meta*.mdb.meta# Unity3D generated file on crash reportssysinfo.txt# Builds*.apk*.unitypackage# Crashlytics generated filecrashlytics-build.properties</code></pre><ul><li><p>把它保存成 <code>.gitignore</code> ，删除文件拓展名，对，它就叫这个</p><ul><li>这个文件也可以自定义，比如：</li><li><code>*.psd</code> 指所有psd不予暂存</li><li><code>test.*</code> 指所有叫test的文件不予暂存</li><li><code>test.psd</code> 指这个文件不予暂存</li></ul></li><li><p>保存到仓库根目录</p></li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/118_st.png"  height="250"><ul><li>选择这个忽略文件，暂存所选，单独为这个文件保存成一个版本，推送远程</li><li>再来暂存Unity工程，保存成版本，推送远程</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/119_st.png"  height="450"><ul><li>前往Github，来下载这个分支，发现这个文件贼他马小，说明它不包含Unity本地的配置信息</li><li>小到1M，压缩后300K，难以置信</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/120_st.png"  height="350"><ul><li><p>我不相信这个上传的文件是不是正常文件，事实胜于雄辩，版本需要检验</p></li><li><p>于是我重新克隆了一下服务器到本地，重新打开Unity</p></li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/121_st.png"  height="250"><ul><li>草了，东西一分不少</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/114_st.png"  height="250"><ul><li>回想一下，如果没有忽略文件，上传的Unity空工程将高达50M</li></ul><h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><ul><li><p>回到原来的仓库，顺便把测试用的仓库删掉（无情）</p></li><li><p>随便加点东西（一直转的立方体）</p></li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/122_st.png"  height="550"><ul><li>保存，暂存，版本（想必也会了）</li><li>这里多做了几个版本，不展示了</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/124_st.png"  height="250"><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/123_st.png"  height="250"><ul><li>来介绍一下这是什么意思 ↑</li><li>正如图谱所示，这个仓库的版本是直线式的，没有分支</li><li>如果做到版本5，也就是上材质这一步，开始做出不一样的变化，就需要使用分支</li><li>我们从版本4支出两个分支，一个橙色材质，一个蓝色材质</li><li><strong>因为本地Main分支呆在版本5上，如果我回退到版本4，版本5就将会被移除，就必须得用gitbush指令才能调出来，所以，在版本5创建一个分支，用来“钉固”版本5的存档</strong>（这句话很重要）</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/125_st.png"  height="250"><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/126_st.png"  height="200"><ul><li>可以发现，版本5上停了两个分支（可以比作图钉）</li><li>双击左边检视面板的分支1，确保当前位置在分支1而不是main上</li><li>可以猜到，版本1上的两个origin是服务器上的分支，因为我们还没有推送上去</li><li>右键版本4，重置分支1的位置</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/128_st.png"  height="270"><ul><li>修改Unity，将材质调成蓝的</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/127_st.png"  height="250"><ul><li>暂存，保存成版本6</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/129_st.png"  height="200"><ul><li><p>这样就一目了然了</p></li><li><p>Git遵循这些定理：</p><ul><li><strong>如果存档是直线式的，必须保证最后版本上至少有一个分支</strong></li><li><strong>如果存档是叉树式的，必须保证该叉树上的最后版本上至少有一个分支</strong></li><li><strong>开辟叉树的时候一定要新建一个分支，用来保护这个叉树</strong></li></ul></li><li><p>双击左边检视面板的某个分支，Unity会自动跳转到分支下的版本的样子</p></li><li><p>问题又来了，我只想查看每个版本里的文件，不想建那么多复杂的分支怎么办</p></li><li><p>可以在想要跳转的版本那里右键，检出</p></li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/130_st.png"  height="150"><ul><li>会提示一个信息，意思是：你<strong>只能停留在分支上</strong>，而检出时会创建一个叫 <code>HEAD</code> 的标签，来替代停留的分支，如果再双击左边检视面板的某个分支，你就会跳到分支上，<code>HEAD</code> 就<strong>会被移除</strong> </li><li>它的提示里有一句话很重要：“<strong>除非你后面创建一个新分支</strong>”，提示了<strong>如果检出，想要在检出上发展新版本，就必须要新建个分支来保存这个版本</strong></li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/131_st.png"  height="250"><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/132_st.png"  height="200"><ul><li>因为Git控制了工程版本，Unity也会做出反映，要你重新加载（现在在版本3）</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/133_st.png"  height="200"><ul><li>新建分支2来保存</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/134_st.png"  height="225"><h3 id="合并"><a href="#合并" class="headerlink" title="合并"></a>合并</h3><ul><li>这里还有一个合并的功能，但是在这里不太顶用，但是在修改文本文件时还算可以</li><li>双击main分支，点合并，这里选择与版本7合并</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/135_st.png"  height="550"><ul><li>它一定会提示你发生冲突，没有冲突的情况特别少</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/136_st.png"  height="225"><ul><li>点击未暂存文件夹，右边就可以看见冲突代码</li><li>如果单说是脚本修改的话，那还好说，因为它用这种方法来表示冲突：</li></ul><pre><code> + &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD 目前所在分支的代码 + ======= 要与之合并的分支的代码 + &gt;&gt;&gt;&gt;&gt;&gt;&gt; 要合并的分支名</code></pre><ul><li>只留下需要的代码，这些等号和尖括号什么都要删掉（好他马奇怪）</li><li>（如果不想要这些合并纠错，可以点顶上的丢弃）</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/137_st.png"  height="550"><ul><li>于是我把等号和尖括号都删掉了</li><li>而且事实证明，在vscode里这种东西更好修改（但是vscode没有很图形化的git表达）<ul><li>比如说要保留某一方的修改或者保留双方时，按个键就行了（这才是可视化）</li><li>所以推荐这个vscode（vscode天下第一！）</li></ul></li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/138_st.png"  height="150"><ul><li>这时我们提交以下这个合并，让这个合并保存成一个新版本</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/139_st.png"  height="225"><ul><li>很明显，左边的图谱很直白了，版本3和版本7合并了</li><li>但是Unity报错了，说明这种场景文件的冲突不要乱合并，因为这种代码不是给人看的，所以<strong>要避免这种非代码的合并</strong> （但Unity里至少有些效果）</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/140_st.png"  height="500"><ul><li>回退这个合并的气人版本，再丢弃合并信息</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/141_st.png"  height="250"><ul><li>最后我们再推送上去（分支要一个一个推）</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/142_st.png"  height="250"><ul><li>就是这么用的</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/git_pics/143_st.png"  height="200">]]></content>
       
       
       <categories>
@@ -53,13 +53,13 @@
             
             <tag> Github </tag>
             
-            <tag> Sourcetree </tag>
-            
             <tag> 存档神器 </tag>
             
             <tag> 硬核 </tag>
             
             <tag> 多图预警 </tag>
+            
+            <tag> Sourcetree </tag>
             
         </tags>
       
@@ -88,15 +88,15 @@
             
             <tag> Github </tag>
             
+            <tag> Git_workflow </tag>
+            
+            <tag> GitKraken </tag>
+            
             <tag> 存档神器 </tag>
             
             <tag> 硬核 </tag>
             
             <tag> 多图预警 </tag>
-            
-            <tag> Git_workflow </tag>
-            
-            <tag> GitKraken </tag>
             
         </tags>
       
@@ -125,13 +125,13 @@
             
             <tag> Github </tag>
             
+            <tag> Git_workflow </tag>
+            
             <tag> 存档神器 </tag>
             
             <tag> 硬核 </tag>
             
             <tag> 多图预警 </tag>
-            
-            <tag> Git_workflow </tag>
             
         </tags>
       
@@ -189,9 +189,9 @@
             
             <tag> 文档 </tag>
             
-            <tag> 简单 </tag>
-            
             <tag> 博客 </tag>
+            
+            <tag> 简单 </tag>
             
             <tag> markdown </tag>
             
@@ -282,9 +282,9 @@
             
             <tag> 教程 </tag>
             
-            <tag> 绘图 </tag>
-            
             <tag> python </tag>
+            
+            <tag> 绘图 </tag>
             
             <tag> 长文 </tag>
             
@@ -315,11 +315,11 @@
             
             <tag> 指南 </tag>
             
+            <tag> python </tag>
+            
             <tag> 小海龟 </tag>
             
             <tag> 绘图 </tag>
-            
-            <tag> python </tag>
             
             <tag> 幼儿编程 </tag>
             
@@ -348,11 +348,11 @@
             
             <tag> 硬核 </tag>
             
-            <tag> python </tag>
-            
             <tag> 入门 </tag>
             
             <tag> 工具 </tag>
+            
+            <tag> python </tag>
             
             <tag> Numpy </tag>
             
@@ -379,9 +379,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 工具 </tag>
+            
+            <tag> python </tag>
             
             <tag> 模板 </tag>
             
@@ -418,9 +418,9 @@
             
             <tag> 硬核 </tag>
             
-            <tag> python </tag>
-            
             <tag> 工具 </tag>
+            
+            <tag> python </tag>
             
             <tag> 模板 </tag>
             
@@ -451,9 +451,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 工具 </tag>
+            
+            <tag> python </tag>
             
             <tag> 基础 </tag>
             
@@ -763,9 +763,9 @@
       
         <tags>
             
-            <tag> 博客 </tag>
-            
             <tag> 教程 </tag>
+            
+            <tag> 博客 </tag>
             
             <tag> hexo </tag>
             
