@@ -187,11 +187,11 @@
       
         <tags>
             
+            <tag> 博客 </tag>
+            
             <tag> 文档 </tag>
             
             <tag> 简单 </tag>
-            
-            <tag> 博客 </tag>
             
             <tag> markdown </tag>
             
@@ -282,9 +282,9 @@
             
             <tag> 教程 </tag>
             
-            <tag> 绘图 </tag>
-            
             <tag> python </tag>
+            
+            <tag> 绘图 </tag>
             
             <tag> 长文 </tag>
             
@@ -315,11 +315,11 @@
             
             <tag> 指南 </tag>
             
+            <tag> python </tag>
+            
             <tag> 小海龟 </tag>
             
             <tag> 绘图 </tag>
-            
-            <tag> python </tag>
             
             <tag> 幼儿编程 </tag>
             
@@ -348,11 +348,11 @@
             
             <tag> 硬核 </tag>
             
-            <tag> python </tag>
-            
             <tag> 入门 </tag>
             
             <tag> 工具 </tag>
+            
+            <tag> python </tag>
             
             <tag> Numpy </tag>
             
@@ -379,9 +379,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 工具 </tag>
+            
+            <tag> python </tag>
             
             <tag> 模板 </tag>
             
@@ -418,9 +418,9 @@
             
             <tag> 硬核 </tag>
             
-            <tag> python </tag>
-            
             <tag> 工具 </tag>
+            
+            <tag> python </tag>
             
             <tag> 模板 </tag>
             
@@ -451,9 +451,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 工具 </tag>
+            
+            <tag> python </tag>
             
             <tag> 基础 </tag>
             
@@ -491,6 +491,35 @@
             <tag> pip </tag>
             
             <tag> anaconda </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Minecraft如何开纯净服</title>
+      <link href="2020/08/15/Minecraft%E5%A6%82%E4%BD%95%E5%BC%80%E7%BA%AF%E5%87%80%E6%9C%8D/"/>
+      <url>2020/08/15/Minecraft%E5%A6%82%E4%BD%95%E5%BC%80%E7%BA%AF%E5%87%80%E6%9C%8D/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Minecraft如何开纯净服"><a href="#Minecraft如何开纯净服" class="headerlink" title="Minecraft如何开纯净服"></a>Minecraft如何开纯净服</h1><ul><li><p>纯净服就是没有模组，模组的设置比较复杂，下次再讲</p></li><li><p>点<a href="http://mcsm.suwings.top/" target="_blank" rel="noopener">此</a>访问MCSM官网，下载 <code>windows整合版</code> 服务器管理器，解压MCSM</p></li><li><p><code>运行.bat</code> ——&gt; 显示 <code>控制面板已经启动</code> 时，访问 <code>http://127.0.0.1:23333/</code> </p></li><li><p>输入默认账号 <code>#master</code>，默认密码 <code>123456</code> ，进入网页管理器</p></li><li><p>点 <code>服务端管理</code> ——&gt;  <code>创建新实例应用</code> ——&gt; <code>引导创建</code> ——&gt;  </p><ul><li><code>服务器名称</code> </li><li><code>服务器本地地址</code> </li><li>下好服务器本体文件：<a href="https://www.minecraft.net/en-us/download/server/" target="_blank" rel="noopener">官网最新版</a> <a href="https://img-61.oss-cn-shanghai.aliyuncs.com/file/Minecraft/server%20-%201.12.2.jar" target="_blank" rel="noopener">版本1.12.2</a> <a href="https://img-61.oss-cn-shanghai.aliyuncs.com/file/Minecraft/server%20-%201.15.1.jar" target="_blank" rel="noopener">版本1.15.1</a> 并上传</li><li>初始内存堆256M，最大内存堆1024M（当然，如果java是64位的就可以调高）</li><li>创建成功</li></ul></li><li><p>在网页管理器查看创建好的服务器，点击 <code>管理</code> ——&gt; <code>开启服务器</code> </p></li><li><p>服务器会在5秒内关闭，这时初始化完成</p></li><li><p>在服务器文件夹里修改 <code>eula.txt</code> 文件，<code>eula=true</code> </p></li><li><p>在网页管理器查看创建好的服务器，点击 <code>管理</code> ——&gt; <code>开启服务器</code> </p></li><li><p><code>win + r</code> ——&gt; <code>cmd / k ipconfig</code> ，<code>IPv4 地址</code> 即服务器地址IP</p></li><li><p>找不到自己IP的话可以尝试<a href="https://www.natfrp.com/" target="_blank" rel="noopener">内网穿透</a>，<a href="https://search.bilibili.com/all?keyword=sakura%20frp&from_source=nav_search_new" target="_blank" rel="noopener">B站教程一大把</a></p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 游戏 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 游戏 </tag>
+            
+            <tag> 网络 </tag>
+            
+            <tag> Minecraft </tag>
             
         </tags>
       
@@ -763,9 +792,9 @@
       
         <tags>
             
-            <tag> 博客 </tag>
-            
             <tag> 教程 </tag>
+            
+            <tag> 博客 </tag>
             
             <tag> hexo </tag>
             
