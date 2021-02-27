@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>如何手工制作全景图片</title>
+      <link href="2021/02/27/Arts/%E5%A6%82%E4%BD%95%E6%89%8B%E5%B7%A5%E5%88%B6%E4%BD%9C%E5%85%A8%E6%99%AF%E5%9B%BE%E7%89%87/"/>
+      <url>2021/02/27/Arts/%E5%A6%82%E4%BD%95%E6%89%8B%E5%B7%A5%E5%88%B6%E4%BD%9C%E5%85%A8%E6%99%AF%E5%9B%BE%E7%89%87/</url>
+      
+        <content type="html"><![CDATA[<h1 id="如何手工制作全景图片"><a href="#如何手工制作全景图片" class="headerlink" title="如何手工制作全景图片"></a>如何手工制作全景图片</h1><h2 id="一：要有手"><a href="#一：要有手" class="headerlink" title="一：要有手"></a>一：要有手</h2><ul><li>你得会画图</li></ul><h2 id="二：要有工具"><a href="#二：要有工具" class="headerlink" title="二：要有工具"></a>二：要有工具</h2><ul><li>你得有画图工具PS（photoshop）</li><li>模型制作工具blender</li><li>贴图制作工具SP（substance painter）</li><li>渲染输出Unity3D</li></ul><h2 id="三：要有目标"><a href="#三：要有目标" class="headerlink" title="三：要有目标"></a>三：要有目标</h2><ul><li>最终目标是制作游戏天空盒，完成一张HDR高动态贴图</li></ul><h2 id="四：方法一：PS极坐标"><a href="#四：方法一：PS极坐标" class="headerlink" title="四：方法一：PS极坐标"></a>四：方法一：PS极坐标</h2><ul><li>原理是使用PS里的极坐标工具，将圆形拉伸成方形</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/hdr_0.png"  width="500"><ul><li>在这里我先制作两张测试图（4096 * 4096），分别为天和地</li><li>在测试图里面标明区域以及位置的标记</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/hdr_1.png"  width="300"><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/hdr_2.png"  width="300"><ul><li>在ps里面分别对这两张图做极坐标处理</li><li>选项选择 <code>极坐标到平面坐标</code> </li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/hdr_8.png"  width="300"><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/hdr_9.png"  width="300"><ul><li>处理后的图如下，圆图被拉伸成了方图</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/hdr_3.png"  width="300"><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/hdr_4.png"  width="300"><ul><li>将两张图的高度缩小为原来的四分之一，再倒着拼到一起（4096 * 2048）</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/hdr_6.png"  width="500"><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/hdr_7.png"  width="500"><ul><li>这里我将图片导出，新建ps工程，将刚刚的图片导入</li><li>设置格式为RGB32位，拼合图像</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/hdr_10.png"  width="300"><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/hdr_11.png"  width="300"><ul><li>另存为HDR格式</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/hdr_16.png"  width="500"><ul><li>这时就完成了</li><li>放在Unity里测试一下</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/hdr_12.png"  width="300"><ul><li>结果还不错，没有什么离谱的拉伸，两极也很正常</li><li><a href="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/%E6%B5%8B%E8%AF%951.hdr" target="_blank" rel="noopener">点此下载</a></li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/hdr_13.png"  width="500"><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/hdr_14.png"  width="500"><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/hdr_15.png"  width="500"><h2 id="五：方法二：SP绘制"><a href="#五：方法二：SP绘制" class="headerlink" title="五：方法二：SP绘制"></a>五：方法二：SP绘制</h2><ul><li>原理是在反法线球中绘制，在Unity中进行投射捕捉</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术美术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 全景图 </tag>
+            
+            <tag> 技术美术 </tag>
+            
+            <tag> 记录 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>透视入门</title>
       <link href="2021/02/09/Arts/%E9%80%8F%E8%A7%86%E5%85%A5%E9%97%A8/"/>
       <url>2021/02/09/Arts/%E9%80%8F%E8%A7%86%E5%85%A5%E9%97%A8/</url>
@@ -78,13 +107,13 @@
       
         <tags>
             
+            <tag> 硬核 </tag>
+            
             <tag> Git </tag>
             
             <tag> Github </tag>
             
             <tag> 存档神器 </tag>
-            
-            <tag> 硬核 </tag>
             
             <tag> 多图预警 </tag>
             
@@ -113,19 +142,19 @@
       
         <tags>
             
+            <tag> 硬核 </tag>
+            
             <tag> Git </tag>
             
             <tag> Github </tag>
             
             <tag> Git_workflow </tag>
             
+            <tag> GitKraken </tag>
+            
             <tag> 存档神器 </tag>
             
-            <tag> 硬核 </tag>
-            
             <tag> 多图预警 </tag>
-            
-            <tag> GitKraken </tag>
             
         </tags>
       
@@ -150,6 +179,8 @@
       
         <tags>
             
+            <tag> 硬核 </tag>
+            
             <tag> Git </tag>
             
             <tag> Github </tag>
@@ -157,8 +188,6 @@
             <tag> Git_workflow </tag>
             
             <tag> 存档神器 </tag>
-            
-            <tag> 硬核 </tag>
             
             <tag> 多图预警 </tag>
             
@@ -311,11 +340,11 @@
             
             <tag> 教程 </tag>
             
-            <tag> 绘图 </tag>
-            
             <tag> python </tag>
             
             <tag> 长文 </tag>
+            
+            <tag> 绘图 </tag>
             
             <tag> Opencv </tag>
             
@@ -342,13 +371,13 @@
       
         <tags>
             
+            <tag> python </tag>
+            
             <tag> 小海龟 </tag>
             
             <tag> 指南 </tag>
             
             <tag> 绘图 </tag>
-            
-            <tag> python </tag>
             
             <tag> 幼儿编程 </tag>
             
@@ -375,13 +404,13 @@
       
         <tags>
             
-            <tag> 硬核 </tag>
-            
-            <tag> python </tag>
+            <tag> 入门 </tag>
             
             <tag> 工具 </tag>
             
-            <tag> 入门 </tag>
+            <tag> 硬核 </tag>
+            
+            <tag> python </tag>
             
             <tag> Numpy </tag>
             
@@ -408,11 +437,11 @@
       
         <tags>
             
+            <tag> 工具 </tag>
+            
             <tag> python </tag>
             
             <tag> 模板 </tag>
-            
-            <tag> 工具 </tag>
             
             <tag> 统计图 </tag>
             
@@ -445,13 +474,13 @@
       
         <tags>
             
+            <tag> 工具 </tag>
+            
             <tag> 硬核 </tag>
             
             <tag> python </tag>
             
             <tag> 模板 </tag>
-            
-            <tag> 工具 </tag>
             
             <tag> 桌面应用 </tag>
             
@@ -480,9 +509,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 工具 </tag>
+            
+            <tag> python </tag>
             
             <tag> 基础 </tag>
             
@@ -513,9 +542,9 @@
       
         <tags>
             
-            <tag> 指南 </tag>
-            
             <tag> python </tag>
+            
+            <tag> 指南 </tag>
             
             <tag> pip </tag>
             
