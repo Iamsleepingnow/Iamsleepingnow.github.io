@@ -391,21 +391,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-02-27
+                    2021-02-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    321
+                    583
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 				
@@ -499,7 +499,61 @@
 
 
 <h2 id="五：方法二：SP绘制"><a href="#五：方法二：SP绘制" class="headerlink" title="五：方法二：SP绘制"></a>五：方法二：SP绘制</h2><ul>
-<li>原理是在反法线球中绘制，在Unity中进行投射捕捉</li>
+<li><p>原理是在球中绘制，在Unity中进行投射捕捉</p>
+</li>
+<li><p>第一步是制作“画布”，即一个分好UV的球（blender）</p>
+</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/hdr_17.png"  width="300">
+
+<ul>
+<li>第二步即绘制材质，天空盒材质（sp）</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/hdr_18.png"  width="500">
+
+<ul>
+<li>将球模型法线翻转，导入Unity，这里使用的是HDRP</li>
+<li>新建无光材质Unlit，赋予贴图</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/hdr_19.png"  width="300">
+
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/hdr_20.png"  width="300">
+
+<ul>
+<li>反射探针的烘焙需要所有模型设为静态，勾选Static</li>
+<li>严格意义上来说是 <code>Reflection Probe Static</code> </li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/hdr_21.png"  width="300">
+
+<ul>
+<li>再在创建的 <code>HDRP Asset</code> 配置文件里修改烘焙分辨率上限，缓存大小改为1，默认是64</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/hdr_22.png"  width="500">
+
+<ul>
+<li>新建反射探针</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/hdr_23.png"  width="300">
+
+<ul>
+<li>放在球的正中心，类型选自定义，形状选球形，开始烘焙</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/hdr_24.png"  width="700">
+
+<ul>
+<li>然后就烘焙出了一个EXR文件，与HDR类似，也是高动态贴图</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/hdr_25.png"  width="300">
+
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/how2makehdr/hdr_26.png"  width="700">
+
+<ul>
+<li>可以选择使用其他工具转换成HDR格式，但没这个需求</li>
+</ul>
+<h2 id="六：方法三：Unity摆场景"><a href="#六：方法三：Unity摆场景" class="headerlink" title="六：方法三：Unity摆场景"></a>六：方法三：Unity摆场景</h2><ul>
+<li>与方法二类似，都是使用Unity烘焙反射探针</li>
+<li>注意，需要在反射球中显示的物体都必须设置为静态</li>
+<li>这个方法我认为是最方便的，因为只在Unity里就能完成</li>
 </ul>
 
             </div>
@@ -1016,7 +1070,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">48.4k</span>&nbsp;字
+                class="white-color">48.6k</span>&nbsp;字
             
             
             
