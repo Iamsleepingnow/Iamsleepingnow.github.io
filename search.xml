@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>Unity天坑VFX</title>
+      <link href="2021/03/03/Unity/Unity%E5%A4%A9%E5%9D%91VFX/"/>
+      <url>2021/03/03/Unity/Unity%E5%A4%A9%E5%9D%91VFX/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Unity天坑VFX"><a href="#Unity天坑VFX" class="headerlink" title="Unity天坑VFX"></a>Unity天坑VFX</h1><ul><li>坑多没关系，主要是香啊</li><li>可以先看看有多<a href="https://github.com/Unity-Technologies/VisualEffectGraph-Samples" target="_blank" rel="noopener">香</a></li><li>这里是英文版的<a href="https://docs.unity3d.com/Packages/com.unity.visualeffectgraph@10.2/manual/index.html" target="_blank" rel="noopener">文档</a></li></ul><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><ul><li><code>Package Manager</code> 里下载安装 <code>High Definition RP</code> 高清管线</li><li>在弹出的 <code>Wizard</code> 里 <code>Fix All</code> ，这样就能用了</li><li>在 <code>Project</code> 窗口里新建 <code>Visual Effect</code> 文件</li><li>在 <code>Hierarchy</code> 窗口里新建 <code>Visual Effect</code> 物体，将文件附上去</li><li>双击VFX的文件，打开VFX窗口</li><li>编译的按钮在VFX窗口左上角 <code>Compile</code> ，<code>Auto</code> 按钮开启自动编译</li><li>保存是 <code>ctrl + S</code></li></ul><h2 id="程序结构"><a href="#程序结构" class="headerlink" title="程序结构"></a>程序结构</h2><ul><li><code>VFX（VisualEffectGraph）</code> 是节点式的，就像 <code>ShaderGraph</code> 一样，使用前需要知道世界的本原</li><li>和 <code>ShaderGraph</code> 不同，世界信号是自上向下传输的</li><li>世界是由 <code>内容块Context</code> 构成的，内容块分为两种： <code>绿块（命令块）</code> 和 <code>橙块（执行块）</code> （蓝块无法链接）</li><li>绿线接绿口，橙线接橙口</li><li>一个健康的粒子需要由以下结构构成<ul><li><code>生成块Spawn（绿）</code></li><li><code>初始化块Initialize Particle（绿转橙）</code></li><li><code>更新块Update Particle（橙）</code></li><li><code>渲染块Output Particle（橙）</code></li></ul></li><li>一个 <code>初始化块</code> 链接一个 <code>更新块</code> 能够构成一个 <code>系统</code> ，并生成一个虚线框来套在系统上，可以命名</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_1.png" width=350><ul><li>上面这个粒子是没有任何效果的，因为只搭好了结构，里面内饰还没有</li><li>右键这些内容块内部，创建一些子节点，这些子节点是树状的</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_2.png" width=350><ul><li>加一点节点，就像这样</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_3.png" width=350><ul><li><p>所以，正如同老版本粒子系统一样，粒子的基本运动是需要<strong>条件</strong>的：</p><ul><li><strong>发射量</strong>【生成块】</li><li><strong>生命周期</strong>【初始化块】</li><li><strong>速度</strong>【初始化块或更新块】</li><li><strong>渲染方法</strong>【渲染块】</li></ul></li><li><p>这个效果是很多直线上升的点点</p></li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_4.png" width=250><h2 id="搜索节点"><a href="#搜索节点" class="headerlink" title="搜索节点"></a>搜索节点</h2><ul><li>在寻找节点时需要输入内容搜索，因为找的话很麻烦</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_5.png" width=350><ul><li><p>但这么多的节点其实时有规律的，第一个词多半是这些：</p><ul><li>Add【添加，在原有属性的基础上添加】</li><li>Set【设置，替换原有属性或属性初始化】</li><li>Blend【混合，与原有混合】</li><li>Inherit【继承，延续父类粒子】</li><li>Multiply【相乘，在原有属性的基础上相乘】</li><li>Position【空间，在一个区块内计算】</li><li>Orient【旋转，仅渲染块】</li></ul></li><li><p>特性词也有这些：</p><ul><li>Curve【曲线映射】</li><li>Map【映射计算】</li><li>Random【随机计算】</li><li>Collide【碰撞，仅更新块】</li><li>Force【力场，仅更新块】</li><li>Kill【消隐区间，区域内粒子清除】</li></ul></li></ul><h2 id="属性类子节点"><a href="#属性类子节点" class="headerlink" title="属性类子节点"></a>属性类子节点</h2><ul><li>搜索词太多了，在里面搜索不是什么好主意</li><li>不过，在点击某一个子节点时， <code>Inspector</code> 面板会显示它的所有信息</li><li>也就是说，所有关于<strong>属性修改</strong>的节点都可以由调整Inspector面板来调出</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_6.png" width=350><ul><li>它拥有四个下拉菜单：<ul><li><code>Attribute</code> 是要调整的属性种类，实在太多了</li><li><code>Composition</code> 是调整方法，有<strong>重载</strong>、<strong>添加</strong>、<strong>相乘</strong>、<strong>混合</strong>四种</li><li><code>Source</code> 是数值类型，有<strong>具体数值</strong>和<strong>继承</strong>两种</li><li><code>Random</code> 是随机方法，有<strong>关闭随机</strong>、<strong>组件范围</strong>、<strong>全局范围</strong>三种</li></ul></li></ul><h2 id="注意项"><a href="#注意项" class="headerlink" title="注意项"></a>注意项</h2><ul><li>有一些很重要的内容不成体系，但是不知道也不行</li></ul><h3 id="坐标系"><a href="#坐标系" class="headerlink" title="坐标系"></a>坐标系</h3><ul><li>粒子是有 <code>世界空间world</code> 和 <code>本地空间local</code> 的，默认是本地空间</li><li>在本地空间模式下，粒子物体的移动受本地影响，反之不受影响</li><li>点击<strong>任何橙色内容块</strong>右上角来修改全局空间</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_7.png" width=350><h3 id="空间暴露"><a href="#空间暴露" class="headerlink" title="空间暴露"></a>空间暴露</h3><ul><li>有一些跟<strong>坐标相关</strong>的数值会显示一个空间符号，默认是 <code>L</code> ，点击成 <code>W</code></li><li>就能在 <code>Scene场景</code> 里动态修改，这样就不需要锻炼抽象思维了</li><li>如果点击了没反应，说明编辑器UI出bug了，重新打开一遍VFX窗口即可</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_8.png" width=350><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_9.png" width=350><h3 id="粒子边界"><a href="#粒子边界" class="headerlink" title="粒子边界"></a>粒子边界</h3><ul><li>这个东西非常重要，每个粒子的初始化块里都有粒子边界设置</li><li>当<strong>屏幕视角</strong>移出粒子边界之后，粒子就<strong>直接不显示</strong>了，非常的突兀</li><li>所以在弄粒子时，粒子边界需要经常去调</li><li>所以暴露一下坐标（指 <code>W</code> ）</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_10.png" width=350><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_11.png" width=350><h3 id="发射数量"><a href="#发射数量" class="headerlink" title="发射数量"></a>发射数量</h3><ul><li><code>生成块Spawn</code> 中修改的发射数量是一秒内发射个数，是<strong>速度</strong></li><li><code>初始化块Initialize Particle</code> 中修改的发射数量是最大可显示数量，是<strong>最大数量</strong></li><li>我使用三个粒子来解释<strong>粒子寿命</strong>，<strong>粒子速度</strong>，<strong>最大数量</strong>之间的关系</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_12.png" width=350><ul><li>当<strong>粒子寿命</strong>为1秒时，<strong>速度</strong>为10时，<strong>最大数量</strong>如果为5，粒子0.1秒发射一个，吐5下停5下</li><li>当<strong>粒子寿命</strong>为1秒时，<strong>速度</strong>为5时，<strong>最大数量</strong>如果为10，粒子0.2秒发射一个，持续发射</li><li>当<strong>粒子寿命</strong>为0.5秒时，<strong>速度</strong>为10时，<strong>最大数量</strong>如果为5，粒子0.1秒发射一个，持续发射</li></ul><h2 id="事件入门"><a href="#事件入门" class="headerlink" title="事件入门"></a>事件入门</h2><ul><li><p>有一个内容块比较特殊： <code>Event事件（绿）</code> 内容块</p></li><li><p>只有一个字符串属性： <code>Event Name</code> ，这里是和代码沟通的属性</p></li><li><p>实现一个小交互：左键播放，右键停止</p></li><li><p>首先需要有一个健康的粒子，至少能看到粒子发射</p></li><li><p>然后链接 <code>Spawn</code>  ，修改 <code>Event Name</code></p></li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_13.png" width=650><ul><li>整一个脚本挂在粒子物体上即可</li></ul><pre class=" language-c#"><code class="language-c#">using System.Collections;using System.Collections.Generic;using UnityEngine;using UnityEngine.VFX;//引用命名空间public class VisualEffectTest1 : MonoBehaviour{    private VisualEffect visualEffect;//这里是粒子本体    void Start()    {        visualEffect = GetComponent<VisualEffect>();//获得粒子本体        visualEffect.Stop();//一开始保证粒子停止播放    }    void Update()    {        if (Input.GetMouseButtonDown(0))//左键        {            visualEffect.SendEvent("OnPlay");//传递事件信号        }        if (Input.GetMouseButtonDown(1))//右键        {            visualEffect.SendEvent("OnStop");//传递事件信号        }    }}</code></pre><h2 id="渲染内容块"><a href="#渲染内容块" class="headerlink" title="渲染内容块"></a>渲染内容块</h2><ul><li>VFX里提供了很多渲染块：（甚至展示不全）</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_14.png" width=350><ul><li>在渲染块中，除了属性种类之外，还可以添加一些特殊效果：<ul><li><code>Camera Fade</code> 摄像机靠近自动消隐</li><li><code>Face Camera Plane</code> 始终面向摄像机</li><li><code>Subpixel Anti-Aliasing</code> 粒子抗锯齿</li><li><code>Screen Space Size</code> 始终保持视野大小（参见Superliminal游戏）</li><li><code>Tile/Wrap Positions</code> 越界粒子折返出现</li></ul></li><li>渲染块右键 <code>Convert Output</code> 可以更改渲染块类型</li></ul><h2 id="内容块外节点"><a href="#内容块外节点" class="headerlink" title="内容块外节点"></a>内容块外节点</h2><ul><li>在内容块以外右键创建节点，会是这样：</li><li><code>Context</code> 里就是<strong>内容块</strong>，带颜色（绿和黄）的那种</li><li><code>Operator</code> 即<strong>操纵器</strong>，几乎所有的数值计算方法</li><li><code>Property</code> 即<strong>自定义属性</strong>，<code>blackboard</code> 悬浮面板里新建的所有数值</li><li><code>System</code> 即内置的粒子<strong>模板</strong>，很方便</li><li><code>Misc</code> <strong>杂项</strong>里有分组器，能把一些节点放进去分类</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_15.png" width=350><h3 id="操纵器"><a href="#操纵器" class="headerlink" title="操纵器"></a>操纵器</h3><ul><li><code>Attribute</code> 即当前的<strong>总输出属性值</strong></li><li><code>Bitwise</code> 即<strong>按位运算</strong>，用的较少</li><li><code>BuiltIn</code> 即<strong>内建属性</strong>，有世界物体空间的转换以及一些系统的公有属性</li><li><code>Color</code> 即<strong>色彩模型转换</strong></li><li><code>Inline</code> 即<strong>内联属性</strong>，所有数据类型的形状都在这</li><li><code>Logic</code> 即<strong>逻辑运算</strong></li><li><code>Math</code> 即<strong>数学运算</strong>，只有你想不到的，没有我数学做不到的</li><li><code>Noise</code> 即<strong>噪音生成器</strong>，有14种</li><li><code>Random</code> 即<strong>随机生成器</strong></li><li><code>Sampling</code> 即<strong>采样</strong>，包含曲线、渐变、贴图的采样</li><li><code>Subgraph Operator</code> 即<strong>块中块</strong>，块中块得在 <code>Project</code> 里创建</li><li><code>Time</code> 即<strong>时间</strong>，时间建议直接搜索，更全面</li><li><code>Utility</code> 即<strong>实用工具</strong>，里面有点缓存加载器</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_16.png" width=350><h2 id="GPU事件"><a href="#GPU事件" class="headerlink" title="GPU事件"></a>GPU事件</h2><ul><li>在做GPU事件之前，先得勾选这个：</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_17.png" width=550><ul><li>勾选拓展包之后，有两个变化：<ul><li><code>Context</code> 中出现 <code>GPUEvent</code> 内容块</li><li><code>更新块Update Particle</code> 中能搜索 <code>Event</code> 了</li></ul></li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_18.png" width=350><ul><li><p>使用GPU事件可以让粒子按照时间流程来套娃</p></li><li><p>GPU事件块只能放在<strong>更新块</strong>内</p></li><li><p>拥有三种事件类型：</p><ul><li><code>Trigger Event Always</code> 始终触发</li><li><code>Trigger Event On Die</code> 销毁时触发</li><li><code>Trigger Event Rate</code> 按速率触发，其中：<ul><li><code>Over Time</code> 指每秒触发次数</li><li><code>Over Distance</code> 指粒子运动距离每超过一米之间的触发次数</li></ul></li></ul></li><li><p>在这种粒子套娃的情况下，新的粒子也许会继承之前的粒子的属性，这时可以使用 <code>Inherit</code></p></li><li><p>套娃的其他操作与之前类似</p></li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_19.png" width=750><h2 id="拉丝模式"><a href="#拉丝模式" class="headerlink" title="拉丝模式"></a>拉丝模式</h2><ul><li>选择 <code>初始化块Initialize Particle（绿转橙）</code> 内容块， <code>Inspector</code> 面板里能选择一个选项： <code>Data Type</code> </li><li>将 <code>Data Type</code> 转换为 <code>Particle Strip</code> ，便开启了拉丝模式</li><li><code>初始化块Initialize Particle（绿转橙）</code> 变成了 <code>初始化块Initialize Particle Strip（绿转淡橙）</code> </li><li>初始化块链接的更新块也变成了独特的更新块</li><li>渲染块要选择独特的拉丝渲染块</li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_20.png" width=350><ul><li>可以加一些独特的效果，相当于普通粒子效果里的<strong>拖尾</strong></li></ul><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_21.png" width=750><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul><li>比普通粒子效果要难入门，难度可能凌驾于 <code>ShaderGraph</code> 之上</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Unity </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Unity </tag>
+            
+            <tag> VFX </tag>
+            
+            <tag> Visual Effect Graph </tag>
+            
+            <tag> 受苦 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>如何手工制作全景图片</title>
       <link href="2021/02/27/Arts/%E5%A6%82%E4%BD%95%E6%89%8B%E5%B7%A5%E5%88%B6%E4%BD%9C%E5%85%A8%E6%99%AF%E5%9B%BE%E7%89%87/"/>
       <url>2021/02/27/Arts/%E5%A6%82%E4%BD%95%E6%89%8B%E5%B7%A5%E5%88%B6%E4%BD%9C%E5%85%A8%E6%99%AF%E5%9B%BE%E7%89%87/</url>
@@ -148,13 +179,13 @@
             
             <tag> Git_workflow </tag>
             
-            <tag> GitKraken </tag>
-            
             <tag> 存档神器 </tag>
             
             <tag> 硬核 </tag>
             
             <tag> 多图预警 </tag>
+            
+            <tag> GitKraken </tag>
             
         </tags>
       
@@ -245,9 +276,9 @@
       
         <tags>
             
-            <tag> 文档 </tag>
-            
             <tag> 博客 </tag>
+            
+            <tag> 文档 </tag>
             
             <tag> 简单 </tag>
             
@@ -278,11 +309,11 @@
       
         <tags>
             
+            <tag> 受苦 </tag>
+            
             <tag> 指南 </tag>
             
             <tag> blender </tag>
-            
-            <tag> 受苦 </tag>
             
             <tag> 插件 </tag>
             
@@ -309,11 +340,11 @@
       
         <tags>
             
+            <tag> 受苦 </tag>
+            
             <tag> 指南 </tag>
             
             <tag> blender </tag>
-            
-            <tag> 受苦 </tag>
             
         </tags>
       
@@ -340,9 +371,9 @@
             
             <tag> 教程 </tag>
             
-            <tag> 长文 </tag>
-            
             <tag> python </tag>
+            
+            <tag> 长文 </tag>
             
             <tag> 绘图 </tag>
             
@@ -371,9 +402,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 指南 </tag>
+            
+            <tag> python </tag>
             
             <tag> 小海龟 </tag>
             
@@ -404,11 +435,11 @@
       
         <tags>
             
-            <tag> python </tag>
+            <tag> 硬核 </tag>
             
             <tag> 工具 </tag>
             
-            <tag> 硬核 </tag>
+            <tag> python </tag>
             
             <tag> 入门 </tag>
             
@@ -437,17 +468,17 @@
       
         <tags>
             
-            <tag> python </tag>
+            <tag> 模板 </tag>
             
             <tag> 工具 </tag>
-            
-            <tag> 模板 </tag>
             
             <tag> 统计图 </tag>
             
             <tag> 数据可视化 </tag>
             
             <tag> 烂文 </tag>
+            
+            <tag> python </tag>
             
             <tag> Matplotlib </tag>
             
@@ -474,13 +505,13 @@
       
         <tags>
             
-            <tag> python </tag>
-            
-            <tag> 工具 </tag>
-            
             <tag> 硬核 </tag>
             
             <tag> 模板 </tag>
+            
+            <tag> 工具 </tag>
+            
+            <tag> python </tag>
             
             <tag> 桌面应用 </tag>
             
@@ -509,13 +540,13 @@
       
         <tags>
             
-            <tag> 基础 </tag>
-            
-            <tag> 长文 </tag>
+            <tag> 工具 </tag>
             
             <tag> python </tag>
             
-            <tag> 工具 </tag>
+            <tag> 基础 </tag>
+            
+            <tag> 长文 </tag>
             
             <tag> 良心 </tag>
             
@@ -542,9 +573,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 指南 </tag>
+            
+            <tag> python </tag>
             
             <tag> pip </tag>
             

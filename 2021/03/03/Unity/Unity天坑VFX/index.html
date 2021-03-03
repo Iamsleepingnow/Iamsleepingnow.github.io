@@ -1,0 +1,1429 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Unity,VFX,Visual Effect Graph,受苦">
+    <meta name="description" content="PYW个人博客">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Unity天坑VFX | PYW个人博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">PYW个人博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>历史</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>工具</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索的关键字" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">PYW个人博客</div>
+        <div class="logo-desc">
+            
+            PYW个人博客
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			历史
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			工具
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/articleTitle/unity_giantpit.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Unity天坑VFX</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Unity/">
+                                <span class="chip bg-color">Unity</span>
+                            </a>
+                        
+                            <a href="/tags/VFX/">
+                                <span class="chip bg-color">VFX</span>
+                            </a>
+                        
+                            <a href="/tags/Visual-Effect-Graph/">
+                                <span class="chip bg-color">Visual Effect Graph</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%8F%97%E8%8B%A6/">
+                                <span class="chip bg-color">受苦</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Unity/" class="post-category">
+                                Unity
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+			
+			<div class="text-color" align=center style="font-size:large">
+				
+					<i class="far fa-square"></i> PYW
+				
+			</div>
+			
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-03-03
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-03-03
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    7 分
+                </div>
+                
+				
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Unity天坑VFX"><a href="#Unity天坑VFX" class="headerlink" title="Unity天坑VFX"></a>Unity天坑VFX</h1><ul>
+<li>坑多没关系，主要是香啊</li>
+<li>可以先看看有多<a href="https://github.com/Unity-Technologies/VisualEffectGraph-Samples" target="_blank" rel="noopener">香</a></li>
+<li>这里是英文版的<a href="https://docs.unity3d.com/Packages/com.unity.visualeffectgraph@10.2/manual/index.html" target="_blank" rel="noopener">文档</a></li>
+</ul>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><ul>
+<li><code>Package Manager</code> 里下载安装 <code>High Definition RP</code> 高清管线</li>
+<li>在弹出的 <code>Wizard</code> 里 <code>Fix All</code> ，这样就能用了</li>
+<li>在 <code>Project</code> 窗口里新建 <code>Visual Effect</code> 文件</li>
+<li>在 <code>Hierarchy</code> 窗口里新建 <code>Visual Effect</code> 物体，将文件附上去</li>
+<li>双击VFX的文件，打开VFX窗口</li>
+<li>编译的按钮在VFX窗口左上角 <code>Compile</code> ，<code>Auto</code> 按钮开启自动编译</li>
+<li>保存是 <code>ctrl + S</code></li>
+</ul>
+<h2 id="程序结构"><a href="#程序结构" class="headerlink" title="程序结构"></a>程序结构</h2><ul>
+<li><code>VFX（VisualEffectGraph）</code> 是节点式的，就像 <code>ShaderGraph</code> 一样，使用前需要知道世界的本原</li>
+<li>和 <code>ShaderGraph</code> 不同，世界信号是自上向下传输的</li>
+<li>世界是由 <code>内容块Context</code> 构成的，内容块分为两种： <code>绿块（命令块）</code> 和 <code>橙块（执行块）</code> （蓝块无法链接）</li>
+<li>绿线接绿口，橙线接橙口</li>
+<li>一个健康的粒子需要由以下结构构成<ul>
+<li><code>生成块Spawn（绿）</code></li>
+<li><code>初始化块Initialize Particle（绿转橙）</code></li>
+<li><code>更新块Update Particle（橙）</code></li>
+<li><code>渲染块Output Particle（橙）</code></li>
+</ul>
+</li>
+<li>一个 <code>初始化块</code> 链接一个 <code>更新块</code> 能够构成一个 <code>系统</code> ，并生成一个虚线框来套在系统上，可以命名</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_1.png" width=350>
+
+<ul>
+<li>上面这个粒子是没有任何效果的，因为只搭好了结构，里面内饰还没有</li>
+<li>右键这些内容块内部，创建一些子节点，这些子节点是树状的</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_2.png" width=350>
+
+<ul>
+<li>加一点节点，就像这样</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_3.png" width=350>
+
+<ul>
+<li><p>所以，正如同老版本粒子系统一样，粒子的基本运动是需要<strong>条件</strong>的：</p>
+<ul>
+<li><strong>发射量</strong>【生成块】</li>
+<li><strong>生命周期</strong>【初始化块】</li>
+<li><strong>速度</strong>【初始化块或更新块】</li>
+<li><strong>渲染方法</strong>【渲染块】</li>
+</ul>
+</li>
+<li><p>这个效果是很多直线上升的点点</p>
+</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_4.png" width=250>
+
+
+
+<h2 id="搜索节点"><a href="#搜索节点" class="headerlink" title="搜索节点"></a>搜索节点</h2><ul>
+<li>在寻找节点时需要输入内容搜索，因为找的话很麻烦</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_5.png" width=350>
+
+<ul>
+<li><p>但这么多的节点其实时有规律的，第一个词多半是这些：</p>
+<ul>
+<li>Add【添加，在原有属性的基础上添加】</li>
+<li>Set【设置，替换原有属性或属性初始化】</li>
+<li>Blend【混合，与原有混合】</li>
+<li>Inherit【继承，延续父类粒子】</li>
+<li>Multiply【相乘，在原有属性的基础上相乘】</li>
+<li>Position【空间，在一个区块内计算】</li>
+<li>Orient【旋转，仅渲染块】</li>
+</ul>
+</li>
+<li><p>特性词也有这些：</p>
+<ul>
+<li>Curve【曲线映射】</li>
+<li>Map【映射计算】</li>
+<li>Random【随机计算】</li>
+<li>Collide【碰撞，仅更新块】</li>
+<li>Force【力场，仅更新块】</li>
+<li>Kill【消隐区间，区域内粒子清除】</li>
+</ul>
+</li>
+</ul>
+<h2 id="属性类子节点"><a href="#属性类子节点" class="headerlink" title="属性类子节点"></a>属性类子节点</h2><ul>
+<li>搜索词太多了，在里面搜索不是什么好主意</li>
+<li>不过，在点击某一个子节点时， <code>Inspector</code> 面板会显示它的所有信息</li>
+<li>也就是说，所有关于<strong>属性修改</strong>的节点都可以由调整Inspector面板来调出</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_6.png" width=350>
+
+<ul>
+<li>它拥有四个下拉菜单：<ul>
+<li><code>Attribute</code> 是要调整的属性种类，实在太多了</li>
+<li><code>Composition</code> 是调整方法，有<strong>重载</strong>、<strong>添加</strong>、<strong>相乘</strong>、<strong>混合</strong>四种</li>
+<li><code>Source</code> 是数值类型，有<strong>具体数值</strong>和<strong>继承</strong>两种</li>
+<li><code>Random</code> 是随机方法，有<strong>关闭随机</strong>、<strong>组件范围</strong>、<strong>全局范围</strong>三种</li>
+</ul>
+</li>
+</ul>
+<h2 id="注意项"><a href="#注意项" class="headerlink" title="注意项"></a>注意项</h2><ul>
+<li>有一些很重要的内容不成体系，但是不知道也不行</li>
+</ul>
+<h3 id="坐标系"><a href="#坐标系" class="headerlink" title="坐标系"></a>坐标系</h3><ul>
+<li>粒子是有 <code>世界空间world</code> 和 <code>本地空间local</code> 的，默认是本地空间</li>
+<li>在本地空间模式下，粒子物体的移动受本地影响，反之不受影响</li>
+<li>点击<strong>任何橙色内容块</strong>右上角来修改全局空间</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_7.png" width=350>
+
+<h3 id="空间暴露"><a href="#空间暴露" class="headerlink" title="空间暴露"></a>空间暴露</h3><ul>
+<li>有一些跟<strong>坐标相关</strong>的数值会显示一个空间符号，默认是 <code>L</code> ，点击成 <code>W</code></li>
+<li>就能在 <code>Scene场景</code> 里动态修改，这样就不需要锻炼抽象思维了</li>
+<li>如果点击了没反应，说明编辑器UI出bug了，重新打开一遍VFX窗口即可</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_8.png" width=350>
+
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_9.png" width=350>
+
+<h3 id="粒子边界"><a href="#粒子边界" class="headerlink" title="粒子边界"></a>粒子边界</h3><ul>
+<li>这个东西非常重要，每个粒子的初始化块里都有粒子边界设置</li>
+<li>当<strong>屏幕视角</strong>移出粒子边界之后，粒子就<strong>直接不显示</strong>了，非常的突兀</li>
+<li>所以在弄粒子时，粒子边界需要经常去调</li>
+<li>所以暴露一下坐标（指 <code>W</code> ）</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_10.png" width=350>
+
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_11.png" width=350>
+
+<h3 id="发射数量"><a href="#发射数量" class="headerlink" title="发射数量"></a>发射数量</h3><ul>
+<li><code>生成块Spawn</code> 中修改的发射数量是一秒内发射个数，是<strong>速度</strong></li>
+<li><code>初始化块Initialize Particle</code> 中修改的发射数量是最大可显示数量，是<strong>最大数量</strong></li>
+<li>我使用三个粒子来解释<strong>粒子寿命</strong>，<strong>粒子速度</strong>，<strong>最大数量</strong>之间的关系</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_12.png" width=350>
+
+<ul>
+<li>当<strong>粒子寿命</strong>为1秒时，<strong>速度</strong>为10时，<strong>最大数量</strong>如果为5，粒子0.1秒发射一个，吐5下停5下</li>
+<li>当<strong>粒子寿命</strong>为1秒时，<strong>速度</strong>为5时，<strong>最大数量</strong>如果为10，粒子0.2秒发射一个，持续发射</li>
+<li>当<strong>粒子寿命</strong>为0.5秒时，<strong>速度</strong>为10时，<strong>最大数量</strong>如果为5，粒子0.1秒发射一个，持续发射</li>
+</ul>
+<h2 id="事件入门"><a href="#事件入门" class="headerlink" title="事件入门"></a>事件入门</h2><ul>
+<li><p>有一个内容块比较特殊： <code>Event事件（绿）</code> 内容块</p>
+</li>
+<li><p>只有一个字符串属性： <code>Event Name</code> ，这里是和代码沟通的属性</p>
+</li>
+<li><p>实现一个小交互：左键播放，右键停止</p>
+</li>
+<li><p>首先需要有一个健康的粒子，至少能看到粒子发射</p>
+</li>
+<li><p>然后链接 <code>Spawn</code>  ，修改 <code>Event Name</code></p>
+</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_13.png" width=650>
+
+<ul>
+<li>整一个脚本挂在粒子物体上即可</li>
+</ul>
+<pre class=" language-c#"><code class="language-c#">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.VFX;//引用命名空间
+
+public class VisualEffectTest1 : MonoBehaviour
+{
+    private VisualEffect visualEffect;//这里是粒子本体
+
+    void Start()
+    {
+        visualEffect = GetComponent<VisualEffect>();//获得粒子本体
+        visualEffect.Stop();//一开始保证粒子停止播放
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))//左键
+        {
+            visualEffect.SendEvent("OnPlay");//传递事件信号
+        }
+        if (Input.GetMouseButtonDown(1))//右键
+        {
+            visualEffect.SendEvent("OnStop");//传递事件信号
+        }
+    }
+}</code></pre>
+<h2 id="渲染内容块"><a href="#渲染内容块" class="headerlink" title="渲染内容块"></a>渲染内容块</h2><ul>
+<li>VFX里提供了很多渲染块：（甚至展示不全）</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_14.png" width=350>
+
+<ul>
+<li>在渲染块中，除了属性种类之外，还可以添加一些特殊效果：<ul>
+<li><code>Camera Fade</code> 摄像机靠近自动消隐</li>
+<li><code>Face Camera Plane</code> 始终面向摄像机</li>
+<li><code>Subpixel Anti-Aliasing</code> 粒子抗锯齿</li>
+<li><code>Screen Space Size</code> 始终保持视野大小（参见Superliminal游戏）</li>
+<li><code>Tile/Wrap Positions</code> 越界粒子折返出现</li>
+</ul>
+</li>
+<li>渲染块右键 <code>Convert Output</code> 可以更改渲染块类型</li>
+</ul>
+<h2 id="内容块外节点"><a href="#内容块外节点" class="headerlink" title="内容块外节点"></a>内容块外节点</h2><ul>
+<li>在内容块以外右键创建节点，会是这样：</li>
+<li><code>Context</code> 里就是<strong>内容块</strong>，带颜色（绿和黄）的那种</li>
+<li><code>Operator</code> 即<strong>操纵器</strong>，几乎所有的数值计算方法</li>
+<li><code>Property</code> 即<strong>自定义属性</strong>，<code>blackboard</code> 悬浮面板里新建的所有数值</li>
+<li><code>System</code> 即内置的粒子<strong>模板</strong>，很方便</li>
+<li><code>Misc</code> <strong>杂项</strong>里有分组器，能把一些节点放进去分类</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_15.png" width=350>
+
+<h3 id="操纵器"><a href="#操纵器" class="headerlink" title="操纵器"></a>操纵器</h3><ul>
+<li><code>Attribute</code> 即当前的<strong>总输出属性值</strong></li>
+<li><code>Bitwise</code> 即<strong>按位运算</strong>，用的较少</li>
+<li><code>BuiltIn</code> 即<strong>内建属性</strong>，有世界物体空间的转换以及一些系统的公有属性</li>
+<li><code>Color</code> 即<strong>色彩模型转换</strong></li>
+<li><code>Inline</code> 即<strong>内联属性</strong>，所有数据类型的形状都在这</li>
+<li><code>Logic</code> 即<strong>逻辑运算</strong></li>
+<li><code>Math</code> 即<strong>数学运算</strong>，只有你想不到的，没有我数学做不到的</li>
+<li><code>Noise</code> 即<strong>噪音生成器</strong>，有14种</li>
+<li><code>Random</code> 即<strong>随机生成器</strong></li>
+<li><code>Sampling</code> 即<strong>采样</strong>，包含曲线、渐变、贴图的采样</li>
+<li><code>Subgraph Operator</code> 即<strong>块中块</strong>，块中块得在 <code>Project</code> 里创建</li>
+<li><code>Time</code> 即<strong>时间</strong>，时间建议直接搜索，更全面</li>
+<li><code>Utility</code> 即<strong>实用工具</strong>，里面有点缓存加载器</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_16.png" width=350>
+
+
+
+<h2 id="GPU事件"><a href="#GPU事件" class="headerlink" title="GPU事件"></a>GPU事件</h2><ul>
+<li>在做GPU事件之前，先得勾选这个：</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_17.png" width=550>
+
+<ul>
+<li>勾选拓展包之后，有两个变化：<ul>
+<li><code>Context</code> 中出现 <code>GPUEvent</code> 内容块</li>
+<li><code>更新块Update Particle</code> 中能搜索 <code>Event</code> 了</li>
+</ul>
+</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_18.png" width=350>
+
+<ul>
+<li><p>使用GPU事件可以让粒子按照时间流程来套娃</p>
+</li>
+<li><p>GPU事件块只能放在<strong>更新块</strong>内</p>
+</li>
+<li><p>拥有三种事件类型：</p>
+<ul>
+<li><code>Trigger Event Always</code> 始终触发</li>
+<li><code>Trigger Event On Die</code> 销毁时触发</li>
+<li><code>Trigger Event Rate</code> 按速率触发，其中：<ul>
+<li><code>Over Time</code> 指每秒触发次数</li>
+<li><code>Over Distance</code> 指粒子运动距离每超过一米之间的触发次数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>在这种粒子套娃的情况下，新的粒子也许会继承之前的粒子的属性，这时可以使用 <code>Inherit</code></p>
+</li>
+<li><p>套娃的其他操作与之前类似</p>
+</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_19.png" width=750>
+
+
+
+<h2 id="拉丝模式"><a href="#拉丝模式" class="headerlink" title="拉丝模式"></a>拉丝模式</h2><ul>
+<li>选择 <code>初始化块Initialize Particle（绿转橙）</code> 内容块， <code>Inspector</code> 面板里能选择一个选项： <code>Data Type</code> </li>
+<li>将 <code>Data Type</code> 转换为 <code>Particle Strip</code> ，便开启了拉丝模式</li>
+<li><code>初始化块Initialize Particle（绿转橙）</code> 变成了 <code>初始化块Initialize Particle Strip（绿转淡橙）</code> </li>
+<li>初始化块链接的更新块也变成了独特的更新块</li>
+<li>渲染块要选择独特的拉丝渲染块</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_20.png" width=350>
+
+<ul>
+<li>可以加一些独特的效果，相当于普通粒子效果里的<strong>拖尾</strong></li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_21.png" width=750>
+
+
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>比普通粒子效果要难入门，难度可能凌驾于 <code>ShaderGraph</code> 之上</li>
+</ul>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Unity/">
+                                    <span class="chip bg-color">Unity</span>
+                                </a>
+                            
+                                <a href="/tags/VFX/">
+                                    <span class="chip bg-color">VFX</span>
+                                </a>
+                            
+                                <a href="/tags/Visual-Effect-Graph/">
+                                    <span class="chip bg-color">Visual Effect Graph</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%8F%97%E8%8B%A6/">
+                                    <span class="chip bg-color">受苦</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">宁的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/03/03/Unity/Unity%E5%A4%A9%E5%9D%91VFX/">
+                    <div class="card-image">
+                        
+                        <img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/articleTitle/unity_giantpit.png" class="responsive-img" alt="Unity天坑VFX">
+                        
+                        <span class="card-title">Unity天坑VFX</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Unity天坑VFX
+坑多没关系，主要是香啊
+可以先看看有多香
+这里是英文版的文档
+
+初始化
+Package Manager 里下载安装 High Definition RP 高清管线
+在弹出的 Wizard 里 Fix All ，这样就能
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Unity/" class="post-category">
+                                    Unity
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Unity/">
+                        <span class="chip bg-color">Unity</span>
+                    </a>
+                    
+                    <a href="/tags/VFX/">
+                        <span class="chip bg-color">VFX</span>
+                    </a>
+                    
+                    <a href="/tags/Visual-Effect-Graph/">
+                        <span class="chip bg-color">Visual Effect Graph</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8F%97%E8%8B%A6/">
+                        <span class="chip bg-color">受苦</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/02/27/Arts/%E5%A6%82%E4%BD%95%E6%89%8B%E5%B7%A5%E5%88%B6%E4%BD%9C%E5%85%A8%E6%99%AF%E5%9B%BE%E7%89%87/">
+                    <div class="card-image">
+                        
+                        <img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/articleTitle/panorama_title.png" class="responsive-img" alt="如何手工制作全景图片">
+                        
+                        <span class="card-title">如何手工制作全景图片</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            如何手工制作全景图片一：要有手
+你得会画图
+
+二：要有工具
+你得有画图工具PS（photoshop）
+模型制作工具blender
+贴图制作工具SP（substance painter）
+渲染输出Unity3D
+
+三：要有目标
+最终目标是制作
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E7%BE%8E%E6%9C%AF/" class="post-category">
+                                    技术美术
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%85%A8%E6%99%AF%E5%9B%BE/">
+                        <span class="chip bg-color">全景图</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%8A%80%E6%9C%AF%E7%BE%8E%E6%9C%AF/">
+                        <span class="chip bg-color">技术美术</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AE%B0%E5%BD%95/">
+                        <span class="chip bg-color">记录</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: PYW个人博客<br />'
+            + '文章作者: 彭艺伟<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">彭艺伟</a>
+			
+			|&nbsp;记录&nbsp;|&nbsp;博客&nbsp;|
+			
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">50.8k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "4";
+                    var startDate = "27";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/Iamsleepingnow" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2412985731@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2412985731" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2412985731" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="https://music.163.com/#/user/home?id=86005044" class="tooltipped" target="_blank" data-tooltip="关注我的网易云音乐: https://music.163.com/#/user/home?id=86005044" data-position="top" data-delay="50">
+		<i class="fab fa-juejin">易</i>
+    </a>
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索的关键字</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" color="0,255,255"
+        pointColor="255,255,255" opacity='0.5'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.4'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
