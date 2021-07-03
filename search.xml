@@ -20,11 +20,11 @@
       
         <tags>
             
+            <tag> 硬核 </tag>
+            
             <tag> 程序 </tag>
             
             <tag> C++ </tag>
-            
-            <tag> 硬核 </tag>
             
         </tags>
       
@@ -42,14 +42,14 @@
       
       <categories>
           
-          <category> Unity </category>
+          <category> unity </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Unity </tag>
+            <tag> unity </tag>
             
             <tag> VFX </tag>
             
@@ -167,13 +167,13 @@
       
         <tags>
             
-            <tag> 硬核 </tag>
-            
             <tag> Git </tag>
             
             <tag> Github </tag>
             
             <tag> 存档神器 </tag>
+            
+            <tag> 硬核 </tag>
             
             <tag> 多图预警 </tag>
             
@@ -202,19 +202,19 @@
       
         <tags>
             
-            <tag> 硬核 </tag>
-            
             <tag> Git </tag>
             
             <tag> Github </tag>
             
             <tag> Git_workflow </tag>
             
-            <tag> GitKraken </tag>
-            
             <tag> 存档神器 </tag>
             
+            <tag> 硬核 </tag>
+            
             <tag> 多图预警 </tag>
+            
+            <tag> GitKraken </tag>
             
         </tags>
       
@@ -239,8 +239,6 @@
       
         <tags>
             
-            <tag> 硬核 </tag>
-            
             <tag> Git </tag>
             
             <tag> Github </tag>
@@ -248,6 +246,8 @@
             <tag> Git_workflow </tag>
             
             <tag> 存档神器 </tag>
+            
+            <tag> 硬核 </tag>
             
             <tag> 多图预警 </tag>
             
@@ -305,9 +305,9 @@
       
         <tags>
             
-            <tag> 文档 </tag>
-            
             <tag> 博客 </tag>
+            
+            <tag> 文档 </tag>
             
             <tag> 简单 </tag>
             
@@ -400,9 +400,9 @@
             
             <tag> 教程 </tag>
             
-            <tag> 绘图 </tag>
-            
             <tag> python </tag>
+            
+            <tag> 绘图 </tag>
             
             <tag> 长文 </tag>
             
@@ -431,13 +431,13 @@
       
         <tags>
             
+            <tag> python </tag>
+            
             <tag> 小海龟 </tag>
             
             <tag> 指南 </tag>
             
             <tag> 绘图 </tag>
-            
-            <tag> python </tag>
             
             <tag> 幼儿编程 </tag>
             
@@ -466,11 +466,11 @@
             
             <tag> 硬核 </tag>
             
-            <tag> python </tag>
-            
             <tag> 入门 </tag>
             
             <tag> 工具 </tag>
+            
+            <tag> python </tag>
             
             <tag> Numpy </tag>
             
@@ -497,9 +497,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 工具 </tag>
+            
+            <tag> python </tag>
             
             <tag> 模板 </tag>
             
@@ -536,9 +536,9 @@
             
             <tag> 硬核 </tag>
             
-            <tag> python </tag>
-            
             <tag> 工具 </tag>
+            
+            <tag> python </tag>
             
             <tag> 模板 </tag>
             
@@ -569,9 +569,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 工具 </tag>
+            
+            <tag> python </tag>
             
             <tag> 基础 </tag>
             
@@ -602,9 +602,9 @@
       
         <tags>
             
-            <tag> 指南 </tag>
-            
             <tag> python </tag>
+            
+            <tag> 指南 </tag>
             
             <tag> pip </tag>
             
