@@ -144,9 +144,9 @@
     <category term="unity" scheme="http://iamsleepingnow.github.io/categories/unity/"/>
     
     
-    <category term="多图预警" scheme="http://iamsleepingnow.github.io/tags/%E5%A4%9A%E5%9B%BE%E9%A2%84%E8%AD%A6/"/>
-    
     <category term="教程" scheme="http://iamsleepingnow.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="多图预警" scheme="http://iamsleepingnow.github.io/tags/%E5%A4%9A%E5%9B%BE%E9%A2%84%E8%AD%A6/"/>
     
     <category term="unity" scheme="http://iamsleepingnow.github.io/tags/unity/"/>
     
@@ -569,11 +569,11 @@
     <category term="文档" scheme="http://iamsleepingnow.github.io/categories/%E6%96%87%E6%A1%A3/"/>
     
     
-    <category term="文档" scheme="http://iamsleepingnow.github.io/tags/%E6%96%87%E6%A1%A3/"/>
-    
     <category term="超纲" scheme="http://iamsleepingnow.github.io/tags/%E8%B6%85%E7%BA%B2/"/>
     
     <category term="论文" scheme="http://iamsleepingnow.github.io/tags/%E8%AE%BA%E6%96%87/"/>
+    
+    <category term="文档" scheme="http://iamsleepingnow.github.io/tags/%E6%96%87%E6%A1%A3/"/>
     
     <category term="LaTeX" scheme="http://iamsleepingnow.github.io/tags/LaTeX/"/>
     
@@ -601,9 +601,9 @@
     
     <category term="博客" scheme="http://iamsleepingnow.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
-    <category term="简单" scheme="http://iamsleepingnow.github.io/tags/%E7%AE%80%E5%8D%95/"/>
-    
     <category term="文档" scheme="http://iamsleepingnow.github.io/tags/%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="简单" scheme="http://iamsleepingnow.github.io/tags/%E7%AE%80%E5%8D%95/"/>
     
     <category term="markdown" scheme="http://iamsleepingnow.github.io/tags/markdown/"/>
     
