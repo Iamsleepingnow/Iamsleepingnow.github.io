@@ -1,0 +1,875 @@
+<!DOCTYPE html><html class="hide-aside" lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Unity上道秘籍 | Iamsleepingnow 世界</title><meta name="author" content="彭҈̢̛艺҉͜͝伟҈̧̕"><meta name="copyright" content="彭҈̢̛艺҉͜͝伟҈̧̕"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ff3c96"><meta name="description" content="Unity上道秘籍 本文仅用于理解Unity的基础代码运作逻辑 能让人快速入门Unity及Unity的编程    🔥Unity的世界观 本节主要介绍Unity界面与基础脚本通信 提示：强烈建议使用英文编辑器！！  🚩界面介绍 默认你有一点点的C#基础，因为我也只会一点点的C#基础👍 下图是Unity新项目的界面 Unity引擎界面由许多窗口构成，窗口能够互相吸附、打开关闭 两个窗口可以像网页">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity上道秘籍">
+<meta property="og:url" content="http://iamsleepingnow.github.io/2022/01/10/Unity/Unity%E4%B8%8A%E9%81%93%E7%A7%98%E7%B1%8D/index.html">
+<meta property="og:site_name" content="Iamsleepingnow 世界">
+<meta property="og:description" content="Unity上道秘籍 本文仅用于理解Unity的基础代码运作逻辑 能让人快速入门Unity及Unity的编程    🔥Unity的世界观 本节主要介绍Unity界面与基础脚本通信 提示：强烈建议使用英文编辑器！！  🚩界面介绍 默认你有一点点的C#基础，因为我也只会一点点的C#基础👍 下图是Unity新项目的界面 Unity引擎界面由许多窗口构成，窗口能够互相吸附、打开关闭 两个窗口可以像网页">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://iamsleepingnow.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2022-01-10T11:16:30.000Z">
+<meta property="article:modified_time" content="2022-01-10T11:57:36.166Z">
+<meta property="article:author" content="彭҈̢̛艺҉͜͝伟҈̧̕">
+<meta property="article:tag" content="多图预警">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="unity">
+<meta property="article:tag" content="长文">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://iamsleepingnow.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://iamsleepingnow.github.io/2022/01/10/Unity/Unity%E4%B8%8A%E9%81%93%E7%A7%98%E7%B1%8D/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: false,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Unity上道秘籍',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-01-10 19:57:36'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="Iamsleepingnow 世界" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">68</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 世界</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-save"></i><span> 档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-quote-left"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 功能</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tools/music/"><i class="fa-fw fas fa-play"></i><span> 歌单</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-arrows-alt"></i><span> 信息</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/banner_default_2k.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Iamsleepingnow 世界"><span class="site-name">Iamsleepingnow 世界</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 世界</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-save"></i><span> 档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-quote-left"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 功能</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tools/music/"><i class="fa-fw fas fa-play"></i><span> 歌单</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-arrows-alt"></i><span> 信息</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Unity上道秘籍</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-01-10T11:16:30.000Z" title="发表于 2022-01-10 19:16:30">2022-01-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-01-10T11:57:36.166Z" title="更新于 2022-01-10 19:57:36">2022-01-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/unity/">unity</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Unity上道秘籍"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Unity上道秘籍"><a href="#Unity上道秘籍" class="headerlink" title="Unity上道秘籍"></a>Unity上道秘籍</h1><ul>
+<li>本文仅用于理解Unity的基础代码运作逻辑</li>
+<li>能让人快速入门Unity及Unity的编程</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_000.jpg" width=200>
+
+<h2 id="🔥Unity的世界观"><a href="#🔥Unity的世界观" class="headerlink" title="🔥Unity的世界观"></a>🔥Unity的世界观</h2><ul>
+<li>本节主要介绍Unity界面与基础脚本通信</li>
+<li>提示：强烈建议使用英文编辑器！！</li>
+</ul>
+<h3 id="🚩界面介绍"><a href="#🚩界面介绍" class="headerlink" title="🚩界面介绍"></a>🚩界面介绍</h3><ul>
+<li>默认你有一点点的C#基础，因为我也只会一点点的C#基础👍</li>
+<li>下图是Unity新项目的界面<ul>
+<li>Unity引擎界面由许多窗口构成，窗口能够互相吸附、打开关闭</li>
+<li>两个窗口可以像网页标签一样重叠</li>
+<li>标签右方带锁头的窗口可以被上锁，可以固定显示某个物体的状态</li>
+<li>在标签栏里<code>Window</code>中可以调出所有的窗口，窗口都可以多开</li>
+<li>恢复及设置窗口布局点击界面右上角<code>Layout</code></li>
+</ul>
+</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_001.png" width=750>
+
+<h4 id="Scene场景窗口"><a href="#Scene场景窗口" class="headerlink" title="Scene场景窗口"></a>Scene场景窗口</h4><ul>
+<li><code>Scene窗口</code>用于显示一个<code>场景文件Scene</code>里的所有内容</li>
+<li><code>鼠标右键拖动</code>：以自身为基准旋转（忽略X轴旋转）</li>
+<li><code>Alt + 鼠标左键拖动</code>：以视角中场景的中轴旋转（忽略X轴旋转）</li>
+<li><code>鼠标中键拖动</code>：以固定比率移动自身</li>
+<li><code>鼠标中键点击</code>：若点击至物体，视角会聚焦该物体，中键拖动所移动的比率会智能变化</li>
+<li><code>鼠标滚轮</code>：推动视角纵深</li>
+<li>使用<code>视角辅助器</code>能将视角转换为正视角和正交视图</li>
+</ul>
+<h4 id="Game游戏窗口"><a href="#Game游戏窗口" class="headerlink" title="Game游戏窗口"></a>Game游戏窗口</h4><ul>
+<li><code>Game窗口</code>以列表的形式显示<code>Scene场景</code>中<code>摄像机组件</code>内的视图</li>
+<li><code>Game窗口</code>左上角的<code>Display序数</code>必须与此时显示的摄像机相匹配</li>
+<li><code>Display序数</code>选项旁可以设置<code>输出视角的分辨率</code></li>
+<li><code>Maximize On Play全屏播放选项</code>若开启，运行游戏时会使<code>Game窗口</code>最大化</li>
+</ul>
+<h4 id="Hierarchy大纲"><a href="#Hierarchy大纲" class="headerlink" title="Hierarchy大纲"></a>Hierarchy大纲</h4><ul>
+<li><code>Hierarchy窗口</code>用于显示<code>Scene场景</code>中所包含的所有游戏物体</li>
+<li>在<code>Hierarchy窗口</code>中单击右键可以新建几乎所有的Unity预设物体</li>
+<li>拖动窗口中的物体至另外的物体上，可以设置父子集关系</li>
+<li>一般场景物体的图标和字体显示黑色，预制体的图标和字体显示蓝色</li>
+<li><code>Hierarchy窗口</code>中预制体的右边显示箭头，可以将场景转换为预制体编辑模式</li>
+<li>复制物体使用<code>ctrl + D</code>，删除物体使用<code>Delete</code></li>
+<li>多选物体时，按<code>ctrl</code>键加选减选</li>
+<li>连选物体时，先选择首物体，按<code>shift</code>键选择尾物体</li>
+</ul>
+<h4 id="Project项目文件"><a href="#Project项目文件" class="headerlink" title="Project项目文件"></a>Project项目文件</h4><ul>
+<li><code>Project窗口</code>以列表的形式显示整个项目的所有资源文件</li>
+<li>推荐使用文件夹分类的方式进行文件管理（右键-&gt;Create-&gt;Folder）</li>
+<li>默认的<code>Project窗口</code>有<code>Assets</code>和<code>Packages</code>两个文件夹<ul>
+<li>在<code>Assets</code>里放入项目的所有工程文件</li>
+<li>在<code>Packages</code>里查看该项目所拥有的所有资源包</li>
+</ul>
+</li>
+<li>复制文件使用<code>ctrl + D</code>，删除文件使用<code>Delete</code></li>
+<li>多选文件时，按<code>ctrl</code>键加选减选</li>
+<li>连选文件时，先选择首文件，按<code>shift</code>键选择尾文件</li>
+</ul>
+<h4 id="Inspector细节清单"><a href="#Inspector细节清单" class="headerlink" title="Inspector细节清单"></a>Inspector细节清单</h4><ul>
+<li><code>Inspector窗口</code>用于显示在<code>Hierarchy窗口</code>或<code>Project窗口</code>中选择的物体的内部信息</li>
+<li>如果选择<code>Hierarchy窗口</code>中物体：（拿场景中<code>Main Camera</code>举例）<ul>
+<li>Inspector窗口中显示三个标题字体加粗的区块：<code>Transform</code>、<code>Camera</code>和<code>Audio Listener</code></li>
+<li>这三个区块被称为<code>组件</code></li>
+<li>所有<code>组件</code>之上，可以设置该物体的<code>Name名称</code>、<code>Tag标签</code>、<code>Layer层级</code>和<code>Static是否静态</code></li>
+<li>所有<code>组件</code>之下，按钮<code>Add Component</code>可以为该物体添加新<code>组件</code></li>
+<li>几乎任何物体都拥有<code>Transform组件</code></li>
+</ul>
+</li>
+<li>如果选择<code>Project窗口</code>中文件：<ul>
+<li>如果该文件是预制体，则会显示与选择<code>Hierarchy窗口</code>中物体的显示大致一致</li>
+<li>如果该文件是C#脚本或其他文本文件，则会显示脚本文字的预览</li>
+<li>其他文件都有其特殊的显示</li>
+</ul>
+</li>
+</ul>
+<h4 id="Console日志窗口"><a href="#Console日志窗口" class="headerlink" title="Console日志窗口"></a>Console日志窗口</h4><ul>
+<li>通过标签栏-&gt;Window-&gt;General-&gt;Console或<code>Ctril + Shift + C</code>打开<code>Console窗口</code></li>
+<li><code>Console窗口</code>用于显示游戏日志，包括游戏bug、警告及玩家测试语句</li>
+</ul>
+<hr>
+<h3 id="🚩脚本功能"><a href="#🚩脚本功能" class="headerlink" title="🚩脚本功能"></a>🚩脚本功能</h3><ul>
+<li>在Project窗口里新建文件夹用来装脚本</li>
+</ul>
+<h4 id="新建脚本"><a href="#新建脚本" class="headerlink" title="新建脚本"></a>新建脚本</h4><ul>
+<li>在文件夹内右键-&gt;Create-&gt;C# Script来创建脚本，同时为脚本命名</li>
+<li>如果不命名，默认名为<code>NewBehaviourScript</code>，同时不建议在<code>Project窗口</code>里改脚本名</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_002.png" width=350>
+
+<ul>
+<li>双击打开新建的脚本（默认下载了VisualStudio并安装了Unity依赖项）</li>
+<li>新建的脚本如下：<ul>
+<li>如果脚本类需要改名字，则需要保证脚本内类名与<code>Project窗口</code>中脚本文件名一致</li>
+</ul>
+</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_003.png" width=550>
+
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;<span class="comment">//引用非泛型集合</span></span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;<span class="comment">//引用泛型集合</span></span><br><span class="line"><span class="keyword">using</span> UnityEngine;<span class="comment">//引用Unity引擎依赖项</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyScript_1</span> : <span class="title">MonoBehaviour</span><span class="comment">//继承自MonoBehaviour类</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Start</span>()</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//Start方法只在游戏开始时第一帧执行</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Update</span>()</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//Update方法在游戏开始后每一帧执行</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="组件挂载"><a href="#组件挂载" class="headerlink" title="组件挂载"></a>组件挂载</h4><ul>
+<li>继承自MonoBehaviour类的脚本属于<code>组件</code>脚本，可以挂载到任何游戏物体上来作为<code>组件</code><ul>
+<li>保存脚本后，Unity会自动编译，同时引擎右下角会转圈</li>
+<li>在<code>Hierarchy窗口</code>中右键新建一个<code>空物体</code>（Create Empty），命名为<code>GameObject_1</code></li>
+<li>将<code>Project窗口</code>中<code>MyScript_1</code>脚本拖到此新建游戏物体的<code>Inspector窗口</code>下方空白处</li>
+<li>于是<code>GameObject_1</code>物体就拥有了<code>MyScript_1</code>脚本<code>组件</code></li>
+<li>右键组件标题栏-&gt;Remove Component用于移除该组件</li>
+</ul>
+</li>
+<li>一个物体可以添加多个组件，组件与组件之间是平行关系，没有顺序限制</li>
+<li>预制体也可以重载添加组件，但重载的组件不允许放置在已预置组件之前</li>
+<li>物体身上的多个相同组件默认以放置的顺序来排序</li>
+<li>如果组件拥有像<code>Start()</code>或<code>Update()</code>类似的线程函数，在<code>Inspector窗口</code>会显示对勾<ul>
+<li><code>Inspector窗口</code>左上角的对勾用于控制该物体是否显示</li>
+</ul>
+</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_004.png" width=750>
+
+<h4 id="Mono类的生命周期"><a href="#Mono类的生命周期" class="headerlink" title="Mono类的生命周期"></a>Mono类的生命周期</h4><ul>
+<li>在继承自MonoBehaviour类的脚本中，内置了许多线程函数，它们的调用拥有先后顺序（生命周期）<ul>
+<li>官方绘制的周期图：<a target="_blank" rel="noopener" href="https://docs.unity3d.com/uploads/Main/monobehaviour_flowchart.svg">网页</a></li>
+<li>在下图（不完整）中，蓝色标注的是常用函数，粉色标注的是事件函数</li>
+</ul>
+</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_005.png" width=250>
+
+<hr>
+<h3 id="🚩脚本通信"><a href="#🚩脚本通信" class="headerlink" title="🚩脚本通信"></a>🚩脚本通信</h3><ul>
+<li>游戏是由许许多多逻辑回圈构成的，这种逻辑回圈被称为<code>系统</code><ul>
+<li>如数值系统、动画系统、联机系统、界面系统等</li>
+</ul>
+</li>
+<li>上述系统都属于功能较为完整单一的逻辑回圈，各司其职、相互访问数值，从而构成游戏</li>
+<li>逻辑回圈中最重要的就是脚本通信</li>
+<li>最基本的脚本通信逻辑即<code>获取（Get）</code>到其他脚本内部的数值，或直接<code>设置（Set）</code>它们</li>
+</ul>
+<h4 id="Get和Set"><a href="#Get和Set" class="headerlink" title="Get和Set"></a>Get和Set</h4><ul>
+<li>Get和Set的来历：<ul>
+<li>在类定义时，<code>私有private</code>或<code>受保护protected</code>的变量无法被外部脚本直接获取</li>
+<li>这时就需要设置<code>公开public</code>成员函数来间接进行GetSet操作</li>
+</ul>
+</li>
+</ul>
+<h4 id="组件访问"><a href="#组件访问" class="headerlink" title="组件访问"></a>组件访问</h4><ul>
+<li><p>在Unity中，对于相对静态的物体身上脚本组件的访问大致拥有几种类型：</p>
+<ul>
+<li><p>一：在Inspector窗口拖拽</p>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_006.png" width=450></li>
+<li><p>二：先获取物体，再获取脚本组件</p>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_007.png" width=600>
+
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_008.png" width=750></li>
+</ul>
+</li>
+<li><p>如何查看组件的真实类名：</p>
+<ul>
+<li>在任何不熟悉的组件的标题栏上右键-&gt;如果没有<code>Edit Script</code>选项：<ul>
+<li>此组件为Unity官方组件</li>
+<li>此组件类的类名与该加粗标题名一致</li>
+</ul>
+</li>
+<li>因<code>Camera</code>组件没有<code>Edit Script</code>选项，所以可判断该组件类名为<code>Camera</code></li>
+<li>因<code>TextMeshPro-Text(UI)</code>组件有<code>Edit Script</code>选项，查看其类名为<code>TextMeshProUGUI</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="物体组件访问函数"><a href="#物体组件访问函数" class="headerlink" title="物体组件访问函数"></a>物体组件访问函数</h4><ul>
+<li>因为组件都是挂到物体上的，所以需要先获取物体，再获取其身上的组件</li>
+<li>获取语句建议写在<code>Start()</code>方法里</li>
+<li>获取物体的方法：<ul>
+<li>直接搜索名字，但是需要保证没有重名物体<ul>
+<li>GameObject GameObject.Find()</li>
+</ul>
+</li>
+<li>将物体设置某个标签Tag，但是需要保证只有该物体有该标签<ul>
+<li>GameObject GameObject.FindGameObjectWithTag()</li>
+<li>GameObject[] GameObject.FindGameObjectsWithTag()</li>
+<li>GameObject GameObject.FindWithTag()</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>获取物体中组件的方法：<ul>
+<li>直接获取<ul>
+<li>&lt;Template T&gt; T GetComponent&lt;T&gt;()</li>
+<li>&lt;Template T&gt; T[] GetComponents&lt;T&gt;()</li>
+</ul>
+</li>
+<li>通过父子物体获取<ul>
+<li>Component Component.GetComponentInChildren()</li>
+<li>Component[] Component.GetComponentsInChildren()</li>
+<li>Component Component.GetComponentInParent()</li>
+<li>Component[] Component.GetComponentsInParent()</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="参数的访问"><a href="#参数的访问" class="headerlink" title="参数的访问"></a>参数的访问</h4><ul>
+<li><code>print()</code>和<code>Debug.Log()</code>一样，都是输出一条消息给<code>Console窗口</code></li>
+<li>比如说要获取和控制摄像机组件身上的视场角<ul>
+<li>需要先获取场景中的摄像机物体，这里使用拖拽的方法</li>
+<li>查看摄像机组件里的参数<ul>
+<li>注意，这里的参数是被<code>界面脚本</code>加工过的，有时与脚本内部值不匹配</li>
+<li>建议到官网API或Manual上查询</li>
+</ul>
+</li>
+<li>根据代码提示找到<code>cam.fieldOfView</code>接口</li>
+<li>尝试GetSet</li>
+</ul>
+</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_009.png" width=450>
+
+<ul>
+<li>保存代码，运行游戏，打开<code>Console窗口</code>查看数值波动</li>
+<li>在运行过程中修改<code>MyScript_1</code>组件暴露的<code>fov</code>参数（拖拽）<ul>
+<li><code>Game窗口</code>显示的视场发生了变化，<code>Camera</code>组件中<code>FieldOfView</code>参数动态参与改变</li>
+</ul>
+</li>
+</ul>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><ul>
+<li>以上即基础的参数访问，同时也实现了两个类（<code>Camera</code>与<code>MyScript_1</code>）之间的通信</li>
+<li>使用代码分流（if-else/switch）及以上介绍的脚本通信，足以实现基础逻辑回圈制作</li>
+<li>脚本通信是整个Unity学习的梗概，其他的东西其实都是万变不离其宗的</li>
+</ul>
+<hr>
+<h2 id="🔥组件基础"><a href="#🔥组件基础" class="headerlink" title="🔥组件基础"></a>🔥组件基础</h2><ul>
+<li>组件的访问是在获取到装载组件的物体后，对其物体使用<code>GetComponent&lt;组件类名&gt;()</code>模板函数</li>
+<li>组件的添加是在物体上使用<code>gameObject.AddComponent&lt;组件类名&gt;()</code>模板函数</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_010.png" width=500>
+
+
+
+<h2 id="🔥属性与参数暴露"><a href="#🔥属性与参数暴露" class="headerlink" title="🔥属性与参数暴露"></a>🔥属性与参数暴露</h2><h3 id="🚩常用访问修饰符"><a href="#🚩常用访问修饰符" class="headerlink" title="🚩常用访问修饰符"></a>🚩常用访问修饰符</h3><ul>
+<li>public公开<ul>
+<li>公开的属性能够被其他脚本所访问，并暴露在<code>Inspector面板</code>上</li>
+</ul>
+</li>
+<li>private私有<ul>
+<li>私有的属性只能在该脚本中访问（无修饰符变量默认是私有的）</li>
+</ul>
+</li>
+<li>protected保护<ul>
+<li>保护的属性只能在该脚本和继承该脚本的脚本所访问</li>
+</ul>
+</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_011.png" width=250>
+
+<hr>
+<h3 id="🚩常用数值属性"><a href="#🚩常用数值属性" class="headerlink" title="🚩常用数值属性"></a>🚩常用数值属性</h3><ul>
+<li><p>这些都是Unity自带的参数属性，如果对于检视面板美化感兴趣，可以查看另一篇讲<code>Odin</code>插件的文章</p>
+</li>
+<li><p>携带属性：<code>[RequireComponent(typeof(脚本类名))]</code></p>
+<ul>
+<li>修饰类的属性，可以使物体添加该脚本时强制添加某附着脚本</li>
+<li>如果原先有该附着脚本，则锁定该附着脚本</li>
+</ul>
+</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_012.png" width=400>
+
+<ul>
+<li>添加到组件工具集：<code>[AddComponentMenu(&quot;分栏名&quot;)]</code><ul>
+<li>修饰类的属性，可以使该脚本添加到Unity的组件工具集中</li>
+</ul>
+</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_013.png" width=500>
+
+<ul>
+<li>小标题：<code>[Header(&quot;标题名&quot;)]</code><ul>
+<li>修饰变量的属性，为其修饰的public变量及以下变量添加小标题</li>
+<li>该属性下的第一个变量一定得是public修饰变量</li>
+</ul>
+</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_014.png" width=350>
+
+<ul>
+<li>可序列化和于细节面板隐藏：<code>[SerializeField]</code> &amp; <code>[HideInInspector]</code><ul>
+<li><code>SerializeField</code>能无视private修饰，直接暴露到编辑器，见下图</li>
+<li>但由于private的缘故，无法在其他脚本内被访问</li>
+<li><code>HideInInspector</code>能将一切被修饰变量于细节面板隐藏，无视public</li>
+<li>但由于public的缘故，还是能够在其他脚本内被访问</li>
+</ul>
+</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_015.png" width=350>
+
+<ul>
+<li>文本区、空白区、数值范围：<code>[TextArea()]</code> &amp; <code>[space()]</code> &amp; <code>[Range()]</code><ul>
+<li>TextArea提供一个比较大的范围的文本输入区，可以用于查看文字</li>
+<li>需要填入最小和最大显示行数，超过最大行数会显示滚动条</li>
+<li>TextArea于Multiline属性相似，都是拓展文本区</li>
+<li>Space单纯就是空白</li>
+<li>Range为数值类型提供了限制，需要输入最小值和最大值</li>
+</ul>
+</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_016.png" width=350>
+
+<ul>
+<li>类序列化：<code>[System.Serializable]</code><ul>
+<li>将类序列化成结构体，同样适用于结构体序列化</li>
+<li>暴露在细节面板中是以下拉菜单的形式存在的</li>
+</ul>
+</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_017.png" width=400>
+
+<ul>
+<li>小提示：<code>[Tooltip()]</code><ul>
+<li>鼠标放在细节面板的变量上，会出现小提示</li>
+</ul>
+</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_018.png" width=350>
+
+<hr>
+<h2 id="🔥预制体"><a href="#🔥预制体" class="headerlink" title="🔥预制体"></a>🔥预制体</h2><ul>
+<li>类似于虚幻的蓝图类，但是Unity的预制体内容较为单薄</li>
+<li>预制体就是预先设计好的，存储成文件的，允许携带层级关系的一套物件单例</li>
+</ul>
+<h3 id="🚩预制体制作"><a href="#🚩预制体制作" class="headerlink" title="🚩预制体制作"></a>🚩预制体制作</h3><ul>
+<li>将<code>Hierarchy大纲</code>里的单个物体或物体父级拖入<code>Project项目文件</code>窗口中，即可创建</li>
+<li>只有在<code>Project窗口</code>中的才是预制体，<code>Hierarchy窗口</code>里的是预制体实例</li>
+<li>删除预制体实例，预制体不会受影响；删除预制体，预制体实例会失联</li>
+<li>修改预制体参数，预制体实例内的参数也会发生改变</li>
+<li>右键预制体实例选择<code>Break Prefab</code>，即可与预制体断开连接，使实例变为普通场景物体</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_019.png" width=500>
+
+<h3 id="🚩预制体实例化"><a href="#🚩预制体实例化" class="headerlink" title="🚩预制体实例化"></a>🚩预制体实例化</h3><ul>
+<li>预制体属于文件，同样也属于物体，同样可以通过GameObject类型来获取</li>
+<li>使用<code>GameObject.Instantiate()</code>方法在游戏一开始生成预制体实例</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_020.png" width=450>
+
+<hr>
+<h2 id="🔥方位运动"><a href="#🔥方位运动" class="headerlink" title="🔥方位运动"></a>🔥方位运动</h2><h3 id="🚩DeltaTime秒每帧"><a href="#🚩DeltaTime秒每帧" class="headerlink" title="🚩DeltaTime秒每帧"></a>🚩DeltaTime秒每帧</h3><ul>
+<li>如果要在游戏中控制人物的移动，实现逻辑是在<code>Update()</code>方法里每帧对人物方位进行修改</li>
+<li>假设说玩家的速度很快，达到了惊人的1米/帧</li>
+<li>玩家的电脑性能很好，帧速率（每秒刷新次数）达到了惊人的60帧/秒</li>
+<li>通过计算，这位玩家1秒钟就能前进60米</li>
+<li>另一个玩家电脑性能很烂，帧速率（每秒刷新次数）达到了20帧/秒</li>
+<li>通过计算，这位玩家1秒钟才能前进20米</li>
+<li>在游戏人物速度一致的情况下，仅通过电脑性能就能使两个联机的玩家在速度上拉开差距</li>
+<li>这是不可取的，所以要引入秒每帧（增量时间）<code>DeltaTime</code>的概念</li>
+<li>尝试使用1去除帧速率，60帧/秒的玩家的增量时间为1/60，20帧/秒的玩家为1/20</li>
+<li>然后在玩家速度上乘以这个变量</li>
+<li>60帧/秒的玩家最终速度为60*(1/60)=1米/秒，1秒钟前进1米</li>
+<li>20帧/秒的玩家最终速度为20*(1/20)=1米/秒，1秒钟前进1米</li>
+<li>虽然速度大幅下降，但是两位玩家达成了速度的归一化，排除了硬件影响</li>
+<li>所以说，DeltaTime拯救了高ping玩家</li>
+<li>在Unity里，使用<code>Time.deltaTime</code>来获取增量时间</li>
+</ul>
+<hr>
+<h3 id="🚩移动旋转缩放"><a href="#🚩移动旋转缩放" class="headerlink" title="🚩移动旋转缩放"></a>🚩移动旋转缩放</h3><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_021.png" width=550>
+
+<ul>
+<li>一般情况下，需要乘上速度和增量时间</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_022.png" width=650>
+
+<hr>
+<h2 id="🔥输入事件"><a href="#🔥输入事件" class="headerlink" title="🔥输入事件"></a>🔥输入事件</h2><ul>
+<li>输入由<code>Input</code>接口去管理</li>
+<li>主要有以下几种输入事件：</li>
+</ul>
+<h3 id="🚩鼠标事件"><a href="#🚩鼠标事件" class="headerlink" title="🚩鼠标事件"></a>🚩鼠标事件</h3><ul>
+<li>Input.GetMouseButton()    鼠标持续按下状态</li>
+<li>Input.GetMouseButtonDown()    鼠标按下状态</li>
+<li>Input.GetMouseButtonUp()    鼠标抬起状态</li>
+<li>Input.MousePosition    鼠标位置</li>
+<li>Input.mouseScrollDelta    鼠标滚轮状态</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_023.png" width=550>
+
+<hr>
+<h3 id="🚩键盘事件"><a href="#🚩键盘事件" class="headerlink" title="🚩键盘事件"></a>🚩键盘事件</h3><ul>
+<li>Input.GetKey()    键盘持续按下状态</li>
+<li>Input.GetKeyDown()    键盘按下状态</li>
+<li>Input.GetKeyUp()    键盘抬起状态</li>
+<li>Input.anyKey    任意键持续按下状态</li>
+<li>Input.anyKeyDown    任意键按下状态</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_024.png" width=550>
+
+<hr>
+<h3 id="🚩轴事件"><a href="#🚩轴事件" class="headerlink" title="🚩轴事件"></a>🚩轴事件</h3><ul>
+<li>在Unity的Project Settings项目设置窗口里的Input Manager设置按键轴参数</li>
+<li>通过轴名称的字符串来获取轴按键输入</li>
+<li>里面的参数自行翻译，没什么好说的</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_025.png" width=650>
+
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_026.png" width=650>
+
+<ul>
+<li>Input.GetAxis()    获取轴输入，返回浮点值</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_027.png" width=450>
+
+<hr>
+<h3 id="🚩轴按键事件"><a href="#🚩轴按键事件" class="headerlink" title="🚩轴按键事件"></a>🚩轴按键事件</h3><ul>
+<li><p>轴输入获取的是轴的数值状态</p>
+</li>
+<li><p>要获取Input Manager里自定义按键的按钮事件，就得使用按键事件</p>
+</li>
+<li><p>Input.GetButton()    按键持续按下状态</p>
+</li>
+<li><p>Input.GetButtonDown()    按键按下状态</p>
+</li>
+<li><p>Input.GetButtonUp()    按键抬起状态</p>
+</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_028.png" width=450>
+
+<hr>
+<h3 id="🚩手柄事件"><a href="#🚩手柄事件" class="headerlink" title="🚩手柄事件"></a>🚩手柄事件</h3><ul>
+<li>手柄输入分为手柄按键和手柄轴两个部分：<ul>
+<li>手柄按键：Input.GetKey/Down/Up(KeyCode.JoystickButton1~19)</li>
+<li>手柄输入：Input.GetAxis()</li>
+</ul>
+</li>
+<li>手柄按键输入具体要按照手柄品牌和型号而定，下图是Xbox版本</li>
+<li>手柄输入需要在Project Settings里设置，主要设置：<ul>
+<li><code>Dead</code>忽视阈值，输入不达阈值则看作没输入</li>
+<li><code>Sensitivity</code>灵敏度，轴返回值是-1~1之间的数，再乘上灵敏度</li>
+<li><code>Invert</code>是否翻转轴</li>
+<li><code>Axis</code>具体哪个轴，见下图所示</li>
+</ul>
+</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_029.png" width=450>
+
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_030.png" width=500>
+
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_031.png" width=500>
+
+<hr>
+<h2 id="🔥接触事件"><a href="#🔥接触事件" class="headerlink" title="🔥接触事件"></a>🔥接触事件</h2><ul>
+<li>在场景里新建一个<code>Cube方块</code>，在Inspector面板里可以看到<code>BoxCollider箱体碰撞箱</code>组件</li>
+<li>碰撞和触发事件就是通过此组件进行的</li>
+<li>将我们的脚本<code>MyScript_1</code>附着在此方块上</li>
+<li>接触事件都有2d和3d两个版本</li>
+</ul>
+<h3 id="🚩碰撞事件"><a href="#🚩碰撞事件" class="headerlink" title="🚩碰撞事件"></a>🚩碰撞事件</h3><ul>
+<li>碰撞事件产生的前提条件是碰撞的双方至少有一方拥有<code>刚体Rigidbody</code>组件</li>
+<li>产生碰撞事件需要将<code>BoxCollider</code>组件上的<code>is Trigger</code>取消勾选</li>
+<li>碰撞事件与初始化、更新事件同级，都属于事件方法</li>
+<li>当物体产生碰撞时会自动调用碰撞方法，并返回<code>Collision</code>类型的参数</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_032.png" width=400>
+
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_033.png" width=600>
+
+<hr>
+<h3 id="🚩碰撞层级"><a href="#🚩碰撞层级" class="headerlink" title="🚩碰撞层级"></a>🚩碰撞层级</h3><ul>
+<li>在<code>Project Settings</code>里找到<code>Tags and Layers</code>，添加两个自定义层级</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_034.png" width=500>
+
+<ul>
+<li>将两个需要碰撞的物体分别设置成不同的碰撞层</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_035.png" width=400>
+
+<ul>
+<li>别忘了碰撞箱组件和刚体组件</li>
+<li>在<code>Project Settings</code>里找到<code>Physics</code>，翻到最底下的<code>Layer Collision Matrix</code></li>
+<li>横轴纵轴之间交叉的勾选框即代表两个层级的物体之间是否能够发生碰撞</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_036.png" width=500>
+
+<hr>
+<h3 id="🚩触发事件"><a href="#🚩触发事件" class="headerlink" title="🚩触发事件"></a>🚩触发事件</h3><ul>
+<li><p>触发事件产生的前提条件同样是是触发的双方至少有一方拥有<code>刚体Rigidbody</code>组件</p>
+</li>
+<li><p>与碰撞事件类似，触发事件只需将需要检测触发的BoxCollider组件的is Trigger勾选上即可</p>
+</li>
+<li><p>任何一方勾选is Trigger都可以触发触发事件</p>
+</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_037.png" width=600>
+
+<hr>
+<h2 id="🔥射线检测"><a href="#🔥射线检测" class="headerlink" title="🔥射线检测"></a>🔥射线检测</h2><ul>
+<li>射线检测就是从一个点到另一个点之间拉一条红外线，经过的物体会触发射线检测</li>
+</ul>
+<h3 id="🚩直线射线检测"><a href="#🚩直线射线检测" class="headerlink" title="🚩直线射线检测"></a>🚩直线射线检测</h3><ul>
+<li>最简单的射线检测</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_038.png" width=750>
+
+<ul>
+<li>对射线做出一些限制，射线检测允许使用物体层级来区分</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_039.png" width=800>
+
+<ul>
+<li>如何检测一堆物体</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_040.png" width=750>
+
+<hr>
+<h3 id="🚩圆弧射线检测"><a href="#🚩圆弧射线检测" class="headerlink" title="🚩圆弧射线检测"></a>🚩圆弧射线检测</h3><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_041.png" width=550>
+
+<hr>
+<h2 id="🔥物理运算"><a href="#🔥物理运算" class="headerlink" title="🔥物理运算"></a>🔥物理运算</h2><h3 id="🚩刚体"><a href="#🚩刚体" class="headerlink" title="🚩刚体"></a>🚩刚体</h3><ul>
+<li>Unity的绝大多数物理运算都与刚体组件<code>Rigidbody</code>有关</li>
+<li>作为引导类的文章，只介绍为什么要使用刚体，以及一些基础操作</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_042.png" width=500>
+
+<ul>
+<li>在之前的碰撞检测里面以及提及了刚体在碰撞事件中的作用，所以只需要简要介绍一下其他内容：<ul>
+<li>Mass：质量，质量越大惯性越大，推动它也需要更多的力</li>
+<li>Drag：阻力，移动时，物体会受到一种类似空气阻力的反作用力</li>
+<li>Angular Drag：旋转阻力，旋转时所受到的阻力</li>
+<li>Use Gravity：是否开启重力，不开启重力会失重，凡受力之后会永远匀速运动下去</li>
+<li>Is Kinematic：是否开启动力学，不开启时不会受力移动，适合用于一些特殊情况</li>
+<li>Constraints：限制，允许冻结移动或旋转的轴向</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="🔥界面绑定"><a href="#🔥界面绑定" class="headerlink" title="🔥界面绑定"></a>🔥界面绑定</h2><ul>
+<li>Unity里的界面是使用一种与三维共存的方式来运行的，在使用界面之前，需要在<code>Hierarchy大纲</code>里右键新建一个<code>Canvas</code>画布，同时会创建一个<code>EventSystem</code>物体，用来管理控制行为</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_043.png" width=350>
+
+<ul>
+<li>右键<code>Canvas</code>创建的一切物体都隐藏了其<code>Transform</code>组件，取而代之的是<code>RectTransform</code>组件</li>
+<li>双击<code>Canvas</code>让视图居中，点击<code>Scene窗口</code>左上方的<code>2D视图按钮</code>，用来方便查看</li>
+<li><code>Pos X</code>和<code>Pos Y</code>都指的是屏幕坐标，如果<code>Game窗口</code>里定义的大小是<code>1920*1080像素</code>，那么如果想要将物体贴于屏幕右上角，它的坐标就会是<code>（960，540）</code>，因为坐标原点是屏幕中心</li>
+<li><code>width</code>和<code>height</code>是图像宽和高，单位像素</li>
+<li><code>Anchors</code>是物体锚点，位于0到1之间，锚点用来规定图像的延展区间，以防由于输出分辨率的变化，界面元素显示错误的问题</li>
+<li>锚点的用处在于：无论分辨率如何，物体与锚点之间的距离恒定</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_044.png" width=450>
+
+<ul>
+<li>点击组件左上角的锚点预设图标，允许选取锚点预设</li>
+<li>锚点预设能将物体锚点设置在屏幕的多个位置，但不会修改物体的实际位置</li>
+<li>在选取锚点预设时按住<code>alt</code>键，就能在修改锚点的时候修改物体位置</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_045.png" width=450>
+
+<h3 id="🚩编码提示"><a href="#🚩编码提示" class="headerlink" title="🚩编码提示"></a>🚩编码提示</h3><ul>
+<li><p>在使用Unity的界面之前，需要做上引用：<code>using UnityEngine.UI;</code></p>
+</li>
+<li><p>最常见的界面元素是文本，也就是<code>Text组件</code>，在代码中获取组件后，便可以修改其中<code>text</code>参数，也就是显示的文本了</p>
+</li>
+<li><p>图像是<code>Image组件</code>，其中图像参数是<code>sprite</code></p>
+</li>
+<li><p>单选框是<code>Toggle组件</code>，其中是否开启参数是<code>isOn</code></p>
+</li>
+<li><p>滑动条是<code>Slider组件</code>，其中滑动数值参数是<code>value</code></p>
+</li>
+</ul>
+<hr>
+<h3 id="🚩按钮与事件绑定"><a href="#🚩按钮与事件绑定" class="headerlink" title="🚩按钮与事件绑定"></a>🚩按钮与事件绑定</h3><ul>
+<li>按钮是<code>Button组件</code>，组件最下方有一个<code>OnClick()</code>点击事件接口，点击右下方的加号用来添加函数槽</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_046.png" width=450>
+
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_047.png" width=350>
+
+<hr>
+<h2 id="🔥美术与程序"><a href="#🔥美术与程序" class="headerlink" title="🔥美术与程序"></a>🔥美术与程序</h2><ul>
+<li>因为美术的知识太繁杂，也不好描述，这里只讲美术与程序之间的调用</li>
+</ul>
+<h3 id="🚩材质与默认着色器"><a href="#🚩材质与默认着色器" class="headerlink" title="🚩材质与默认着色器"></a>🚩材质与默认着色器</h3><ul>
+<li><p><code>着色器Shader</code>是<code>材质Material</code>的爹，一个着色器可以拥有多个材质的实例，着色器控制材质的渲染方法与参数，着色器就是材质的源码，在Unity里，官方提供了一个叫<code>Standard Shader</code>的基础着色器</p>
+</li>
+<li><p>将材质拖给任何携带类似<code>Renderer</code>组件的物体时，能够直接赋予上去</p>
+</li>
+<li><p>在Project窗口里右键新建一个材质，在<code>Inspector窗口</code>中是这样显示的</p>
+</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_048.png" width=450>
+
+<ul>
+<li>右键<code>Inspector窗口</code>中的第一栏，选择<code>Select Shader</code>用来查看默认着色器参数</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_049.png" width=450>
+
+<ul>
+<li>在<code>Properties</code>下面，左边一栏是参数在其源码中的名称，意思是，如果在代码里调用着色器参数，只能调用这种名称</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_050.png" width=450>
+
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_051.png" width=550>
+
+<hr>
+<h3 id="🚩粒子"><a href="#🚩粒子" class="headerlink" title="🚩粒子"></a>🚩粒子</h3><ul>
+<li>在<code>Hierarchy窗口</code>里右键新建<code>Effects-&gt;ParticleSystem</code>创建粒子系统</li>
+<li>其中<code>Play On Awake</code>是是否在启动时运行</li>
+<li>太多了，这些东西需要上手去实操，其他的有时间再聊</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_052.png" width=550>
+
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_053.png" width=300>
+
+<hr>
+<h2 id="🔥数据持久化"><a href="#🔥数据持久化" class="headerlink" title="🔥数据持久化"></a>🔥数据持久化</h2><ul>
+<li>数据持久化就是存档，游戏不能没有存档</li>
+<li>除了Unity自带的<code>PlayerPrefs</code>方法，还有<code>Json</code>、<code>XML</code>、<code>bit</code>等方法也能更好的存档</li>
+</ul>
+<h3 id="🚩PlayerPrefs"><a href="#🚩PlayerPrefs" class="headerlink" title="🚩PlayerPrefs"></a>🚩PlayerPrefs</h3><img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_054.png" width=650>
+
+<hr>
+<h2 id="🔥场景跳转与退出"><a href="#🔥场景跳转与退出" class="headerlink" title="🔥场景跳转与退出"></a>🔥场景跳转与退出</h2><ul>
+<li>点击工具栏的<code>File-&gt;BuildSettings</code>，查看游戏构建设置</li>
+<li>将需要参与场景跳转的所有场景（就是最终输出的游戏场景）拖入<code>Scenes In Build</code>栏位里</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_055.png" width=650>
+
+<ul>
+<li>在代码中需要引用<code>using UnityEngine.SceneManagement;</code></li>
+<li>代码比较简单</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/Unity/howToUseUnity/Unity_056.png" width=450>
+
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://iamsleepingnow.github.io">彭҈̢̛艺҉͜͝伟҈̧̕</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://iamsleepingnow.github.io/2022/01/10/Unity/Unity%E4%B8%8A%E9%81%93%E7%A7%98%E7%B1%8D/">http://iamsleepingnow.github.io/2022/01/10/Unity/Unity%E4%B8%8A%E9%81%93%E7%A7%98%E7%B1%8D/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="null" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://iamsleepingnow.github.io" target="_blank">Iamsleepingnow 世界</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%A4%9A%E5%9B%BE%E9%A2%84%E8%AD%A6/">多图预警</a><a class="post-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/">教程</a><a class="post-meta__tags" href="/tags/unity/">unity</a><a class="post-meta__tags" href="/tags/%E9%95%BF%E6%96%87/">长文</a></div><div class="post_share"></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/01/09/Unity/Unity%E6%8F%92%E4%BB%B6Odin%E7%AE%80%E8%A6%81%E5%85%A5%E9%97%A8/" title="Unity插件Odin简要入门"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-09</div><div class="title">Unity插件Odin简要入门</div></div></a></div><div><a href="/2021/02/03/Python/opencvPython%E6%95%99%E7%A8%8B/" title="OpencvPython正经教程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-02-03</div><div class="title">OpencvPython正经教程</div></div></a></div><div><a href="/2021/02/04/Git/Git%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E5%9B%BE%E8%A7%A3_GitKraken/" title="Git操作步骤图解_GitKraken"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-02-04</div><div class="title">Git操作步骤图解_GitKraken</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">彭҈̢̛艺҉͜͝伟҈̧̕</div><div class="author-info__description">Iamsleepingnow 世界</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">68</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Unity%E4%B8%8A%E9%81%93%E7%A7%98%E7%B1%8D"><span class="toc-number">1.</span> <span class="toc-text">Unity上道秘籍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%A5Unity%E7%9A%84%E4%B8%96%E7%95%8C%E8%A7%82"><span class="toc-number">1.1.</span> <span class="toc-text">🔥Unity的世界观</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%A9%E7%95%8C%E9%9D%A2%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.1.1.</span> <span class="toc-text">🚩界面介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Scene%E5%9C%BA%E6%99%AF%E7%AA%97%E5%8F%A3"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">Scene场景窗口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Game%E6%B8%B8%E6%88%8F%E7%AA%97%E5%8F%A3"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">Game游戏窗口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Hierarchy%E5%A4%A7%E7%BA%B2"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">Hierarchy大纲</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Project%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.1.1.4.</span> <span class="toc-text">Project项目文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Inspector%E7%BB%86%E8%8A%82%E6%B8%85%E5%8D%95"><span class="toc-number">1.1.1.5.</span> <span class="toc-text">Inspector细节清单</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Console%E6%97%A5%E5%BF%97%E7%AA%97%E5%8F%A3"><span class="toc-number">1.1.1.6.</span> <span class="toc-text">Console日志窗口</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%A9%E8%84%9A%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="toc-number">1.1.2.</span> <span class="toc-text">🚩脚本功能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E8%84%9A%E6%9C%AC"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">新建脚本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E6%8C%82%E8%BD%BD"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">组件挂载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Mono%E7%B1%BB%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">Mono类的生命周期</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%A9%E8%84%9A%E6%9C%AC%E9%80%9A%E4%BF%A1"><span class="toc-number">1.1.3.</span> <span class="toc-text">🚩脚本通信</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Get%E5%92%8CSet"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">Get和Set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E8%AE%BF%E9%97%AE"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">组件访问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%A9%E4%BD%93%E7%BB%84%E4%BB%B6%E8%AE%BF%E9%97%AE%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.3.3.</span> <span class="toc-text">物体组件访问函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E7%9A%84%E8%AE%BF%E9%97%AE"><span class="toc-number">1.1.3.4.</span> <span class="toc-text">参数的访问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">1.1.3.5.</span> <span class="toc-text">小结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%A5%E7%BB%84%E4%BB%B6%E5%9F%BA%E7%A1%80"><span class="toc-number">1.2.</span> <span class="toc-text">🔥组件基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%A5%E5%B1%9E%E6%80%A7%E4%B8%8E%E5%8F%82%E6%95%B0%E6%9A%B4%E9%9C%B2"><span class="toc-number">1.3.</span> <span class="toc-text">🔥属性与参数暴露</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%A9%E5%B8%B8%E7%94%A8%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-number">1.3.1.</span> <span class="toc-text">🚩常用访问修饰符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%A9%E5%B8%B8%E7%94%A8%E6%95%B0%E5%80%BC%E5%B1%9E%E6%80%A7"><span class="toc-number">1.3.2.</span> <span class="toc-text">🚩常用数值属性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%A5%E9%A2%84%E5%88%B6%E4%BD%93"><span class="toc-number">1.4.</span> <span class="toc-text">🔥预制体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%A9%E9%A2%84%E5%88%B6%E4%BD%93%E5%88%B6%E4%BD%9C"><span class="toc-number">1.4.1.</span> <span class="toc-text">🚩预制体制作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%A9%E9%A2%84%E5%88%B6%E4%BD%93%E5%AE%9E%E4%BE%8B%E5%8C%96"><span class="toc-number">1.4.2.</span> <span class="toc-text">🚩预制体实例化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%A5%E6%96%B9%E4%BD%8D%E8%BF%90%E5%8A%A8"><span class="toc-number">1.5.</span> <span class="toc-text">🔥方位运动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%A9DeltaTime%E7%A7%92%E6%AF%8F%E5%B8%A7"><span class="toc-number">1.5.1.</span> <span class="toc-text">🚩DeltaTime秒每帧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%A9%E7%A7%BB%E5%8A%A8%E6%97%8B%E8%BD%AC%E7%BC%A9%E6%94%BE"><span class="toc-number">1.5.2.</span> <span class="toc-text">🚩移动旋转缩放</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%A5%E8%BE%93%E5%85%A5%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.6.</span> <span class="toc-text">🔥输入事件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%A9%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.6.1.</span> <span class="toc-text">🚩鼠标事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%A9%E9%94%AE%E7%9B%98%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.6.2.</span> <span class="toc-text">🚩键盘事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%A9%E8%BD%B4%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.6.3.</span> <span class="toc-text">🚩轴事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%A9%E8%BD%B4%E6%8C%89%E9%94%AE%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.6.4.</span> <span class="toc-text">🚩轴按键事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%A9%E6%89%8B%E6%9F%84%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.6.5.</span> <span class="toc-text">🚩手柄事件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%A5%E6%8E%A5%E8%A7%A6%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.7.</span> <span class="toc-text">🔥接触事件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%A9%E7%A2%B0%E6%92%9E%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.7.1.</span> <span class="toc-text">🚩碰撞事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%A9%E7%A2%B0%E6%92%9E%E5%B1%82%E7%BA%A7"><span class="toc-number">1.7.2.</span> <span class="toc-text">🚩碰撞层级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%A9%E8%A7%A6%E5%8F%91%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.7.3.</span> <span class="toc-text">🚩触发事件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%A5%E5%B0%84%E7%BA%BF%E6%A3%80%E6%B5%8B"><span class="toc-number">1.8.</span> <span class="toc-text">🔥射线检测</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%A9%E7%9B%B4%E7%BA%BF%E5%B0%84%E7%BA%BF%E6%A3%80%E6%B5%8B"><span class="toc-number">1.8.1.</span> <span class="toc-text">🚩直线射线检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%A9%E5%9C%86%E5%BC%A7%E5%B0%84%E7%BA%BF%E6%A3%80%E6%B5%8B"><span class="toc-number">1.8.2.</span> <span class="toc-text">🚩圆弧射线检测</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%A5%E7%89%A9%E7%90%86%E8%BF%90%E7%AE%97"><span class="toc-number">1.9.</span> <span class="toc-text">🔥物理运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%A9%E5%88%9A%E4%BD%93"><span class="toc-number">1.9.1.</span> <span class="toc-text">🚩刚体</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%A5%E7%95%8C%E9%9D%A2%E7%BB%91%E5%AE%9A"><span class="toc-number">1.10.</span> <span class="toc-text">🔥界面绑定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%A9%E7%BC%96%E7%A0%81%E6%8F%90%E7%A4%BA"><span class="toc-number">1.10.1.</span> <span class="toc-text">🚩编码提示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%A9%E6%8C%89%E9%92%AE%E4%B8%8E%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A"><span class="toc-number">1.10.2.</span> <span class="toc-text">🚩按钮与事件绑定</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%A5%E7%BE%8E%E6%9C%AF%E4%B8%8E%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.11.</span> <span class="toc-text">🔥美术与程序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%A9%E6%9D%90%E8%B4%A8%E4%B8%8E%E9%BB%98%E8%AE%A4%E7%9D%80%E8%89%B2%E5%99%A8"><span class="toc-number">1.11.1.</span> <span class="toc-text">🚩材质与默认着色器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%A9%E7%B2%92%E5%AD%90"><span class="toc-number">1.11.2.</span> <span class="toc-text">🚩粒子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%A5%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96"><span class="toc-number">1.12.</span> <span class="toc-text">🔥数据持久化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%A9PlayerPrefs"><span class="toc-number">1.12.1.</span> <span class="toc-text">🚩PlayerPrefs</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%A5%E5%9C%BA%E6%99%AF%E8%B7%B3%E8%BD%AC%E4%B8%8E%E9%80%80%E5%87%BA"><span class="toc-number">1.13.</span> <span class="toc-text">🔥场景跳转与退出</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/04/20/Unity/%E9%93%BE%E5%BC%8F%E7%BC%96%E7%A8%8B%E4%B8%8EUniRX%E7%9A%84%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/" title="链式编程与UniRX的基础使用"><img src="https://s2.loli.net/2023/04/20/YRqUmMdQz3J9FHv.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="链式编程与UniRX的基础使用"/></a><div class="content"><a class="title" href="/2023/04/20/Unity/%E9%93%BE%E5%BC%8F%E7%BC%96%E7%A8%8B%E4%B8%8EUniRX%E7%9A%84%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/" title="链式编程与UniRX的基础使用">链式编程与UniRX的基础使用</a><time datetime="2023-04-19T17:54:42.000Z" title="发表于 2023-04-20 01:54:42">2023-04-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/08/Unity/Unity%E4%B8%AD%E8%AE%A9%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%BB%A3%E7%A0%81%E7%9A%84%E7%A2%B0%E6%92%9E%E7%AE%B1%E5%A4%84%E4%BA%8E%E4%B8%8D%E5%90%8C%E5%B1%82%E7%BA%A7%E7%9A%84%E6%96%B9%E6%B3%95/" title="Unity中使碰撞检测的碰撞箱处于不同层级的方法"><img src="https://s2.loli.net/2023/04/20/8N4mKhbuFpfzlQU.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity中使碰撞检测的碰撞箱处于不同层级的方法"/></a><div class="content"><a class="title" href="/2022/07/08/Unity/Unity%E4%B8%AD%E8%AE%A9%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%BB%A3%E7%A0%81%E7%9A%84%E7%A2%B0%E6%92%9E%E7%AE%B1%E5%A4%84%E4%BA%8E%E4%B8%8D%E5%90%8C%E5%B1%82%E7%BA%A7%E7%9A%84%E6%96%B9%E6%B3%95/" title="Unity中使碰撞检测的碰撞箱处于不同层级的方法">Unity中使碰撞检测的碰撞箱处于不同层级的方法</a><time datetime="2022-07-08T05:42:25.000Z" title="发表于 2022-07-08 13:42:25">2022-07-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/05/05/ArticyDraft/Articy%20Draft%203%20%E4%B8%8E%20Unity/" title="Articy Draft 3 与 Unity">Articy Draft 3 与 Unity</a><time datetime="2022-05-05T09:46:30.000Z" title="发表于 2022-05-05 17:46:30">2022-05-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/03/Arts/%E5%A6%82%E4%BD%95%E5%9C%A8PS%E4%B8%AD%E4%BD%BF%E7%94%A8DaVinci%E7%9A%84LUT/" title="如何在PS中使用DaVinci的LUT">如何在PS中使用DaVinci的LUT</a><time datetime="2022-03-03T13:36:03.000Z" title="发表于 2022-03-03 21:36:03">2022-03-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/10/Unity/Unity%E4%B8%8A%E9%81%93%E7%A7%98%E7%B1%8D/" title="Unity上道秘籍">Unity上道秘籍</a><time datetime="2022-01-10T11:16:30.000Z" title="发表于 2022-01-10 19:16:30">2022-01-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/banner_default_2k.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 彭҈̢̛艺҉͜͝伟҈̧̕</div><div class="footer_custom_text">Iamsleepingnow 世界</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,508 @@
+<!DOCTYPE html><html class="hide-aside" lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Unity天坑VFX | Iamsleepingnow 世界</title><meta name="author" content="彭҈̢̛艺҉͜͝伟҈̧̕"><meta name="copyright" content="彭҈̢̛艺҉͜͝伟҈̧̕"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ff3c96"><meta name="description" content="Unity天坑VFX 坑多没关系，主要是香啊 可以先看看有多香 这里是英文版的文档  初始化 Package Manager 里下载安装 High Definition RP 高清管线 在弹出的 Wizard 里 Fix All ，这样就能用了 在 Project 窗口里新建 Visual Effect 文件 在 Hierarchy 窗口里新建 Visual Effect 物体，将文件附上去 双击">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity天坑VFX">
+<meta property="og:url" content="http://iamsleepingnow.github.io/2021/03/03/Unity/Unity%E5%A4%A9%E5%9D%91VFX/index.html">
+<meta property="og:site_name" content="Iamsleepingnow 世界">
+<meta property="og:description" content="Unity天坑VFX 坑多没关系，主要是香啊 可以先看看有多香 这里是英文版的文档  初始化 Package Manager 里下载安装 High Definition RP 高清管线 在弹出的 Wizard 里 Fix All ，这样就能用了 在 Project 窗口里新建 Visual Effect 文件 在 Hierarchy 窗口里新建 Visual Effect 物体，将文件附上去 双击">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://iamsleepingnow.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2021-03-03T13:25:15.000Z">
+<meta property="article:modified_time" content="2021-07-03T13:45:24.606Z">
+<meta property="article:author" content="彭҈̢̛艺҉͜͝伟҈̧̕">
+<meta property="article:tag" content="受苦">
+<meta property="article:tag" content="unity">
+<meta property="article:tag" content="VFX">
+<meta property="article:tag" content="Visual Effect Graph">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://iamsleepingnow.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://iamsleepingnow.github.io/2021/03/03/Unity/Unity%E5%A4%A9%E5%9D%91VFX/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: false,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Unity天坑VFX',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-07-03 21:45:24'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="Iamsleepingnow 世界" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">68</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 世界</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-save"></i><span> 档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-quote-left"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 功能</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tools/music/"><i class="fa-fw fas fa-play"></i><span> 歌单</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-arrows-alt"></i><span> 信息</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/banner_default_2k.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Iamsleepingnow 世界"><span class="site-name">Iamsleepingnow 世界</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 世界</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-save"></i><span> 档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-quote-left"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 功能</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tools/music/"><i class="fa-fw fas fa-play"></i><span> 歌单</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-arrows-alt"></i><span> 信息</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Unity天坑VFX</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-03-03T13:25:15.000Z" title="发表于 2021-03-03 21:25:15">2021-03-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-07-03T13:45:24.606Z" title="更新于 2021-07-03 21:45:24">2021-07-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/unity/">unity</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Unity天坑VFX"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Unity天坑VFX"><a href="#Unity天坑VFX" class="headerlink" title="Unity天坑VFX"></a>Unity天坑VFX</h1><ul>
+<li>坑多没关系，主要是香啊</li>
+<li>可以先看看有多<a target="_blank" rel="noopener" href="https://github.com/Unity-Technologies/VisualEffectGraph-Samples">香</a></li>
+<li>这里是英文版的<a target="_blank" rel="noopener" href="https://docs.unity3d.com/Packages/com.unity.visualeffectgraph@10.2/manual/index.html">文档</a></li>
+</ul>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><ul>
+<li><code>Package Manager</code> 里下载安装 <code>High Definition RP</code> 高清管线</li>
+<li>在弹出的 <code>Wizard</code> 里 <code>Fix All</code> ，这样就能用了</li>
+<li>在 <code>Project</code> 窗口里新建 <code>Visual Effect</code> 文件</li>
+<li>在 <code>Hierarchy</code> 窗口里新建 <code>Visual Effect</code> 物体，将文件附上去</li>
+<li>双击VFX的文件，打开VFX窗口</li>
+<li>编译的按钮在VFX窗口左上角 <code>Compile</code> ，<code>Auto</code> 按钮开启自动编译</li>
+<li>保存是 <code>ctrl + S</code></li>
+</ul>
+<h2 id="程序结构"><a href="#程序结构" class="headerlink" title="程序结构"></a>程序结构</h2><ul>
+<li><code>VFX（VisualEffectGraph）</code> 是节点式的，就像 <code>ShaderGraph</code> 一样，使用前需要知道世界的本原</li>
+<li>和 <code>ShaderGraph</code> 不同，世界信号是自上向下传输的</li>
+<li>世界是由 <code>内容块Context</code> 构成的，内容块分为两种： <code>绿块（命令块）</code> 和 <code>橙块（执行块）</code> （蓝块无法链接）</li>
+<li>绿线接绿口，橙线接橙口</li>
+<li>一个健康的粒子需要由以下结构构成<ul>
+<li><code>生成块Spawn（绿）</code></li>
+<li><code>初始化块Initialize Particle（绿转橙）</code></li>
+<li><code>更新块Update Particle（橙）</code></li>
+<li><code>渲染块Output Particle（橙）</code></li>
+</ul>
+</li>
+<li>一个 <code>初始化块</code> 链接一个 <code>更新块</code> 能够构成一个 <code>系统</code> ，并生成一个虚线框来套在系统上，可以命名</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_1.png" width=350>
+
+<ul>
+<li>上面这个粒子是没有任何效果的，因为只搭好了结构，里面内饰还没有</li>
+<li>右键这些内容块内部，创建一些子节点，这些子节点是树状的</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_2.png" width=350>
+
+<ul>
+<li>加一点节点，就像这样</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_3.png" width=350>
+
+<ul>
+<li><p>所以，正如同老版本粒子系统一样，粒子的基本运动是需要<strong>条件</strong>的：</p>
+<ul>
+<li><strong>发射量</strong>【生成块】</li>
+<li><strong>生命周期</strong>【初始化块】</li>
+<li><strong>速度</strong>【初始化块或更新块】</li>
+<li><strong>渲染方法</strong>【渲染块】</li>
+</ul>
+</li>
+<li><p>这个效果是很多直线上升的点点</p>
+</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_4.png" width=250>
+
+
+
+<h2 id="搜索节点"><a href="#搜索节点" class="headerlink" title="搜索节点"></a>搜索节点</h2><ul>
+<li>在寻找节点时需要输入内容搜索，因为找的话很麻烦</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_5.png" width=350>
+
+<ul>
+<li><p>但这么多的节点其实时有规律的，第一个词多半是这些：</p>
+<ul>
+<li>Add【添加，在原有属性的基础上添加】</li>
+<li>Set【设置，替换原有属性或属性初始化】</li>
+<li>Blend【混合，与原有混合】</li>
+<li>Inherit【继承，延续父类粒子】</li>
+<li>Multiply【相乘，在原有属性的基础上相乘】</li>
+<li>Position【空间，在一个区块内计算】</li>
+<li>Orient【旋转，仅渲染块】</li>
+</ul>
+</li>
+<li><p>特性词也有这些：</p>
+<ul>
+<li>Curve【曲线映射】</li>
+<li>Map【映射计算】</li>
+<li>Random【随机计算】</li>
+<li>Collide【碰撞，仅更新块】</li>
+<li>Force【力场，仅更新块】</li>
+<li>Kill【消隐区间，区域内粒子清除】</li>
+</ul>
+</li>
+</ul>
+<h2 id="属性类子节点"><a href="#属性类子节点" class="headerlink" title="属性类子节点"></a>属性类子节点</h2><ul>
+<li>搜索词太多了，在里面搜索不是什么好主意</li>
+<li>不过，在点击某一个子节点时， <code>Inspector</code> 面板会显示它的所有信息</li>
+<li>也就是说，所有关于<strong>属性修改</strong>的节点都可以由调整Inspector面板来调出</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_6.png" width=350>
+
+<ul>
+<li>它拥有四个下拉菜单：<ul>
+<li><code>Attribute</code> 是要调整的属性种类，实在太多了</li>
+<li><code>Composition</code> 是调整方法，有<strong>重载</strong>、<strong>添加</strong>、<strong>相乘</strong>、<strong>混合</strong>四种</li>
+<li><code>Source</code> 是数值类型，有<strong>具体数值</strong>和<strong>继承</strong>两种</li>
+<li><code>Random</code> 是随机方法，有<strong>关闭随机</strong>、<strong>组件范围</strong>、<strong>全局范围</strong>三种</li>
+</ul>
+</li>
+</ul>
+<h2 id="注意项"><a href="#注意项" class="headerlink" title="注意项"></a>注意项</h2><ul>
+<li>有一些很重要的内容不成体系，但是不知道也不行</li>
+</ul>
+<h3 id="坐标系"><a href="#坐标系" class="headerlink" title="坐标系"></a>坐标系</h3><ul>
+<li>粒子是有 <code>世界空间world</code> 和 <code>本地空间local</code> 的，默认是本地空间</li>
+<li>在本地空间模式下，粒子物体的移动受本地影响，反之不受影响</li>
+<li>点击<strong>任何橙色内容块</strong>右上角来修改全局空间</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_7.png" width=350>
+
+<h3 id="空间暴露"><a href="#空间暴露" class="headerlink" title="空间暴露"></a>空间暴露</h3><ul>
+<li>有一些跟<strong>坐标相关</strong>的数值会显示一个空间符号，默认是 <code>L</code> ，点击成 <code>W</code></li>
+<li>就能在 <code>Scene场景</code> 里动态修改，这样就不需要锻炼抽象思维了</li>
+<li>如果点击了没反应，说明编辑器UI出bug了，重新打开一遍VFX窗口即可</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_8.png" width=350>
+
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_9.png" width=350>
+
+<h3 id="粒子边界"><a href="#粒子边界" class="headerlink" title="粒子边界"></a>粒子边界</h3><ul>
+<li>这个东西非常重要，每个粒子的初始化块里都有粒子边界设置</li>
+<li>当<strong>屏幕视角</strong>移出粒子边界之后，粒子就<strong>直接不显示</strong>了，非常的突兀</li>
+<li>所以在弄粒子时，粒子边界需要经常去调</li>
+<li>所以暴露一下坐标（指 <code>W</code> ）</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_10.png" width=350>
+
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_11.png" width=350>
+
+<h3 id="发射数量"><a href="#发射数量" class="headerlink" title="发射数量"></a>发射数量</h3><ul>
+<li><code>生成块Spawn</code> 中修改的发射数量是一秒内发射个数，是<strong>速度</strong></li>
+<li><code>初始化块Initialize Particle</code> 中修改的发射数量是最大可显示数量，是<strong>最大数量</strong></li>
+<li>我使用三个例子来解释<strong>粒子寿命</strong>，<strong>粒子速度</strong>，<strong>最大数量</strong>之间的关系</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_12.png" width=350>
+
+<ul>
+<li>当<strong>粒子寿命</strong>为1秒时，<strong>速度</strong>为10时，<strong>最大数量</strong>如果为5，粒子0.1秒发射一个，吐5下停5下</li>
+<li>当<strong>粒子寿命</strong>为1秒时，<strong>速度</strong>为5时，<strong>最大数量</strong>如果为10，粒子0.2秒发射一个，持续发射</li>
+<li>当<strong>粒子寿命</strong>为0.5秒时，<strong>速度</strong>为10时，<strong>最大数量</strong>如果为5，粒子0.1秒发射一个，持续发射</li>
+</ul>
+<h2 id="事件入门"><a href="#事件入门" class="headerlink" title="事件入门"></a>事件入门</h2><ul>
+<li><p>有一个内容块比较特殊： <code>Event事件（绿）</code> 内容块</p>
+</li>
+<li><p>只有一个字符串属性： <code>Event Name</code> ，这里是和代码沟通的属性</p>
+</li>
+<li><p>实现一个小交互：左键播放，右键停止</p>
+</li>
+<li><p>首先需要有一个健康的粒子，至少能看到粒子发射</p>
+</li>
+<li><p>然后链接 <code>Spawn</code>  ，修改 <code>Event Name</code></p>
+</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_13.png" width=650>
+
+<ul>
+<li>整一个脚本挂在粒子物体上即可</li>
+</ul>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">using</span> UnityEngine.VFX;<span class="comment">//引用命名空间</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">VisualEffectTest1</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> VisualEffect visualEffect;<span class="comment">//这里是粒子本体</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Start</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        visualEffect = GetComponent&lt;VisualEffect&gt;();<span class="comment">//获得粒子本体</span></span><br><span class="line">        visualEffect.Stop();<span class="comment">//一开始保证粒子停止播放</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Update</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (Input.GetMouseButtonDown(<span class="number">0</span>))<span class="comment">//左键</span></span><br><span class="line">        &#123;</span><br><span class="line">            visualEffect.SendEvent(<span class="string">&quot;OnPlay&quot;</span>);<span class="comment">//传递事件信号</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (Input.GetMouseButtonDown(<span class="number">1</span>))<span class="comment">//右键</span></span><br><span class="line">        &#123;</span><br><span class="line">            visualEffect.SendEvent(<span class="string">&quot;OnStop&quot;</span>);<span class="comment">//传递事件信号</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="渲染内容块"><a href="#渲染内容块" class="headerlink" title="渲染内容块"></a>渲染内容块</h2><ul>
+<li>VFX里提供了很多渲染块：（甚至展示不全）</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_14.png" width=350>
+
+<ul>
+<li>在渲染块中，除了属性种类之外，还可以添加一些特殊效果：<ul>
+<li><code>Camera Fade</code> 摄像机靠近自动消隐</li>
+<li><code>Face Camera Plane</code> 始终面向摄像机</li>
+<li><code>Subpixel Anti-Aliasing</code> 粒子抗锯齿</li>
+<li><code>Screen Space Size</code> 始终保持视野大小（参见Superliminal游戏）</li>
+<li><code>Tile/Wrap Positions</code> 越界粒子折返出现</li>
+</ul>
+</li>
+<li>渲染块右键 <code>Convert Output</code> 可以更改渲染块类型</li>
+</ul>
+<h2 id="内容块外节点"><a href="#内容块外节点" class="headerlink" title="内容块外节点"></a>内容块外节点</h2><ul>
+<li>在内容块以外右键创建节点，会是这样：</li>
+<li><code>Context</code> 里就是<strong>内容块</strong>，带颜色（绿和黄）的那种</li>
+<li><code>Operator</code> 即<strong>操纵器</strong>，几乎所有的数值计算方法</li>
+<li><code>Property</code> 即<strong>自定义属性</strong>，<code>blackboard</code> 悬浮面板里新建的所有数值</li>
+<li><code>System</code> 即内置的粒子<strong>模板</strong>，很方便</li>
+<li><code>Misc</code> <strong>杂项</strong>里有分组器，能把一些节点放进去分类</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_15.png" width=350>
+
+<h3 id="操纵器"><a href="#操纵器" class="headerlink" title="操纵器"></a>操纵器</h3><ul>
+<li><code>Attribute</code> 即当前的<strong>总输出属性值</strong></li>
+<li><code>Bitwise</code> 即<strong>按位运算</strong>，用的较少</li>
+<li><code>BuiltIn</code> 即<strong>内建属性</strong>，有世界物体空间的转换以及一些系统的公有属性</li>
+<li><code>Color</code> 即<strong>色彩模型转换</strong></li>
+<li><code>Inline</code> 即<strong>内联属性</strong>，所有数据类型的形状都在这</li>
+<li><code>Logic</code> 即<strong>逻辑运算</strong></li>
+<li><code>Math</code> 即<strong>数学运算</strong>，只有你想不到的，没有我数学做不到的</li>
+<li><code>Noise</code> 即<strong>噪音生成器</strong>，有14种</li>
+<li><code>Random</code> 即<strong>随机生成器</strong></li>
+<li><code>Sampling</code> 即<strong>采样</strong>，包含曲线、渐变、贴图的采样</li>
+<li><code>Subgraph Operator</code> 即<strong>块中块</strong>，块中块得在 <code>Project</code> 里创建</li>
+<li><code>Time</code> 即<strong>时间</strong>，时间建议直接搜索，更全面</li>
+<li><code>Utility</code> 即<strong>实用工具</strong>，里面有点缓存加载器</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_16.png" width=350>
+
+
+
+<h2 id="GPU事件"><a href="#GPU事件" class="headerlink" title="GPU事件"></a>GPU事件</h2><ul>
+<li>在做GPU事件之前，先得勾选这个：</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_17.png" width=550>
+
+<ul>
+<li>勾选拓展包之后，有两个变化：<ul>
+<li><code>Context</code> 中出现 <code>GPUEvent</code> 内容块</li>
+<li><code>更新块Update Particle</code> 中能搜索 <code>Event</code> 了</li>
+</ul>
+</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_18.png" width=350>
+
+<ul>
+<li><p>使用GPU事件可以让粒子按照时间流程来套娃</p>
+</li>
+<li><p>GPU事件块只能放在<strong>更新块</strong>内</p>
+</li>
+<li><p>拥有三种事件类型：</p>
+<ul>
+<li><code>Trigger Event Always</code> 始终触发</li>
+<li><code>Trigger Event On Die</code> 销毁时触发</li>
+<li><code>Trigger Event Rate</code> 按速率触发，其中：<ul>
+<li><code>Over Time</code> 指每秒触发次数</li>
+<li><code>Over Distance</code> 指粒子运动距离每超过一米之间的触发次数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>在这种粒子套娃的情况下，新的粒子也许会继承之前的粒子的属性，这时可以使用 <code>Inherit</code></p>
+</li>
+<li><p>套娃的其他操作与之前类似</p>
+</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_19.png" width=750>
+
+
+
+<h2 id="拉丝模式"><a href="#拉丝模式" class="headerlink" title="拉丝模式"></a>拉丝模式</h2><ul>
+<li>选择 <code>初始化块Initialize Particle（绿转橙）</code> 内容块， <code>Inspector</code> 面板里能选择一个选项： <code>Data Type</code> </li>
+<li>将 <code>Data Type</code> 转换为 <code>Particle Strip</code> ，便开启了拉丝模式</li>
+<li><code>初始化块Initialize Particle（绿转橙）</code> 变成了 <code>初始化块Initialize Particle Strip（绿转淡橙）</code> </li>
+<li>初始化块链接的更新块也变成了独特的更新块</li>
+<li>渲染块要选择独特的拉丝渲染块</li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_20.png" width=350>
+
+<ul>
+<li>可以加一些独特的效果，相当于普通粒子效果里的<strong>拖尾</strong></li>
+</ul>
+<img src="https://iamsleepinggroup.coding.net/p/coding-devops-guide/d/link-pool/git/raw/master/pics/unity_vfx/vfx_21.png" width=750>
+
+
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>比普通粒子效果要难入门，难度可能凌驾于 <code>ShaderGraph</code> 之上</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://iamsleepingnow.github.io">彭҈̢̛艺҉͜͝伟҈̧̕</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://iamsleepingnow.github.io/2021/03/03/Unity/Unity%E5%A4%A9%E5%9D%91VFX/">http://iamsleepingnow.github.io/2021/03/03/Unity/Unity%E5%A4%A9%E5%9D%91VFX/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="null" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://iamsleepingnow.github.io" target="_blank">Iamsleepingnow 世界</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%8F%97%E8%8B%A6/">受苦</a><a class="post-meta__tags" href="/tags/unity/">unity</a><a class="post-meta__tags" href="/tags/VFX/">VFX</a><a class="post-meta__tags" href="/tags/Visual-Effect-Graph/">Visual Effect Graph</a></div><div class="post_share"></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/02/03/Blender/Blender%E6%8C%87%E5%8D%97/" title="反人类三维软件Blender指南"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-02-03</div><div class="title">反人类三维软件Blender指南</div></div></a></div><div><a href="/2021/02/03/Blender/Blender%E6%8F%92%E4%BB%B6%E6%A8%A1%E6%9D%BF/" title="Blender插件模板"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-02-03</div><div class="title">Blender插件模板</div></div></a></div><div><a href="/2021/08/13/Blender/Blender%E6%A8%A1%E5%9E%8B%E6%8B%93%E8%A1%A5/" title="Blender模型拓补"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-13</div><div class="title">Blender模型拓补</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">彭҈̢̛艺҉͜͝伟҈̧̕</div><div class="author-info__description">Iamsleepingnow 世界</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">68</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Unity%E5%A4%A9%E5%9D%91VFX"><span class="toc-number">1.</span> <span class="toc-text">Unity天坑VFX</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.1.</span> <span class="toc-text">初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84"><span class="toc-number">1.2.</span> <span class="toc-text">程序结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E8%8A%82%E7%82%B9"><span class="toc-number">1.3.</span> <span class="toc-text">搜索节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E7%B1%BB%E5%AD%90%E8%8A%82%E7%82%B9"><span class="toc-number">1.4.</span> <span class="toc-text">属性类子节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E9%A1%B9"><span class="toc-number">1.5.</span> <span class="toc-text">注意项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-number">1.5.1.</span> <span class="toc-text">坐标系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E6%9A%B4%E9%9C%B2"><span class="toc-number">1.5.2.</span> <span class="toc-text">空间暴露</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B2%92%E5%AD%90%E8%BE%B9%E7%95%8C"><span class="toc-number">1.5.3.</span> <span class="toc-text">粒子边界</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%91%E5%B0%84%E6%95%B0%E9%87%8F"><span class="toc-number">1.5.4.</span> <span class="toc-text">发射数量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%85%A5%E9%97%A8"><span class="toc-number">1.6.</span> <span class="toc-text">事件入门</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%B2%E6%9F%93%E5%86%85%E5%AE%B9%E5%9D%97"><span class="toc-number">1.7.</span> <span class="toc-text">渲染内容块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E5%9D%97%E5%A4%96%E8%8A%82%E7%82%B9"><span class="toc-number">1.8.</span> <span class="toc-text">内容块外节点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E7%BA%B5%E5%99%A8"><span class="toc-number">1.8.1.</span> <span class="toc-text">操纵器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GPU%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.9.</span> <span class="toc-text">GPU事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%89%E4%B8%9D%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.10.</span> <span class="toc-text">拉丝模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.11.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/04/20/Unity/%E9%93%BE%E5%BC%8F%E7%BC%96%E7%A8%8B%E4%B8%8EUniRX%E7%9A%84%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/" title="链式编程与UniRX的基础使用"><img src="https://s2.loli.net/2023/04/20/YRqUmMdQz3J9FHv.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="链式编程与UniRX的基础使用"/></a><div class="content"><a class="title" href="/2023/04/20/Unity/%E9%93%BE%E5%BC%8F%E7%BC%96%E7%A8%8B%E4%B8%8EUniRX%E7%9A%84%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/" title="链式编程与UniRX的基础使用">链式编程与UniRX的基础使用</a><time datetime="2023-04-19T17:54:42.000Z" title="发表于 2023-04-20 01:54:42">2023-04-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/08/Unity/Unity%E4%B8%AD%E8%AE%A9%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%BB%A3%E7%A0%81%E7%9A%84%E7%A2%B0%E6%92%9E%E7%AE%B1%E5%A4%84%E4%BA%8E%E4%B8%8D%E5%90%8C%E5%B1%82%E7%BA%A7%E7%9A%84%E6%96%B9%E6%B3%95/" title="Unity中使碰撞检测的碰撞箱处于不同层级的方法"><img src="https://s2.loli.net/2023/04/20/8N4mKhbuFpfzlQU.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity中使碰撞检测的碰撞箱处于不同层级的方法"/></a><div class="content"><a class="title" href="/2022/07/08/Unity/Unity%E4%B8%AD%E8%AE%A9%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%BB%A3%E7%A0%81%E7%9A%84%E7%A2%B0%E6%92%9E%E7%AE%B1%E5%A4%84%E4%BA%8E%E4%B8%8D%E5%90%8C%E5%B1%82%E7%BA%A7%E7%9A%84%E6%96%B9%E6%B3%95/" title="Unity中使碰撞检测的碰撞箱处于不同层级的方法">Unity中使碰撞检测的碰撞箱处于不同层级的方法</a><time datetime="2022-07-08T05:42:25.000Z" title="发表于 2022-07-08 13:42:25">2022-07-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/05/05/ArticyDraft/Articy%20Draft%203%20%E4%B8%8E%20Unity/" title="Articy Draft 3 与 Unity">Articy Draft 3 与 Unity</a><time datetime="2022-05-05T09:46:30.000Z" title="发表于 2022-05-05 17:46:30">2022-05-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/03/Arts/%E5%A6%82%E4%BD%95%E5%9C%A8PS%E4%B8%AD%E4%BD%BF%E7%94%A8DaVinci%E7%9A%84LUT/" title="如何在PS中使用DaVinci的LUT">如何在PS中使用DaVinci的LUT</a><time datetime="2022-03-03T13:36:03.000Z" title="发表于 2022-03-03 21:36:03">2022-03-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/10/Unity/Unity%E4%B8%8A%E9%81%93%E7%A7%98%E7%B1%8D/" title="Unity上道秘籍">Unity上道秘籍</a><time datetime="2022-01-10T11:16:30.000Z" title="发表于 2022-01-10 19:16:30">2022-01-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/banner_default_2k.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 彭҈̢̛艺҉͜͝伟҈̧̕</div><div class="footer_custom_text">Iamsleepingnow 世界</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
