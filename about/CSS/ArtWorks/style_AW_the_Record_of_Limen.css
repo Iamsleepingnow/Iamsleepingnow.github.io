@@ -90,8 +90,8 @@ h1.bigtitle{
     display: inline-block;
     text-align: right;
 /*	VALUES:16~64, VIEWPORT:450~1920*/
-/*    font-size: clamp(1.875rem, 0.335rem + 4.93vw, 6.25rem);*/
-    font-size: clamp(1.125rem, 0.092rem + 3.67vw, 4.5rem);
+    font-size: clamp(1.875rem, 0.335rem + 4.93vw, 6.25rem);
+/*    font-size: clamp(1.125rem, 0.092rem + 3.67vw, 4.5rem);*/
     background-size: 100%;
     background-position: 20%;
     text-shadow: 5px 5px 20px #000;
@@ -110,7 +110,8 @@ span.en-bigtitle{
 /*	outline: solid #0066FF;*/
 /*	border-radius: 6px;*/
 /*	VALUES:16~64, VIEWPORT:450~1920*/
-	font-size: clamp(1rem, 0.082rem + 3.27vw, 4rem);
+/*	font-size: clamp(1rem, 0.082rem + 3.27vw, 4rem);*/
+	font-size: clamp(1.5rem, 0.39rem + 3.95vw, 5.125rem);
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~链接*/
 /*返回主页链接*/
