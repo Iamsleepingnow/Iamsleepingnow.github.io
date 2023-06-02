@@ -144,9 +144,9 @@
     <category term="unity" scheme="http://iamsleepingnow.github.io/categories/unity/"/>
     
     
-    <category term="多图预警" scheme="http://iamsleepingnow.github.io/tags/%E5%A4%9A%E5%9B%BE%E9%A2%84%E8%AD%A6/"/>
-    
     <category term="教程" scheme="http://iamsleepingnow.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="多图预警" scheme="http://iamsleepingnow.github.io/tags/%E5%A4%9A%E5%9B%BE%E9%A2%84%E8%AD%A6/"/>
     
     <category term="unity" scheme="http://iamsleepingnow.github.io/tags/unity/"/>
     
@@ -177,9 +177,9 @@
     
     <category term="教程" scheme="http://iamsleepingnow.github.io/tags/%E6%95%99%E7%A8%8B/"/>
     
-    <category term="unity" scheme="http://iamsleepingnow.github.io/tags/unity/"/>
-    
     <category term="超好用" scheme="http://iamsleepingnow.github.io/tags/%E8%B6%85%E5%A5%BD%E7%94%A8/"/>
+    
+    <category term="unity" scheme="http://iamsleepingnow.github.io/tags/unity/"/>
     
   </entry>
   
@@ -599,15 +599,15 @@
     <category term="文档" scheme="http://iamsleepingnow.github.io/categories/%E6%96%87%E6%A1%A3/"/>
     
     
-    <category term="文档" scheme="http://iamsleepingnow.github.io/tags/%E6%96%87%E6%A1%A3/"/>
-    
     <category term="博客" scheme="http://iamsleepingnow.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
-    <category term="超好用" scheme="http://iamsleepingnow.github.io/tags/%E8%B6%85%E5%A5%BD%E7%94%A8/"/>
+    <category term="文档" scheme="http://iamsleepingnow.github.io/tags/%E6%96%87%E6%A1%A3/"/>
     
     <category term="简单" scheme="http://iamsleepingnow.github.io/tags/%E7%AE%80%E5%8D%95/"/>
     
     <category term="markdown" scheme="http://iamsleepingnow.github.io/tags/markdown/"/>
+    
+    <category term="超好用" scheme="http://iamsleepingnow.github.io/tags/%E8%B6%85%E5%A5%BD%E7%94%A8/"/>
     
   </entry>
   
