@@ -31,6 +31,7 @@ div.floatbg-truncate{
     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,1)), url(../Source/background.jpg);
     background-size: 100%;
 }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*主内容部分*/
 div.content{
     width: 90%; /*99.7*/
@@ -44,6 +45,7 @@ div.content{
 ul.ul-content{
     list-style-type: none;
 }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*空白占位A*/
 div.halfpage{
     /* border: 1px dotted #454545; */
@@ -56,6 +58,7 @@ div.quatpage{
     width: 100%;
     height: 200px;
 }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*主标题*/
 h1.bigtitle{
     font-family: "Revamped";
@@ -74,7 +77,8 @@ h1.bigtitle{
 }
 /*返回主页链接*/
 a.back{
-    font-size: 18px;
+/*	18px*/
+    font-size: clamp(0.875rem, 0.551rem + 0.86vw, 2.625rem);
     color: #888;
     text-decoration: none;
     letter-spacing: .5em;
@@ -92,6 +96,7 @@ a.back:active{
     color: #ffd500;
     letter-spacing: .5em;
 }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*个人形象*/
 div.aboutme{
     width: 400px;
@@ -118,6 +123,7 @@ h3.aboutme-en-name{
     letter-spacing: 0.35em;
     font-size: 24px;
 }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*个人简要介绍*/
 div.introme{
     width: clamp(21.875rem, 10.465rem + 45.64vw, 120rem);
@@ -128,7 +134,7 @@ div.introme{
 }
 /*个人简要介绍 --中文文本介绍*/
 p.cn-introme{
-    margin-top: 0px;
+/*    margin-top: 0px;*/
     color: #888;
     margin-top: 50px;
     line-height: 35px;
@@ -139,7 +145,7 @@ p.cn-introme{
 }
 /*个人简要介绍 --英文文本介绍*/
 p.en-introme{
-    margin-top: 0px;
+/*    margin-top: 0px;*/
     color: #888;
     margin-top: 50px;
     line-height: 35px;
@@ -148,22 +154,43 @@ p.en-introme{
     text-align: left;
     letter-spacing: -0.05em;
 }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*列表中的所有超链接*/
 ul a{
     display: inline-block;
     font-size: 22px;
-    color: #888;
+    color: #888800;
     text-decoration: none;
     letter-spacing: 0.05em;
     margin-top: 10px;
     margin-bottom: 10px;
 }
-/*列表中的所有超链接 -- 鼠标悬停伪类*/
-ul a:hover{
-    text-decoration: line-through;
+/*作品清单样式*/
+ul.ul-artworklist{
+	display: inline-block;
+    font-size: 22px;
+    color: #CCC;
+    text-decoration: none;
+	list-style-type: none;
+    letter-spacing: 0.1em;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+/*作品清单中的所有超链接*/
+ul.ul-artworklist a{
+	padding-bottom: 10px;
+	font-size: 22px;
+    color: #888;
+    letter-spacing: 0.05em;
+}
+/*作品清单中的所有超链接 -- 鼠标悬停伪类*/
+ul.ul-artworklist a:hover{
+	text-decoration: #ffd500 wavy underline;
+/*	text-decoration: line-through;*/
     font-size: 22px;
     color: #ffd500;
 }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*固定锚点 -- 回到顶端*/
 div.fixedanchor{
     position: fixed;

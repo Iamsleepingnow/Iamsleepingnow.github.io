@@ -1,0 +1,279 @@
+@charset "utf-8";
+/* CSS Document */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~框架*/
+/*引用外部字体*/
+/*
+@font-face {
+    font-family: "Revamped";
+    src: url(../../Source/Revamped.otf);
+}
+*/
+@font-face {
+    font-family: "Futura";
+    src: url(../../Source/Futura-Bold-5.ttf);
+}
+*{ /*重置浏览器*/
+    margin: 0;
+    padding: 0;
+    font-family: "宋体";
+}
+body{
+    background-color: #000;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~背景*/
+/*背景区域*/
+div.bg{
+    position: absolute;
+    width: 100%;
+    /* height: 100%; */
+    background-color: #000;
+    z-index: -10;
+}
+/*浮动背景图，需要循环覆盖*/
+div.floatbg-truncate{
+    position: absolute;
+    left: 0;
+	top: -50px;
+    float: right;
+    height: 100%;
+    width: 100%;
+    background-repeat: repeat-y;
+    z-index: -9;
+    background-image: linear-gradient(rgba(30,0,60,0.6), rgba(0,0,0,1)), url(../../Source/background.jpg);
+    background-size: 100%;
+}
+embed#svg-main{
+	height: 10%;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~主内容*/
+/*主内容部分*/
+div.content{
+    width: 100%; /*99.7*/
+    height: 100%;
+    /* background-color: #00000066; */
+    margin: 0px auto;
+    padding: 0px 0px;
+    text-align: center;
+}
+/*主内容部分-列表*/
+div.content ul{
+	list-style-type: none;
+	text-align: left;
+	color: #FFF;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~占位空白*/
+/*空白占位A*/
+div.halfpage{
+    /* border: 1px dotted #454545; */
+    width: 100%;
+    height: 400px;
+}
+/*空白占位B*/
+div.quatpage{
+    /* border: 1px dotted #454545; */
+    width: 100%;
+    height: 200px;
+}
+/*空白占位C*/
+div.eightpage{
+    /* border: 1px dotted #454545; */
+    width: 100%;
+    height: 100px;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~标题*/
+/*主标题*/
+h1.bigtitle{
+/*    font-family: "Revamped";*/
+	font-family: "Futura";
+    color: #FFF;
+    padding-top: 250px;
+    padding-bottom: 250px;
+	padding-right: 5%;
+    box-sizing: border-box;
+    width: 100%;
+    display: inline-block;
+    text-align: right;
+    font-size: clamp(1.875rem, 0.335rem + 4.93vw, 6.25rem);
+    background-size: 100%;
+    background-position: 20%;
+    text-shadow: 5px 5px 20px #000;
+    letter-spacing: 0.25em;
+}
+/*主标中的英文*/
+span.en-bigtitle{
+	font-family: "Futura";
+	font-style: oblique;
+/*	#CCAA00,#FF0088*/
+	background-image:-webkit-linear-gradient(top, #6600FF,#0066FF);
+	-webkit-background-clip:text;
+	-webkit-text-fill-color:transparent;
+	text-shadow: 5px 5px 20px #FF883300;
+	letter-spacing: 0.15em;
+/*	VALUES:16~64, VIEWPORT:450~1920*/
+	font-size: clamp(1rem, 0.082rem + 3.27vw, 4rem);
+/*	outline: solid #0066FF;*/
+/*	border-radius: 6px;*/
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~链接*/
+/*返回主页链接*/
+a.back{
+    font-size: 18px;
+    color: #888;
+    text-decoration: none;
+    letter-spacing: .5em;
+    text-shadow: 0px 0px 10px #000;
+}
+/*返回主页链接 -- 鼠标悬停伪类*/
+a.back:hover{
+    text-decoration: line-through;
+    color: #ffd500;
+    letter-spacing: .5em;
+}
+/*返回主页链接 -- 持续触发伪类*/
+a.back:active{
+    text-decoration: line-through;
+    color: #ffd500;
+    letter-spacing: .5em;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~文本*/
+/*介绍文本*/
+div.intro{
+	/*VALUES:300~2600, VIEWPORT:600~3840*/
+    width: clamp(18.75rem, -7.87rem + 70.99vw, 162.5rem);
+    margin: auto;
+    z-index: 9;
+    border: 0px solid #000;
+	background-color: #000000CC;
+	border-radius: 20px;
+    padding: 40px 3% 60px 3%;
+    box-sizing: border-box;
+}
+/*介绍文本 --中文文本介绍*/
+p.cn-intro{
+    color: #CCC;
+    margin-top: 10px;
+    line-height: 35px;
+    font-size: 20px;
+    text-indent: 2em;
+    text-align: left;
+    letter-spacing: 0.15em;
+}
+/*介绍文本 --中文文本介绍 --技术信息*/
+p.cn-intro#cn-intro-tech{
+	color: #888;
+	margin-bottom: 60px;
+}
+/*介绍文本 --英文文本介绍*/
+p.en-intro{
+    color: #CCC;
+    margin-top: 10px;
+    line-height: 35px;
+    font-size: 20px;
+    text-indent: 2em;
+    text-align: left;
+    letter-spacing: -0.05em;
+}
+/*介绍文本 --英文文本介绍 --技术信息*/
+p.en-intro#en-intro-tech{
+	color: #888;
+	margin-bottom: 60px;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~图片*/
+/*矢量图 --主图*/
+embed.svg#svg-main{
+	position: absolute;
+	width: 100%;
+	float: right;
+	right: 10%;
+	top: 10px;
+	z-index: -10;
+}
+div.images{
+	width: clamp(18.75rem, -7.87rem + 70.99vw, 162.5rem);
+    margin: auto;
+	padding: 0px;
+    z-index: 9;
+}
+img.img{
+	margin: auto;
+	width: 100%;
+	box-shadow: 0px 0px 30px #000;
+}
+li.images{
+	padding-top: 200px;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~锚点*/
+/*固定锚点 -- 回到顶端*/
+div.fixedanchor{
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 25px;
+    height: 25px;
+    background: url(../../Source/uparrow.png);
+    background-size: 100% 100%;
+    opacity: 0.35;
+}
+/*返回按钮*/
+div.backpage{
+	position: fixed;
+    top: 15px;
+    left: 15px;
+    width: 25px;
+    height: 25px;
+    background: url(../../Source/leftarrow.png);
+    background-size: 100% 100%;
+    opacity: 0.35;
+}
+/*前一页按钮*/
+div.leftpage{
+	position: absolute;
+    top: 50%;
+    left: 15px;
+    width: 30px;
+    height: 50px;
+    background: url(../../Source/leftarrow_alt1.png);
+    background-size: 100% 100%;
+    opacity: 0.35;
+}
+div.leftpage:hover{
+	opacity: 1;
+}
+/*后一页按钮*/
+div.rightpage{
+	position: absolute;
+    top: 50%;
+    right: 15px;
+    width: 30px;
+    height: 50px;
+    background: url(../../Source/rightarrow_alt1.png);
+    background-size: 100% 100%;
+    opacity: 0.35;
+}
+div.rightpage:hover{
+	opacity: 1;
+}
+/*完整视频链接*/
+a.fullvideo{
+	font-family: "Futura";
+	color: #ddd;
+    box-sizing: border-box;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+    text-shadow: 5px 5px 20px #000;
+    letter-spacing: 0.25em;
+	text-decoration: none;
+	padding-right: 5%;
+}
+/*完整视频链接 -- 鼠标悬停伪类*/
+a.fullvideo:hover{
+    text-decoration: line-through;
+    color: #ffd500;
+}
+/*完整视频链接 -- 持续触发伪类*/
+a.fullvideo:active{
+    text-decoration: line-through;
+    color: #ffd500;
+}
