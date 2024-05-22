@@ -1,12 +1,20 @@
 /*引用外部字体*/
 @font-face {
+    font-family: "GreekCarve";
+    src: url(../Source/GreekCarve.ttf);
+}
+@font-face {
     font-family: "Revamped";
     src: url(../Source/Revamped.otf);
+}
+@font-face {
+    font-family: "RomanLess";
+    src: url(../Source/RomanLess.ttf);
 }
 *{ /*重置浏览器*/
     margin: 0;
     padding: 0;
-    font-family: "宋体";
+    font-family: "宋体"; /*宋体*/
 }
 body{
     background-color: #000;
@@ -28,7 +36,7 @@ div.floatbg-truncate{
     width: 100%;
     background-repeat: repeat-y;
     z-index: -9;
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,1)), url(../Source/background.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,1)), url(../Source/background.jpg);
     background-size: 100%;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -61,19 +69,19 @@ div.quatpage{
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*主标题*/
 h1.bigtitle{
-    font-family: "Revamped";
-    color: #ddd;
-    padding-top: 250px;
-    padding-bottom: 250px;
+    font-family: "GreekCarve";
+    color: #ffde07;
+    padding-top: 10%; /*250px*/
+    padding-bottom: 10%; /*250px*/
     box-sizing: border-box;
     width: 100%;
     display: inline-block;
     text-align: center;
-    font-size: clamp(1.875rem, 0.335rem + 4.93vw, 6.25rem);
+    font-size: clamp(1.875rem, 9.38vw, 11.25rem);/*clamp(1.875rem, 0.335rem + 4.93vw, 6.25rem);*/
     background-size: 100%;
     background-position: 20%;
     text-shadow: 5px 5px 20px #000;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.05em;
 }
 /*返回主页链接*/
 a.back{
@@ -114,19 +122,19 @@ h3.aboutme-cn-name{
     margin-top: 50px;
     color: #ddd;
     letter-spacing: 0.2em;
-    font-size: 24px;
+    font-size: 36px;
 }
 /*个人形象 -- 英文姓名*/
 h3.aboutme-en-name{
     margin-top: 0px;
     color: #888;
     letter-spacing: 0.35em;
-    font-size: 24px;
+    font-size: 28px;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*个人简要介绍*/
 div.introme{
-    width: clamp(21.875rem, 10.465rem + 45.64vw, 120rem);
+    width: clamp(42.5rem, 24.615rem + 39.74vw, 120rem);/*clamp(21.875rem, 10.465rem + 45.64vw, 120rem);*/
     /* height: 450px; */
     margin: auto;
     z-index: 9;
@@ -135,10 +143,10 @@ div.introme{
 /*个人简要介绍 --中文文本介绍*/
 p.cn-introme{
 /*    margin-top: 0px;*/
-    color: #888;
+    color: #bbb;
     margin-top: 50px;
-    line-height: 35px;
-    font-size: 20px;
+    line-height: 45px;
+    font-size: 26px;
     text-indent: 2em;
     text-align: left;
     letter-spacing: 0.15em;
@@ -146,20 +154,20 @@ p.cn-introme{
 /*个人简要介绍 --英文文本介绍*/
 p.en-introme{
 /*    margin-top: 0px;*/
-    color: #888;
+    color: #bbb;
     margin-top: 50px;
-    line-height: 35px;
-    font-size: 20px;
+    line-height: 45px;
+    font-size: 26px;
     text-indent: 2em;
     text-align: left;
-    letter-spacing: -0.05em;
+    letter-spacing: 0.05em;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*列表中的所有超链接*/
 ul a{
     display: inline-block;
-    font-size: 22px;
-    color: #888800;
+    font-size: clamp(1.25rem, 1.077rem + 0.38vw, 2rem); /*22px*/
+    color: #e9c00a;
     text-decoration: none;
     letter-spacing: 0.05em;
     margin-top: 10px;
@@ -168,8 +176,8 @@ ul a{
 /*作品清单样式*/
 ul.ul-artworklist{
 	display: inline-block;
-    font-size: 22px;
-    color: #CCC;
+    font-size: clamp(1.25rem, 1.077rem + 0.38vw, 2rem); /*22px*/
+    color: #aaa;
     text-decoration: none;
 	list-style-type: none;
     letter-spacing: 0.1em;
@@ -179,15 +187,15 @@ ul.ul-artworklist{
 /*作品清单中的所有超链接*/
 ul.ul-artworklist a{
 	padding-bottom: 10px;
-	font-size: 22px;
-    color: #888;
+	font-size: clamp(1.25rem, 1.077rem + 0.38vw, 2rem); /*22px*/
+    color: #fff;
     letter-spacing: 0.05em;
 }
 /*作品清单中的所有超链接 -- 鼠标悬停伪类*/
 ul.ul-artworklist a:hover{
 	text-decoration: #ffd500 wavy underline;
 /*	text-decoration: line-through;*/
-    font-size: 22px;
+    font-size: clamp(1.25rem, 1.077rem + 0.38vw, 2rem); /*22px*/
     color: #ffd500;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

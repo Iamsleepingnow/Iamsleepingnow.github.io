@@ -2,15 +2,21 @@
 /* CSS Document */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~框架*/
 /*引用外部字体*/
-/*
+@font-face {
+    font-family: "GreekCarve";
+    src: url(../Source/GreekCarve.ttf);
+}
 @font-face {
     font-family: "Revamped";
-    src: url(../../Source/Revamped.otf);
+    src: url(../Source/Revamped.otf);
 }
-*/
 @font-face {
-    font-family: "Futura";
-    src: url(../../Source/Futura-Bold-5.ttf);
+    font-family: "RomanLess";
+    src: url(../Source/RomanLess.ttf);
+}
+@font-face {
+    font-family: "FuturaBold";
+    src: url(../Source/FuturaBold.ttf);
 }
 *{ /*重置浏览器*/
     margin: 0;
@@ -29,8 +35,8 @@ div.bg{
     background-color: #000;
     z-index: -10;
 }
-/*浮动背景图，需要循环覆盖*/
-div.floatbg-truncate{
+/*浮动背景图，需要循环覆盖（工人博物馆）*/
+div.floatbg-truncate-001{
     position: absolute;
     left: 0;
     float: right;
@@ -38,7 +44,67 @@ div.floatbg-truncate{
     width: 100%;
     background-repeat: repeat-y;
     z-index: -9;
-    background-image: linear-gradient(rgba(70,10,20,0.6), rgba(0,0,0,1)), url(../../Source/background.jpg);
+    background-image: linear-gradient(rgba(0,10,50,0.6), rgba(0,0,0,1)), url(../Source/background.jpg);
+    background-size: 100%;
+}
+/*浮动背景图，需要循环覆盖（数据主义）*/
+div.floatbg-truncate-002{
+    position: absolute;
+    left: 0;
+    float: right;
+    height: 100%;
+    width: 100%;
+    background-repeat: repeat-y;
+    z-index: -9;
+    background-image: linear-gradient(rgba(181, 240, 178, 0.8), rgba(0,0,0,1)), url(../Source/background.jpg);
+    background-size: 100%;
+}
+/*浮动背景图，需要循环覆盖（能工智能）*/
+div.floatbg-truncate-003{
+    position: absolute;
+    left: 0;
+    float: right;
+    height: 100%;
+    width: 100%;
+    background-repeat: repeat-y;
+    z-index: -9;
+    background-image: linear-gradient(rgba(79, 43, 42, 0.7), rgba(0,0,0,1)), url(../Source/background.jpg);
+    background-size: 100%;
+}
+/*浮动背景图，需要循环覆盖（玻璃数据）*/
+div.floatbg-truncate-005{
+    position: absolute;
+    left: 0;
+    float: right;
+    height: 100%;
+    width: 100%;
+    background-repeat: repeat-y;
+    z-index: -9;
+    background-image: linear-gradient(rgba(85, 61, 5, 0.3), rgba(0,0,0,1)), url(../Source/background.jpg);
+    background-size: 100%;
+}
+/*浮动背景图，需要循环覆盖（阈限志）*/
+div.floatbg-truncate-007{
+    position: absolute;
+    left: 0;
+    float: right;
+    height: 100%;
+    width: 100%;
+    background-repeat: repeat-y;
+    z-index: -9;
+    background-image: linear-gradient(rgba(17, 0, 3, 0.7), rgba(0,0,0,1)), url(../Source/background.jpg);
+    background-size: 100%;
+}
+/*浮动背景图，需要循环覆盖（心机接口）*/
+div.floatbg-truncate-009{
+    position: absolute;
+    left: 0;
+    float: right;
+    height: 100%;
+    width: 100%;
+    background-repeat: repeat-y;
+    z-index: -9;
+    background-image: linear-gradient(rgba(47, 54, 180, 0.688), rgba(0,0,0,1)), url(../Source/background.jpg);
     background-size: 100%;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~主内容*/
@@ -80,38 +146,80 @@ div.eightpage{
 /*主标题*/
 h1.bigtitle{
 /*    font-family: "Revamped";*/
-	font-family: "Futura";
+	font-family: "FuturaBold";
     color: #FFF;
     padding-top: 250px;
-    padding-bottom: 250px;
+    padding-bottom: clamp(3.125rem, -4.231rem + 16.35vw, 35rem);/*250px*/
 	padding-right: 5%;
     box-sizing: border-box;
     width: 100%;
     display: inline-block;
     text-align: right;
-/*	VALUES:16~64, VIEWPORT:450~1920*/
     font-size: clamp(1.875rem, 0.335rem + 4.93vw, 6.25rem);
-/*    font-size: clamp(1.125rem, 0.092rem + 3.67vw, 4.5rem);*/
     background-size: 100%;
     background-position: 20%;
-    text-shadow: 5px 5px 20px #000;
+    text-shadow: 5px 5px 10px #000;
     letter-spacing: 0.25em;
 }
-/*主标中的英文*/
-span.en-bigtitle{
-	font-family: "Futura";
+/*主标中的英文（工人博物馆）*/
+span.en-bigtitle-001{
+    font-family: "RomanLess";
 	font-style: oblique;
-/*	#CCAA00,#FF0088*/
+	background-image:-webkit-linear-gradient(top, #00FF66,#0066FF);
+	-webkit-background-clip:text;
+	-webkit-text-fill-color:transparent;
+	text-shadow: 5px 5px 20px #FF883300;
+	letter-spacing: 0.05em;
+}
+/*主标中的英文（数据主义）*/
+span.en-bigtitle-002{
+    font-family: "RomanLess";
+	font-style: oblique;
+	background-image:-webkit-linear-gradient(top, #66AAFF,#208800);
+	-webkit-background-clip:text;
+	-webkit-text-fill-color:transparent;
+	text-shadow: 5px 5px 20px #FF883300;
+	letter-spacing: 0.05em;
+}
+/*主标中的英文（能工智能）*/
+span.en-bigtitle-003{
+    font-family: "RomanLess";
+	font-style: oblique;
+	background-image:-webkit-linear-gradient(top, #CCFF00,#f47106);
+	-webkit-background-clip:text;
+	-webkit-text-fill-color:transparent;
+	text-shadow: 5px 5px 20px #FF883300;
+	letter-spacing: 0.05em;
+}
+/*主标中的英文（玻璃数据）*/
+span.en-bigtitle-005{
+    font-family: "RomanLess";
+	font-style: oblique;
+	background-image:-webkit-linear-gradient(top, #42f2b4,#FFAA00);
+	-webkit-background-clip:text;
+	-webkit-text-fill-color:transparent;
+	text-shadow: 5px 5px 20px #FF883300;
+	letter-spacing: 0.05em;
+}
+/*主标中的英文（阈限志）*/
+span.en-bigtitle-007{
+    font-family: "RomanLess";
+	font-style: oblique;
 	background-image:-webkit-linear-gradient(top, #FF6600,#FF0000);
 	-webkit-background-clip:text;
 	-webkit-text-fill-color:transparent;
 	text-shadow: 5px 5px 20px #FF883300;
-	letter-spacing: 0.15em;
-/*	outline: solid #0066FF;*/
-/*	border-radius: 6px;*/
-/*	VALUES:16~64, VIEWPORT:450~1920*/
-/*	font-size: clamp(1rem, 0.082rem + 3.27vw, 4rem);*/
-	font-size: clamp(1.5rem, 0.39rem + 3.95vw, 5.125rem);
+	letter-spacing: 0.05em;
+}
+/*主标中的英文（心机接口）*/
+span.en-bigtitle-009{
+    font-family: "RomanLess";
+	font-style: oblique;
+	background-image:-webkit-linear-gradient(top, #ff0090,#0e00a2);
+	-webkit-background-clip:text;
+	-webkit-text-fill-color:transparent;
+	text-shadow: 5px 5px 20px #FF883300;
+	letter-spacing: 0.05em;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~链接*/
 /*返回主页链接*/
@@ -137,8 +245,8 @@ a.back:active{
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~文本*/
 /*介绍文本*/
 div.intro{
-	/*VALUES:300~2600, VIEWPORT:600~3840*/
-    width: clamp(18.75rem, -7.87rem + 70.99vw, 162.5rem);
+	/*VALUES:680~3200, VIEWPORT:720~3840*/ /*VALUES:300~2600, VIEWPORT:600~3840*/
+    width: clamp(42.5rem, 6.154rem + 80.77vw, 200rem);/*clamp(18.75rem, -7.87rem + 70.99vw, 162.5rem);*/
     margin: auto;
     z-index: 9;
     border: 0px solid #000;
@@ -151,8 +259,8 @@ div.intro{
 p.cn-intro{
     color: #CCC;
     margin-top: 10px;
-    line-height: 35px;
-    font-size: 20px;
+    line-height: 45px;
+    font-size: 36px;
     text-indent: 2em;
     text-align: left;
     letter-spacing: 0.15em;
@@ -160,22 +268,22 @@ p.cn-intro{
 /*介绍文本 --中文文本介绍 --技术信息*/
 p.cn-intro#cn-intro-tech{
 	color: #888;
-	margin-bottom: 60px;
+	margin-bottom: 20px;
 }
 /*介绍文本 --英文文本介绍*/
 p.en-intro{
     color: #CCC;
     margin-top: 10px;
-    line-height: 35px;
-    font-size: 20px;
+    line-height: 45px;
+    font-size: 36px;
     text-indent: 2em;
     text-align: left;
-    letter-spacing: -0.05em;
+    letter-spacing: 0.05em;
 }
 /*介绍文本 --英文文本介绍 --技术信息*/
 p.en-intro#en-intro-tech{
 	color: #888;
-	margin-bottom: 60px;
+	margin-bottom: 20px;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~图片*/
 /*矢量图 --主图*/
@@ -184,11 +292,11 @@ embed.svg#svg-main{
 	width: 100%;
 	float: right;
 	right: 10%;
-	top: -80px;
+	top: 10px;
 	z-index: -10;
 }
 div.images{
-	width: clamp(18.75rem, -7.87rem + 70.99vw, 162.5rem);
+	width: clamp(42.5rem, 6.154rem + 80.77vw, 200rem);/*clamp(18.75rem, -7.87rem + 70.99vw, 162.5rem);*/
     margin: auto;
 	padding: 0px;
     z-index: 9;
@@ -196,10 +304,15 @@ div.images{
 img.img{
 	margin: auto;
 	width: 100%;
-	box-shadow: 0px 0px 30px #000;
+	box-shadow: 0px 0px 10px #00000088;
+}
+img.imgBig{
+	margin: auto;
+	width: 100%;
+	/* box-shadow: 0px 0px 30px #000; */
 }
 li.images{
-	padding-top: 200px;
+	padding-top: 100px;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~锚点*/
 /*固定锚点 -- 回到顶端*/
@@ -209,7 +322,7 @@ div.fixedanchor{
     right: 15px;
     width: 25px;
     height: 25px;
-    background: url(../../Source/uparrow.png);
+    background: url(../Source/uparrow.png);
     background-size: 100% 100%;
     opacity: 0.35;
 }
@@ -220,7 +333,7 @@ div.backpage{
     left: 15px;
     width: 25px;
     height: 25px;
-    background: url(../../Source/leftarrow.png);
+    background: url(../Source/leftarrow.png);
     background-size: 100% 100%;
     opacity: 0.35;
 }
@@ -231,7 +344,7 @@ div.leftpage{
     left: 15px;
     width: 30px;
     height: 50px;
-    background: url(../../Source/leftarrow_alt1.png);
+    background: url(../Source/leftarrow_alt1.png);
     background-size: 100% 100%;
     opacity: 0.35;
 }
@@ -245,7 +358,7 @@ div.rightpage{
     right: 15px;
     width: 30px;
     height: 50px;
-    background: url(../../Source/rightarrow_alt1.png);
+    background: url(../Source/rightarrow_alt1.png);
     background-size: 100% 100%;
     opacity: 0.35;
 }
@@ -254,13 +367,13 @@ div.rightpage:hover{
 }
 /*完整视频链接*/
 a.fullvideo{
-	font-family: "Futura";
+	/*font-family: "Futura";*/
 	color: #ddd;
     box-sizing: border-box;
     width: 100%;
     display: inline-block;
     text-align: center;
-    font-size: 20px;
+    font-size: 36px;
     text-shadow: 5px 5px 20px #000;
     letter-spacing: 0.25em;
 	text-decoration: none;
