@@ -1,0 +1,94 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*引用外部字体*/
+@font-face {
+    font-family: "Mangaka";
+    src: url("../../Resources/Fonts/Mangaka.otf");
+}
+
+/*重置浏览器（去除默认浏览器白边）*/
+* { /*Windows*/
+    margin: 0;
+    padding: 0;
+}
+
+/*字体设置*/
+@media screen and (-ms-windows: 1) {
+    * { /*Windows*/
+        font-family: "Microsoft Yahei";
+    }
+}
+@media screen and (-apple-system: Macintosh) {
+    * { /*Macintosh*/
+        font-family: "PingFang SC";
+    }
+}
+
+/*背景区域*/
+div.mainBg{
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    z-index: -10;
+    background-repeat:repeat;
+    background-size: 33.3333%;
+}
+
+/* 页中区域 index.html */
+div.mainPage {
+    width: 66.66%;
+    height: 100%;
+    margin: 0px auto;
+    padding: 0px 0px;
+    text-align: center;
+    background-color: #fff;
+}
+
+/* 标题中文 */
+#Title_CN {
+    font-family: "Mangaka";
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #000;
+}
+
+/* 标题英文 */
+#Title_EN {
+    font-family: "Mangaka";
+    font-size: 2.5em;
+    font-weight: normal;
+    color: #000;
+}
+
+.WorkLinkDiv {
+    position: relative;
+}
+
+/* 作品链接 */
+#WorkLink {
+    font-family: "Mangaka";
+    font-size: 1.5em;
+    font-weight: normal;
+    color: #000;
+    line-height: 1.5em;
+    text-decoration: none;
+}
+
+/* 作品简介中文 */
+.WorkDesc_CN {
+    font-family: "Mangaka";
+    font-size: 1.5em;
+    font-weight: normal;
+    color: #000;
+    line-height: 1.5em;
+}
+
+/* 作品简介英文 */
+.WorkDesc_EN {
+    font-family: "Mangaka";
+    font-size: 1.5em;
+    font-weight: normal;
+    color: #000;
+    line-height: 1.5em;
+}

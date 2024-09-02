@@ -1,0 +1,121 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*引用外部字体*/
+@font-face {
+    font-family: "Mangaka";
+    src: url("../../Resources/Fonts/Mangaka.otf");
+}
+
+/*重置浏览器（去除默认浏览器白边）*/
+* { /*Windows*/
+    margin: 0;
+    padding: 0;
+}
+
+/*字体设置*/
+@media screen and (-ms-windows: 1) {
+    * { /*Windows*/
+        font-family: "Microsoft Yahei";
+    }
+}
+@media screen and (-apple-system: Macintosh) {
+    * { /*Macintosh*/
+        font-family: "PingFang SC";
+    }
+}
+
+/* 测试 */
+/* div {
+    border: 1px solid;
+} */
+
+/*超链接格式*/
+a {
+    text-decoration: none;
+}
+
+/*背景区域*/
+div.mainBg{
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    z-index: -10;
+    background-repeat:repeat;
+    background-size: 33.3333%;
+}
+
+/* 页中区域 index.html */
+div.mainPage {
+    width: 66.66%;
+    height: 100%;
+    margin: 0px auto;
+    padding: 0px 0px;
+    text-align: center;
+    background-color: #fff;
+}
+
+/* 标题图片格式 Script_Title.js */
+img.titleImage {
+    display: block;
+    margin: auto;
+    width: 40%;
+}
+
+/* 作品名称CN */
+.workName_CN {
+    font-size: 1.05em;
+    font-weight: bold;
+    color: #000;
+}
+
+/* 作品名称CN繁体 */
+.workName_Tra {
+    font-size: 1.05em;
+    font-weight: normal;
+    color: #000;
+}
+
+/* 作品名称EN */
+.workName_EN {
+    font-family: "Mangaka";
+    font-size: 1.05em;
+    font-weight: bold;
+    font-style: italic;
+    color: #000;
+}
+
+/* 作者简介CN */
+.authorDesc_CN {
+    font-size: 1.25em;
+    font-weight: normal;
+    color: #000;
+    line-height: 1.5em;
+}
+
+/* 作者简介EN */
+.authorDesc_EN {
+    font-family: "Mangaka";
+    font-size: 1.25em;
+    font-weight: normal;
+    color: #000;
+    line-height: 1.5em;
+}
+
+/* 作者简介非链接 */
+.authorCV_NonLink {
+    font-family: "Mangaka";
+    font-size: 1.25em;
+    font-weight: normal;
+    color: #000;
+    text-decoration: none;
+}
+
+/* 作者简介链接 */
+.authorCV_Link {
+    font-family: "Mangaka";
+    font-size: 1.25em;
+    font-weight: normal;
+    color: #8801f7;
+    text-decoration: none;
+}
