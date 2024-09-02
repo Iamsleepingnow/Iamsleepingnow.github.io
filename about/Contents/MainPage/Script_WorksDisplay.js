@@ -47,7 +47,7 @@ var works = [
         nameTra: "閾限誌",
         name_en: "the Record of Limen",
         pic: ".\\Resources\\Images\\WorksGIF\\阈限志The_Record_of_Limen.gif",
-        url: ".\\Contents\\WorkPages\\Record_of_Limen\\Work_The_Record_of_Limen.html",
+        url: ".\\Contents\\WorkPages\\Record_of_Limen\\Work_the_Record_of_Limen.html",
     },
     {
         name: "XP，但是番茄花园版",
